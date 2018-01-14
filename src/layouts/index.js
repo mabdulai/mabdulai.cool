@@ -1,35 +1,33 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
-import Header from '../components/Header'
-import './index.css'
+import Header from '../components/Header';
+import './index.css';
+
+const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  border: 10px solid #7166ff;
+  padding: 20px;
+`;
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <PageWrapper>
     <Helmet
-      title="Gatsby Default Starter"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
+      title="Mabdulai.io"
+      meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
-)
+    <div>{children()}</div>
+  </PageWrapper>
+);
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PropTypes.func
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
