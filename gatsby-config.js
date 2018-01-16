@@ -17,6 +17,15 @@ module.exports = {
       options: {
         plugins: []
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Merriweather`,
+          `Nunito\:300,500,700,900` // you can also specify font weights and styles
+        ]
+      }
     }
   ]
 };

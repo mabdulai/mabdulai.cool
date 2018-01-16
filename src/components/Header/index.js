@@ -4,8 +4,10 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 
 const HomeLink = styled(Link)`
-  color: green;
   text-decoration: none;
+  font-weight: 900;
+  font-size: 6rem;
+  color: #222;
 `;
 
 const Header = () => (

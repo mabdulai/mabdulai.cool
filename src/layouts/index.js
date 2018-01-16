@@ -6,13 +6,13 @@ import styled from 'styled-components';
 import Header from '../components/Header';
 import './index.css';
 
-const PageWrapper = styled.div`
+  const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
-  border: 10px solid #7166ff;
-  padding: 20px;
+  border-top: 15px solid #9600FF;
+  padding: 5rem;
 `;
 
 const TemplateWrapper = ({ children }) => (
