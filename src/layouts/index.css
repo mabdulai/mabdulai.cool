@@ -7,10 +7,10 @@ body {
 html {
   box-sizing: border-box;
   font-size: 10px;
+  color: #222;
 }
 *, *:before, *:after {
   box-sizing: inherit;
   font-family: 'Nunito';
-  background: #EEEEFF;
 }
 

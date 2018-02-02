@@ -5,15 +5,19 @@ import styled from 'styled-components';
 
 import Header from '../components/Header';
 import './index.css';
+import colors from '../styles/colors';
 
-  const PageWrapper = styled.div`
+const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
-  border-top: 15px solid #9600FF;
-  padding: 5rem;
+  padding: 8rem 15rem;
+  border: 15px solid ${colors.primary};
+  background: ${colors.background};
 `;
+
+
 
 const TemplateWrapper = ({ children }) => (
   <PageWrapper>
@@ -22,6 +26,7 @@ const TemplateWrapper = ({ children }) => (
       meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
     />
     <Header />
+
     <div>{children()}</div>
   </PageWrapper>
 );

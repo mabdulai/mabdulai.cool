@@ -8,12 +8,12 @@ const HomeLink = styled(Link)`
   font-weight: 900;
   font-size: 6rem;
   color: #222;
+  padding-bottom: 2rem;
 `;
 
+
 const Header = () => (
-  <div>
-    <HomeLink to="/">Mabdulai.io</HomeLink>
-  </div>
+  <HomeLink to="/">Mabdulai.io</HomeLink>
 );
 
 export default Header;
