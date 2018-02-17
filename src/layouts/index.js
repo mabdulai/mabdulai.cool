@@ -14,7 +14,7 @@ const PageWrapper = styled.div`
   min-height: 100vh;
   padding: 8rem 15rem;
   border: 15px solid ${colors.primary};
-  background: ${colors.background};
+  background: #fff;
 `;
 
 

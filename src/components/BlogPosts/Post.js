@@ -5,11 +5,9 @@ import colors from '../../styles/colors';
 
 const PostLink = styled(Link)`
   text-decoration: none;
-  display: inline-block;
   color: ${colors.fontMain};
   font-weight: 600;
-  transition: all 150ms ease-in-out;
-  padding: 0rem 1rem;
+  transition: 150ms all ease-in-out;
 
   &:hover {
     background: ${colors.primary};
@@ -17,10 +15,21 @@ const PostLink = styled(Link)`
   }
 `;
 
+const PostItem = styled.li`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+`;
+
 class PostContainer extends Component {
   render() {
     const { post } = this.props;
-    return <PostLink to={post.node.frontmatter.path}>{post.node.frontmatter.title}</PostLink>;
+    return (
+      <PostItem>
+        <PostLink to={post.node.frontmatter.path}>{post.node.frontmatter.title}</PostLink>
+      </PostItem>
+    );
   }
 }
 
