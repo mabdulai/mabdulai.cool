@@ -12,12 +12,8 @@ const PageWrapper = styled.div`
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
-  padding: 8rem 15rem;
-  border: 15px solid ${colors.primary};
   background: #fff;
 `;
-
-
 
 const TemplateWrapper = ({ children }) => (
   <PageWrapper>

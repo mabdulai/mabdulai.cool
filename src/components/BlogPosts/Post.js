@@ -8,18 +8,13 @@ const PostLink = styled(Link)`
   color: ${colors.fontMain};
   font-weight: 600;
   transition: 150ms all ease-in-out;
-
-  &:hover {
-    background: ${colors.primary};
-    color: #fff;
-  }
 `;
 
 const PostItem = styled.li`
   list-style: none;
-  padding: 0;
+  padding: 7rem;
   margin: 0;
-
+  width: 50%;
 `;
 
 class PostContainer extends Component {
