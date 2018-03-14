@@ -9,7 +9,6 @@ import LatestPosts from '../components/Posts/FeaturedPosts';
 import AllPosts from '../components/Posts/AllPosts';
 import FeaturedProject from '../components/projects/FeaturedProject';
 import AllProjects from '../components/projects/AllProjects';
-import Footer from '../components/Footer';
 
 const Intro = styled.div`
   display: flex;
@@ -35,16 +34,16 @@ const Cutebar = styled.div`
   background: ${colors.primary};
 `;
 
-const MainContainer = styled.main`
-  padding: 0 0.5rem;
-  margin: 1rem 0;
+const MainContainer = styled.div`
+  padding: 0;
+  margin: 1rem 0 3rem;
   border-radius: 4px;
   background: #fff;
   box-shadow: ${shadows.mainShadow};
 `;
 
-const IndexContainer = styled.div`
-  padding: 5rem;
+const IndexContainer = styled.main`
+  padding: 5rem 5rem 0;
   background-image: url('https://uploads-ssl.webflow.com/58da70ea373f4eae11a376f7/590103995825ce6d0ed48f02_bg-pattern.svg');
   background-repeat: repeat-y;
 `;
@@ -64,10 +63,13 @@ const IndexPage = ({ data }) => {
       <LatestPosts posts={posts} />
       <MainContainer>
         <AllPosts />
+      </MainContainer>
+      <MainContainer>
         <FeaturedProject />
+      </MainContainer>
+      <MainContainer>
         <AllProjects />
       </MainContainer>
-      <Footer />
     </IndexContainer>
   );
 };
