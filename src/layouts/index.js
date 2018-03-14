@@ -10,7 +10,6 @@ import colors from '../styles/colors';
 const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100vw;
   min-height: 100vh;
   background: #fff;
 `;
@@ -22,7 +21,6 @@ const TemplateWrapper = ({ children }) => (
       meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
     />
     <Header />
-
     <div>{children()}</div>
   </PageWrapper>
 );

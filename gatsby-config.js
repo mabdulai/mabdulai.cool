@@ -22,7 +22,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Merriweather`,
+          `Open Sans`,
           `Nunito\:300,500,700,900` // you can also specify font weights and styles
         ]
       }
