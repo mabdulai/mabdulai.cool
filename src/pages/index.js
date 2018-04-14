@@ -7,8 +7,9 @@ import shadows from '../styles/shadows';
 import Header from '../components/Header';
 import LatestPosts from '../components/Posts/FeaturedPosts';
 import AllPosts from '../components/Posts/AllPosts';
-import FeaturedProject from '../components/projects/FeaturedProject';
-import AllProjects from '../components/projects/AllProjects';
+import FeaturedProject from '../components/Projects/FeaturedProject';
+import AllProjects from '../components/Projects/AllProjects';
+import Contact from '../components/Contact/';
 
 const Intro = styled.div`
   display: flex;
@@ -16,15 +17,13 @@ const Intro = styled.div`
   padding: 0 0 2rem;
   font-size: 4rem;
   font-weight: 600;
-  font-family: 'Nunito';
 `;
 
 const SubIntro = styled.div`
   padding: 2rem 0 5rem;
-  font-family: 'Nunito';
-  font-weight: 600;
   line-height: 3rem;
   font-size: 2rem;
+  font-weight: 700;
 `;
 
 const Cutebar = styled.div`
@@ -34,7 +33,7 @@ const Cutebar = styled.div`
   background: ${colors.primary};
 `;
 
-const MainContainer = styled.div`
+const BlockContainer = styled.div`
   padding: 0;
   margin: 1rem 0 3rem;
   border-radius: 4px;
@@ -61,15 +60,15 @@ const IndexPage = ({ data }) => {
         Welcome to my personal playground. Feel free to check out some of my personal projects and experiments.
       </SubIntro>
       <LatestPosts posts={posts} />
-      <MainContainer>
+      <BlockContainer>
         <AllPosts />
-      </MainContainer>
-      <MainContainer>
+      </BlockContainer>
+      <BlockContainer>
         <FeaturedProject />
-      </MainContainer>
-      <MainContainer>
-        <AllProjects />
-      </MainContainer>
+      </BlockContainer>
+      <BlockContainer>
+        <Contact />
+      </BlockContainer>
     </IndexContainer>
   );
 };

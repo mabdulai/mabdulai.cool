@@ -13,7 +13,7 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #fff;
+  background: #fafeff;
 `;
 
 const TemplateWrapper = ({ children }) => (
