@@ -42,7 +42,7 @@ const BlockContainer = styled.div`
 `;
 
 const IndexContainer = styled.main`
-  padding: 5rem 5rem 0;
+  padding: 5rem 20rem 0;
   background-image: url('https://uploads-ssl.webflow.com/58da70ea373f4eae11a376f7/590103995825ce6d0ed48f02_bg-pattern.svg');
   background-repeat: repeat-y;
 `;
@@ -59,12 +59,11 @@ const IndexPage = ({ data }) => {
         <br />
         Welcome to my personal playground. Feel free to check out some of my personal projects and experiments.
       </SubIntro>
-      <LatestPosts posts={posts} />
-      <BlockContainer>
-        <AllPosts />
-      </BlockContainer>
       <BlockContainer>
         <FeaturedProject />
+      </BlockContainer>
+      <BlockContainer>
+        <AllProjects />
       </BlockContainer>
       <BlockContainer>
         <Contact />

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
 import styled from 'styled-components';
 import colors from '../../../styles/colors';
 
@@ -32,8 +31,6 @@ const Text = styled.div`
   font-size: 2.5rem;
   text-align: center;
 `;
-
-const PostButton = styled(Link)``;
 
 class AllPosts extends Component {
   render() {

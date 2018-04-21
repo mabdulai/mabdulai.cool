@@ -26,6 +26,8 @@ const FeaturedRight = styled.div`
   flex: 1;
   min-height: 60rem;
   background: ${colors.primary};
+  border-radius: 0px 3px 3px 0px;
+
 `;
 
 const Title = styled.div`

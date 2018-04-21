@@ -13,7 +13,7 @@ const HomeLink = styled(Link)`
 `;
 
 const HeaderContainer = styled.header`
-  padding: 4rem 5rem 8rem;
+  padding: 4rem 20rem;
 `;
 
 const Header = () => (
