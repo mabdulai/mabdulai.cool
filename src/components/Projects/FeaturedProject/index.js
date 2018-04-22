@@ -6,8 +6,12 @@ import overstats from '../../../projects/overstats.jpg';
 
 const Container = styled.div`
   display: flex;
-  max-height: 60rem;
+
   overflow: hidden;
+
+  @media (max-width: 1200px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const FeaturedLeft = styled.div`
@@ -16,6 +20,8 @@ const FeaturedLeft = styled.div`
   img {
     object-fit: fill;
     border-radius: 3px;
+    max-width: 100%;
+    height: 60rem;
   }
 `;
 
@@ -27,7 +33,6 @@ const FeaturedRight = styled.div`
   min-height: 60rem;
   background: ${colors.primary};
   border-radius: 0px 3px 3px 0px;
-
 `;
 
 const Title = styled.div`
