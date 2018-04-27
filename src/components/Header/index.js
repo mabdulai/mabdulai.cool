@@ -13,7 +13,12 @@ const HomeLink = styled(Link)`
 `;
 
 const HeaderContainer = styled.header`
-  padding: 4rem 20rem;
+  padding: 4rem 0;
+  max-width: 140rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 `;
 
 const Header = () => (

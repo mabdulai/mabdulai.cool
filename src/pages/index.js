@@ -45,6 +45,8 @@ const IndexContainer = styled.main`
   padding: 5rem 20rem 0;
   background-image: url('https://uploads-ssl.webflow.com/58da70ea373f4eae11a376f7/590103995825ce6d0ed48f02_bg-pattern.svg');
   background-repeat: repeat-y;
+  max-width: 140rem;
+  margin: 0 auto;
 `;
 
 const IndexPage = ({ data }) => {
