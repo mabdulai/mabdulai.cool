@@ -6,22 +6,17 @@ import overstats from '../../../projects/overstats.jpg';
 
 const Container = styled.div`
   display: flex;
-
-  overflow: hidden;
-
   @media (max-width: 1200px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 `;
 
 const FeaturedLeft = styled.div`
-  overflow: hidden;
-
+  flex: 1;
   img {
-    object-fit: fill;
+    object-fit: cover;
     border-radius: 3px;
-    max-width: 100%;
-    height: 60rem;
+    display: flex;
   }
 `;
 
@@ -29,8 +24,6 @@ const FeaturedRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  min-height: 60rem;
   background: ${colors.primary};
   border-radius: 0px 3px 3px 0px;
 `;
@@ -46,17 +39,29 @@ const Title = styled.div`
 `;
 
 const Text = styled.div`
-  padding: 10rem 0;
-  font-size: 3rem;
+  padding: 2rem;
+  line-height: 1.5;
+  font-size: 2rem;
   color: #fff;
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 60%;
   text-align: center;
   align-items: center;
+`;
+
+const OverstatsButton = styled(Button)`
+  padding: 3rem 12rem;
+  transform: translateX(80px) translateY(50px);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0, 0, 0.07);
+  white-space: nowrap;
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    transform: translateX(85px) translateY(55px);
+  }
 `;
 
 class FeaturedProject extends Component {
@@ -70,7 +75,7 @@ class FeaturedProject extends Component {
           <TextContainer>
             <Title>Overstats</Title>
             <Text> A fun experiment with the overwatch API. Getting the more fun stats of your user account</Text>
-            <Button fontSize="1.2rem">Go to Overstats</Button>
+            <OverstatsButton fontSize="1.2rem">Go to Overstats</OverstatsButton>
           </TextContainer>
         </FeaturedRight>
       </Container>

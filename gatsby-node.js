@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
@@ -7,10 +7,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
         edges {
           node {
             excerpt(pruneLength: 250)
@@ -38,4 +35,38 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       });
     });
   });
+};
+
+// Add Babel plugin
+let babelPluginExists = false;
+try {
+  require.resolve(`babel-plugin-styled-components`);
+  babelPluginExists = true;
+} catch (e) {
+  // Ignore
+}
+
+exports.modifyBabelrc = ({ babelrc, stage }) => {
+  if (babelPluginExists) {
+    if (stage === `build-html`) {
+      return {
+        ...babelrc,
+        plugins: babelrc.plugins.concat([
+          [
+            `babel-plugin-styled-components`,
+            {
+              ssr: true
+            }
+          ]
+        ])
+      };
+    }
+
+    return {
+      ...babelrc,
+      plugins: babelrc.plugins.concat([`babel-plugin-styled-components`])
+    };
+  }
+
+  return babelrc;
 };

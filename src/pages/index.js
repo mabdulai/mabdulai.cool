@@ -20,7 +20,7 @@ const Intro = styled.div`
 `;
 
 const SubIntro = styled.div`
-  padding: 2rem 0 5rem;
+  padding: 2rem 0 10rem;
   line-height: 3rem;
   font-size: 2rem;
   font-weight: 700;
@@ -42,11 +42,19 @@ const BlockContainer = styled.div`
 `;
 
 const IndexContainer = styled.main`
-  padding: 5rem 20rem 0;
+  padding: 10rem 20rem 0;
   background-image: url('https://uploads-ssl.webflow.com/58da70ea373f4eae11a376f7/590103995825ce6d0ed48f02_bg-pattern.svg');
   background-repeat: repeat-y;
   max-width: 140rem;
   margin: 0 auto;
+`;
+
+const TextHeader = styled.div`
+  font-size: 4rem;
+`;
+
+const SectionHeader = styled(Intro)`
+  border-bottom
 `;
 
 const IndexPage = ({ data }) => {
@@ -61,6 +69,7 @@ const IndexPage = ({ data }) => {
         <br />
         Welcome to my personal playground. Feel free to check out some of my personal projects and experiments.
       </SubIntro>
+      <Intro>Projects</Intro>
       <BlockContainer>
         <FeaturedProject />
       </BlockContainer>
