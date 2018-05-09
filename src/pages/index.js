@@ -17,6 +17,7 @@ const Intro = styled.div`
   padding: 0 0 2rem;
   font-size: 4rem;
   font-weight: 600;
+  max-width: 50rem;
 `;
 
 const SubIntro = styled.div`
@@ -24,21 +25,20 @@ const SubIntro = styled.div`
   line-height: 3rem;
   font-size: 2rem;
   font-weight: 700;
+  max-width: 50rem;
 `;
 
 const Cutebar = styled.div`
+  display: flex;
   width: 60rem;
   height: 1rem;
-  border-radius: 4px;
   background: ${colors.primary};
+  justify-self: flex-end;
 `;
 
 const BlockContainer = styled.div`
   padding: 0;
-  margin: 1rem 0 3rem;
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: ${shadows.mainShadow};
+  margin: 1rem 0 8rem;
 `;
 
 const IndexContainer = styled.main`
@@ -53,9 +53,10 @@ const TextHeader = styled.div`
   font-size: 4rem;
 `;
 
-const SectionHeader = styled(Intro)`
-  border-bottom
+const FlexContainer = styled.div`
+  display: flex;
 `;
+
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(node => node);
@@ -63,7 +64,7 @@ const IndexPage = ({ data }) => {
   return (
     <IndexContainer>
       <Intro>Hi!👋 I'm Michael Abdulai, a Frontend Developer from The Netherlands.</Intro>
-      <Cutebar />
+      <div><Cutebar /></div>
       <SubIntro>
         Currently kicking ass @ ABOSS in Amsterdam. with a passion for Javascript, design and mechanical keyboards.
         <br />

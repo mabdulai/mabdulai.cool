@@ -15,7 +15,6 @@ const FeaturedLeft = styled.div`
   flex: 1;
   img {
     object-fit: cover;
-    border-radius: 3px;
     display: flex;
   }
 `;
@@ -25,7 +24,7 @@ const FeaturedRight = styled.div`
   align-items: center;
   justify-content: center;
   background: ${colors.primary};
-  border-radius: 0px 3px 3px 0px;
+  transform: translateY(3rem);
 `;
 
 const Title = styled.div`
