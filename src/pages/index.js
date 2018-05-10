@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 import colors from '../styles/colors';
 import shadows from '../styles/shadows';
-
-import Header from '../components/Header';
 import LatestPosts from '../components/Posts/FeaturedPosts';
 import AllPosts from '../components/Posts/AllPosts';
 import FeaturedProject from '../components/Projects/FeaturedProject';
@@ -17,15 +15,14 @@ const Intro = styled.div`
   padding: 0 0 2rem;
   font-size: 4rem;
   font-weight: 600;
-  max-width: 50rem;
 `;
 
 const SubIntro = styled.div`
   padding: 2rem 0 10rem;
-  line-height: 3rem;
+  line-height: 3.2rem;
   font-size: 2rem;
-  font-weight: 700;
   max-width: 50rem;
+  transform: translateX(5rem);
 `;
 
 const Cutebar = styled.div`
@@ -34,6 +31,7 @@ const Cutebar = styled.div`
   height: 1rem;
   background: ${colors.primary};
   justify-self: flex-end;
+  transform: translateX(10rem);
 `;
 
 const BlockContainer = styled.div`
@@ -42,10 +40,8 @@ const BlockContainer = styled.div`
 `;
 
 const IndexContainer = styled.main`
-  padding: 10rem 20rem 0;
-  background-image: url('https://uploads-ssl.webflow.com/58da70ea373f4eae11a376f7/590103995825ce6d0ed48f02_bg-pattern.svg');
-  background-repeat: repeat-y;
-  max-width: 140rem;
+  padding: 15rem 0 10rem;
+  max-width: 100rem;
   margin: 0 auto;
 `;
 
@@ -57,19 +53,49 @@ const FlexContainer = styled.div`
   display: flex;
 `;
 
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 55rem;
+  margin: 0 auto;
+`;
+
+const InlineLink = styled.a`
+  display: inline-flex;
+  text-decoration: none;
+  height: 1.5rem;
+  max-width: 7rem;
+  flex: 0;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  color: #222;
+  transition: 150ms ease-in-out;
+
+  &:hover {
+    background: ${colors.succes};
+  }
+`;
+
+const calcOffSet = () => {};
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(node => node);
 
   return (
     <IndexContainer>
-      <Intro>Hi!👋 I'm Michael Abdulai, a Frontend Developer from The Netherlands.</Intro>
-      <div><Cutebar /></div>
-      <SubIntro>
-        Currently kicking ass @ ABOSS in Amsterdam. with a passion for Javascript, design and mechanical keyboards.
-        <br />
-        Welcome to my personal playground. Feel free to check out some of my personal projects and experiments.
-      </SubIntro>
+      <Header>
+        <Intro>Hi!👋 I'm Michael Abdulai, a Frontend Developer from The Netherlands.</Intro>
+        <div>
+          <Cutebar />
+        </div>
+        <SubIntro>
+          Currently kicking ass @{' '}
+          <InlineLink href="http://www.a-boss.net" target="_blank">
+            <div>ABOSS</div>
+          </InlineLink>{' '}
+          in Amsterdam. with a passion for Javascript, design and mechanical keyboards.
+        </SubIntro>
+      </Header>
       <Intro>Projects</Intro>
       <BlockContainer>
         <FeaturedProject />

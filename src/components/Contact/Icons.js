@@ -24,9 +24,9 @@ class Icons extends Component {
   render() {
     return (
       <IconContainer>
-        {icons.map(({ icon, name, link }) => {
+        {icons.map(({ icon, name, link }, index) => {
           return (
-            <a href={link}>
+            <a key={index} href={link}>
               <Icon src={icon} alt={name} />
             </a>
           );

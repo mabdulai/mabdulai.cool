@@ -7,17 +7,16 @@ const Button = styled(Link)`
   text-decoration: none;
   background: #fff;
   padding: 2rem 6rem;
-  border-radius: 4px;
   color: ${colors.fontMain};
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-weight: 900;
+  font-weight: 700;
   transition: all 150ms ease-in-out;
   font-size: ${props => (props.fontSize ? props.fontSize : '1rem')};
 
   &:hover {
-    background: ${colors.fontMain};
-    color: #fff;
+    background-color: ${colors.succes};
+    color: ${colors.fontMain};
   }
 `;
 class MainButton extends Component {

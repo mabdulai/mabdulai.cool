@@ -11,7 +11,7 @@ const FooterContainer = styled.div`
 
 class Footer extends Component {
   render() {
-    return <FooterContainer>© Michael Abdulai 2018 • Built with 🌟 on GatsbyJS </FooterContainer>;
+    return null;
   }
 }
 
