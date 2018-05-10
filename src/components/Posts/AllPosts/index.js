@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import colors from '../../../styles/colors';
 
-import Button from '../../Buttons/MainButton';
+import Button from '../../Utility/MainButton';
 
 const Container = styled.div`
   display: flex;

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Button from '../../Buttons/MainButton';
+import Button from '../../Utility/MainButton';
 import colors from '../../../styles/colors';
-import overstats from '../../../projects/overstats.jpg';
 
 const Container = styled.div`
   display: flex;
@@ -13,6 +12,12 @@ const Container = styled.div`
 `;
 
 const FeaturedLeft = styled.div`
+  transition: all 150ms ease-out;
+
+  ${Container}:hover & {
+    transform: translateY(-1rem);
+  }
+
   img {
     object-fit: cover;
     display: flex;
@@ -27,7 +32,7 @@ const FeaturedRight = styled.div`
   background: ${colors.primary};
   transform: translateY(3rem);
   max-width: 33.3rem;
-  transition: all 150ms ease-in-out;
+  transition: all 150ms ease-out;
 
   ${Container}:hover & {
     transform: translateY(3.5rem);
@@ -72,17 +77,18 @@ const OverstatsButton = styled(Button)`
 
 class FeaturedProject extends Component {
   render() {
+    const { title, img, text, reverse } = this.props;
     return (
-      <Container>
+      <Container reverse={reverse}>
         <FeaturedLeft>
-          <img src={overstats} />
+          <img src={img} />
         </FeaturedLeft>
         <FeaturedRight>
           <TextContainer>
-            <Title>Overstats</Title>
-            <Text> A fun experiment with the overwatch API. Getting the more fun stats of your user account</Text>
+            <Title>{title}</Title>
+            <Text> {text} </Text>
             <OverstatsButton to="#" fontSize="1.2rem">
-              Go to Overstats
+              Go to {title}
             </OverstatsButton>
           </TextContainer>
         </FeaturedRight>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import colors from '../../../styles/colors';
 
-import Button from '../../Buttons/MainButton';
+import Button from '../../Utility/MainButton';
 
 const Container = styled.div`
   display: flex;
@@ -32,7 +32,6 @@ const Text = styled.div`
   text-align: center;
 `;
 
-
 class AllProjects extends Component {
   render() {
     return (
@@ -51,5 +50,3 @@ class AllProjects extends Component {
 }
 
 export default AllProjects;
-
-
