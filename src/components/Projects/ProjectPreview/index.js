@@ -6,7 +6,7 @@ import shadows from '../../../styles/shadows';
 
 const Container = styled.div`
   display: flex;
-  flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
+  flex-direction: ${props => (props.reverse ? 'row-reverse' : 'row')};
 
   @media (max-width: 1200px) {
     flex-direction: column;
@@ -77,7 +77,7 @@ const OverstatsButton = styled(Button)`
 
 class ProjectPreview extends Component {
   render() {
-    const { title, img, text, reverse } = this.props;
+    const { title, img, text, reverse, link } = this.props;
     return (
       <Container reverse={reverse}>
         <FeaturedLeft>
@@ -87,7 +87,7 @@ class ProjectPreview extends Component {
           <TextContainer>
             <Title>{title}</Title>
             <Text> {text} </Text>
-            <OverstatsButton to="#" fontSize="1.2rem">
+            <OverstatsButton to={link} fontSize="1.2rem">
               Go to {title}
             </OverstatsButton>
           </TextContainer>

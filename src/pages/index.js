@@ -13,6 +13,7 @@ import Intro from '../components/Utility/Intro';
 import BlockContainer from '../components/Utility/BlockContainer';
 
 import overstats from '../projects/overstats.jpg';
+import notif from '../projects/notif.gif';
 
 const IndexContainer = styled.main`
   padding: 15rem 0 10rem;
@@ -27,28 +28,33 @@ const TextHeader = styled.div`
 const FlexContainer = styled.div`
   display: flex;
 `;
-
-
+const Section = styled(Intro)`
+  font-size: 2.5rem;
+`;
 const IndexPage = ({ data }) => {
   return (
     <IndexContainer>
       <Header />
-      <Intro>PROJECTS</Intro>
+      <Section>Projects</Section>
       <BlockContainer>
         <ProjectPreview
           title="Overstats"
           img={overstats}
           text=" A fun experiment with the overwatch API. Getting the more fun stats of your user account."
+          link="https://mabdulai.github.io/overstats"
+          target="_blank"
         />
       </BlockContainer>
       <BlockContainer>
         <ProjectPreview
           title="Notifications"
-          img={overstats}
+          img={notif}
           text="A case study of a redesign of our new notification system."
+          link="/notifications"
           reverse
         />
       </BlockContainer>
+      <Section>Socials</Section>
       <BlockContainer>
         <Contact />
       </BlockContainer>

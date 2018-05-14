@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import React from 'react';
 import colors from '../../styles/colors';
 import shadow from '../../styles/shadows';
@@ -24,7 +24,7 @@ const SubIntro = styled.div`
   transform: translateX(5rem);
   animation: 200ms ${fadeAnimation};
   animation-fill-mode: forwards;
-  animation-delay: 1000ms;
+  animation-delay: 2000ms;
 `;
 
 const Cutebar = styled.div`
@@ -33,7 +33,7 @@ const Cutebar = styled.div`
   height: 1rem;
   background: ${colors.primary};
   transform: translateX(10rem);
-  box-shadow: 5px 5px ${colors.succes}
+  box-shadow: 5px 5px ${colors.succes};
 `;
 
 const InlineLink = styled.a`
@@ -62,7 +62,7 @@ const Header = () => {
       </div>
       <SubIntro>
         Kicking ass @{' '}
-        <InlineLink href='http://www.a-boss.net' target="_blank">
+        <InlineLink href="http://www.a-boss.net" target="_blank">
           <div>ABOSS</div>
         </InlineLink>{' '}
         in Amsterdam. with a passion for Javascript, design and mechanical keyboards.
