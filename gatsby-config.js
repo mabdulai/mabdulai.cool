@@ -22,7 +22,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Lato\:300,500,700,900`,
           `Montserrat\:300,500,700,900`,
           `Nunito\:300,500,700,900` // you can also specify font weights and styles
         ]

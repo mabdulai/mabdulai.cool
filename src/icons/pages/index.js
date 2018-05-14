@@ -5,7 +5,7 @@ import colors from '../styles/colors';
 import shadows from '../styles/shadows';
 import LatestPosts from '../components/Posts/FeaturedPosts';
 import AllPosts from '../components/Posts/AllPosts';
-import FeaturedProject from '../components/Projects/FeaturedProject';
+import ProjectPreview from '../components/Projects/ProjectPreview';
 import AllProjects from '../components/Projects/AllProjects';
 import Contact from '../components/Contact/';
 import Header from '../components/Home/Header';
@@ -28,19 +28,26 @@ const FlexContainer = styled.div`
   display: flex;
 `;
 
+
 const IndexPage = ({ data }) => {
   return (
     <IndexContainer>
-      <Intro>Projects</Intro>
+      <Header />
+      <Intro>PROJECTS</Intro>
       <BlockContainer>
-        <FeaturedProject
+        <ProjectPreview
           title="Overstats"
           img={overstats}
-          text=" A fun experiment with the overwatch API. Getting the more fun stats of your user account"
+          text=" A fun experiment with the overwatch API. Getting the more fun stats of your user account."
         />
       </BlockContainer>
       <BlockContainer>
-        <AllProjects />
+        <ProjectPreview
+          title="Notifications"
+          img={overstats}
+          text="A case study of a redesign of our new notification system."
+          reverse
+        />
       </BlockContainer>
       <BlockContainer>
         <Contact />

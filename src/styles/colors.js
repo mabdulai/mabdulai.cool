@@ -2,6 +2,7 @@ export default {
   background: '#FBFBFB',
   danger: '#F90072',
   primary: '#0496FF',
-  succes: '#7BE0AD',
+  secondary: '#3700ff',
+  succes: '#ffdd00',
   fontMain: '#222222',
 };

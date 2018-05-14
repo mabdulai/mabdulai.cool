@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Button from '../../Utility/MainButton';
 import colors from '../../../styles/colors';
+import shadows from '../../../styles/shadows';
 
 const Container = styled.div`
   display: flex;
+  flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
 
   @media (max-width: 1200px) {
     flex-direction: column;
@@ -28,11 +30,10 @@ const FeaturedRight = styled.div`
   display: flex;
   flex: 1;
   align-items: center;
-  justify-content: center;
   background: ${colors.primary};
   transform: translateY(3rem);
   max-width: 33.3rem;
-  transition: all 150ms ease-out;
+  transition: all 50ms linear;
 
   ${Container}:hover & {
     transform: translateY(3.5rem);
@@ -41,41 +42,40 @@ const FeaturedRight = styled.div`
 
 const Title = styled.div`
   border-bottom: 3px solid ${colors.succes};
-  padding: 5px 20px 10px;
+  margin: 0 10rem 0 5rem;
   text-transform: uppercase;
   font-size: 2rem;
   letter-spacing: 0.2rem;
+  font-weight: 700;
   color: #fff;
 `;
 
 const Text = styled.div`
-  padding: 2rem 5rem;
+  padding: 2rem 10rem 2rem 5rem;
   line-height: 1.5;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 300;
   color: #fff;
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
 `;
 
 const OverstatsButton = styled(Button)`
   padding: 3rem 12rem;
   transform: translateX(8rem) translateY(5rem);
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.05), 0 5px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: ${shadows.mainShadow};
   white-space: nowrap;
-  transition: all 250ms ease-in-out;
+  transition: all 50ms ease-in-out;
 
   &:hover {
     transform: translateY(5rem) translateX(8.5rem);
   }
 `;
 
-class FeaturedProject extends Component {
+class ProjectPreview extends Component {
   render() {
     const { title, img, text, reverse } = this.props;
     return (
@@ -97,4 +97,4 @@ class FeaturedProject extends Component {
   }
 }
 
-export default FeaturedProject;
+export default ProjectPreview;
