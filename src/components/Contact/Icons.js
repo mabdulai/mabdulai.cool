@@ -4,6 +4,7 @@ import Twitter from '../../icons/twitter.svg';
 import Github from '../../icons/github.svg';
 import Dribbble from '../../icons/dribbble.svg';
 import Codepen from '../../icons/codepen.svg';
+import colors from '../../styles/colors';
 
 const icons = [
   { icon: Twitter, name: 'Twitter', link: 'http://www.twitter.com/mabdulai90' },
@@ -13,11 +14,20 @@ const icons = [
 ];
 
 const IconContainer = styled.div`
-  margin: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Icon = styled.img`
-  padding-right: 1.5rem;
+  padding-right: 2rem;
+  fill: ${colors.succes};
+  opacity: 0.6;
+  transition: 200ms ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 class Icons extends Component {

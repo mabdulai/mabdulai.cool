@@ -14,10 +14,11 @@ import BlockContainer from '../components/Utility/BlockContainer';
 
 import overstats from '../projects/overstats.jpg';
 import notif from '../projects/notif.gif';
+import { flash } from 'react-animations';
 
 const IndexContainer = styled.main`
-  padding: 15rem 0 10rem;
-  max-width: 100rem;
+  padding: 15rem 0 0rem;
+  min-width: 120rem;
   margin: 0 auto;
 `;
 
@@ -31,12 +32,17 @@ const FlexContainer = styled.div`
 const Section = styled(Intro)`
   font-size: 2.5rem;
 `;
+
+const FooterContainer = styled(BlockContainer)`
+  margin-bottom: 5rem;
+`;
+
 const IndexPage = ({ data }) => {
   return (
     <IndexContainer>
       <Header />
       <Section>Projects</Section>
-      <BlockContainer>
+      <BlockContainer animate>
         <ProjectPreview
           title="Overstats"
           img={overstats}
@@ -54,10 +60,9 @@ const IndexPage = ({ data }) => {
           reverse
         />
       </BlockContainer>
-      <Section>Socials</Section>
-      <BlockContainer>
+      <FooterContainer>
         <Contact />
-      </BlockContainer>
+      </FooterContainer>
     </IndexContainer>
   );
 };

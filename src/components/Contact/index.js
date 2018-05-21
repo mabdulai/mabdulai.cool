@@ -2,29 +2,72 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import colors from '../../styles/colors';
+import shadows from '../../styles/shadows';
 
 import Icons from './Icons';
 
-const Title = styled.div`
-  border-bottom: 1px solid #222;
-  padding: 0.5rem 2rem 1rem;
-  text-transform: uppercase;
-`;
-
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  min-height: 15rem;
+
+  min-height: 25rem;
+`;
+
+const LeftSide = styled.div`
+  display: flex;
+  width: 60%;
+  padding: 5rem;
+  background: ${colors.primary};
   align-items: center;
   justify-content: center;
-  border-top: 1px solid #fafafa;
+`;
+
+const RightSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-5rem, 5rem);
+  background: #fff;
+  max-height: 15rem;
+  box-shadow: ${shadows.mainShadow};
+  transition: all 150ms linear;
+
+  ${Container}:hover & {
+    transform: translate(-8rem, 5rem);
+  }
+`;
+
+const Title = styled.div`
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+  color: #fff;
+
+  span {
+    border-bottom: 3px solid ${colors.succes};
+  }
+`;
+
+const IconTitle = styled(Title)`
+  color: ${colors.secondary};
+  padding-bottom: 2rem;
 `;
 
 class Contact extends Component {
   render() {
     return (
       <Container>
-        <Icons />
+        <LeftSide>
+          <Title>
+            Feel free to <span>say hi!</span>
+          </Title>
+        </LeftSide>
+        <RightSide>
+          <IconTitle>It also me</IconTitle>
+          <Icons />
+        </RightSide>
       </Container>
     );
   }
