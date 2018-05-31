@@ -53,7 +53,8 @@ const Title = styled.div`
 const Text = styled.div`
   padding: 2rem 10rem 2rem 5rem;
   line-height: 1.5;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
   font-weight: 300;
   color: #fff;
 `;

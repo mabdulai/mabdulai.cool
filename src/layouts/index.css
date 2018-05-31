@@ -14,7 +14,8 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
-  font-family: 'Montserrat';
+  font-family: 'Roboto';
+  font-weight: 400;
 }
 
 img{
