@@ -23,7 +23,7 @@ module.exports = {
       options: {
         fonts: [
           `Roboto\:400,500,700,900`,
-          `Nunito\:300,500,700,900` // you can also specify font weights and styles
+          `Raleway\:300,500,700,900` // you can also specify font weights and styles
         ]
       }
     }
