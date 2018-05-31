@@ -3,15 +3,17 @@ import styled from 'styled-components';
 import colors from '../styles/colors';
 
 import BlockContainer from '../components/Utility/BlockContainer';
+import checkmark from '../icons/check-mark.svg';
+import notif from '../projects/notif.gif';
 
 const StudyContainer = styled.main`
-  padding: 15rem 0 0rem;
-  width: 120rem;
+  padding: 5rem 0 0rem;
   margin: 0 auto;
 `;
 
 const PostBlock = styled(BlockContainer)`
   background: ${colors.background};
+
 `;
 
 const PostTitle = styled.h1`
@@ -21,14 +23,14 @@ const PostTitle = styled.h1`
 
 const PostParagraph = styled.p`
   max-width: 80rem;
-  font-size: 2rem;
-  line-height: 3.5rem;
+  font-size: 1.6rem;
+  line-height: 3rem;
   padding: 1rem 0;
 `;
 const PostSubHeader = styled.h2`
   display: inline-block;
   padding-right: 20rem;
-  margin: 0;
+  margin: 4rem 0 0;
   font-size: 4rem;
   font-weight: 700;
   border-bottom: 1rem solid ${colors.primary};
@@ -38,11 +40,22 @@ const PostBullets = styled.ul`
 `;
 const PostItem = styled.li`
   list-style: none;
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding: 1rem 0;
+
+  &:before {
+    background-image: url(${checkmark});
+    display: inline-block;
+    background-size: cover;
+    min-height: 2rem;
+    min-width: 2rem;
+    margin-right: 1rem;
+    content: '';
+  }
 
   span {
     padding: 0.5rem;
+    transition: 100ms all linear;
   }
 
   &:hover {
@@ -52,12 +65,22 @@ const PostItem = styled.li`
     }
   }
 `;
+const Cutebar = styled.div`
+  display: flex;
+  width: 60rem;
+  height: 1rem;
+  background: ${colors.primary};
+  transform: translateX(10rem);
+  box-shadow: 5px 5px ${colors.succes};
+`;
 class NotificationsStudy extends Component {
   render() {
     return (
       <StudyContainer>
         <PostTitle>ABOSS Notifications</PostTitle>
+        <Cutebar></Cutebar>
         <PostBlock>
+          <img src={notif} alt="ABOSS Notification"/>
           <PostParagraph>
             Working at ABOSS for the last 2 years, I have been able to work on some amazing new functionalities and
             working with some of the cutting edge technologies in the field of Frontend development. But as time goes on
