@@ -5,6 +5,13 @@ import colors from '../styles/colors';
 import BlockContainer from '../components/Utility/BlockContainer';
 import checkmark from '../icons/check-mark.svg';
 import notif from '../projects/notif.gif';
+import steps from '../projects/steps.jpg';
+import blueBegin from '../projects/blue-begin.jpg';
+import redBegin from '../projects/red-begin.jpg';
+import greenBegin from '../projects/green-begin.jpg';
+import blueEnd from '../projects/blue-end.jpg';
+import redEnd from '../projects/red-end.jpg';
+import greenEnd from '../projects/green-end.jpg';
 
 const StudyContainer = styled.main`
   padding: 5rem 0 0rem;
@@ -13,7 +20,6 @@ const StudyContainer = styled.main`
 
 const PostBlock = styled(BlockContainer)`
   background: ${colors.background};
-
 `;
 
 const PostTitle = styled.h1`
@@ -73,14 +79,20 @@ const Cutebar = styled.div`
   transform: translateX(10rem);
   box-shadow: 5px 5px ${colors.succes};
 `;
+
+const ScreenshotContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0;
+`;
 class NotificationsStudy extends Component {
   render() {
     return (
       <StudyContainer>
         <PostTitle>ABOSS Notifications</PostTitle>
-        <Cutebar></Cutebar>
+        <Cutebar />
         <PostBlock>
-          <img src={notif} alt="ABOSS Notification"/>
+          <img src={notif} alt="ABOSS Notification" />
           <PostParagraph>
             Working at ABOSS for the last 2 years, I have been able to work on some amazing new functionalities and
             working with some of the cutting edge technologies in the field of Frontend development. But as time goes on
@@ -162,7 +174,21 @@ class NotificationsStudy extends Component {
           <PostParagraph>
             After much tinkering with the animations and the timings this is what our new notifications look like.
           </PostParagraph>
-          — IMAGE HERE — Notification with action — IMAGE HERE — Color Variations — IMAGE HERE —
+          <img src={steps} alt="Notification animation steps" /> <br />
+          Color Variations <br />
+          <ScreenshotContainer>
+            <img src={greenBegin} alt="Green notification begin" />
+            <img src={greenEnd} alt="Green notification end" />
+          </ScreenshotContainer>
+          <ScreenshotContainer>
+            <img src={redBegin} alt="Red notification begin" />
+            <img src={redEnd} alt="Red notification end" />
+          </ScreenshotContainer>
+          <ScreenshotContainer>
+            <img src={blueBegin} alt="Blue notification begin" />
+            <img src={blueEnd} alt="Blue notification end" />
+          </ScreenshotContainer>
+          — IMAGE HERE —<br />
         </PostBlock>
       </StudyContainer>
     );
