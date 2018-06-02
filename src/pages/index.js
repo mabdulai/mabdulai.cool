@@ -18,7 +18,8 @@ import { flash } from 'react-animations';
 
 const IndexContainer = styled.main`
   padding: 15rem 0 0rem;
-  min-width: 120rem;
+  width: 100%;
+  max-width: 120rem;
   margin: 0 auto;
 `;
 
@@ -29,7 +30,7 @@ const TextHeader = styled.div`
 const FlexContainer = styled.div`
   display: flex;
 `;
-const Section = styled(Intro)`
+const SectionTitle = styled(Intro)`
   font-size: 2.5rem;
 `;
 
@@ -41,7 +42,7 @@ const IndexPage = ({ data }) => {
   return (
     <IndexContainer>
       <Header />
-      <Section>Projects</Section>
+      <SectionTitle>Projects</SectionTitle>
       <BlockContainer animate>
         <ProjectPreview
           title="Overstats"

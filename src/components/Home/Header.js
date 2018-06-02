@@ -11,6 +11,9 @@ const Container = styled.div`
   flex-direction: column;
   max-width: 55rem;
   margin: 0 auto;
+
+  @media (max-width: 1000px) {
+  }
 `;
 
 const fadeAnimation = keyframes`${flash}`;
@@ -25,6 +28,10 @@ const SubIntro = styled.div`
   animation: 200ms ${fadeAnimation};
   animation-fill-mode: forwards;
   animation-delay: 2000ms;
+
+  @media (max-width: 1200px) {
+    padding: 2rem 5rem;
+  }
 `;
 
 const Cutebar = styled.div`
@@ -34,6 +41,12 @@ const Cutebar = styled.div`
   background: ${colors.primary};
   transform: translateX(10rem);
   box-shadow: 5px 5px ${colors.succes};
+  @media (max-width: 1200px) {
+    transform: translateX(0rem);
+    margin: 2rem 5rem;
+    overflow: hidden;
+    width: 40rem;
+  }
 `;
 
 const InlineLink = styled.a`

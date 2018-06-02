@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Link from 'gatsby-link';
 import colors from '../styles/colors';
 
 import BlockContainer from '../components/Utility/BlockContainer';
@@ -14,12 +15,28 @@ import redEnd from '../projects/red-end.jpg';
 import greenEnd from '../projects/green-end.jpg';
 
 const StudyContainer = styled.main`
-  padding: 5rem 0 0rem;
+  padding: 5rem 5rem 0rem;
   margin: 0 auto;
+  max-width: 120rem;
+  width: 100%;
 `;
 
 const PostBlock = styled(BlockContainer)`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background: ${colors.background};
+  img {
+    margin: 0 auto;
+    width: 100%:
+    height: auto;
+  }
+
+  @media (max-width: 700px) {
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 const PostTitle = styled.h1`
@@ -34,13 +51,23 @@ const PostParagraph = styled.p`
   padding: 1rem 0;
 `;
 const PostSubHeader = styled.h2`
-  display: inline-block;
-  padding-right: 20rem;
+  width: 40%;
   margin: 4rem 0 0;
   font-size: 4rem;
   font-weight: 700;
   border-bottom: 1rem solid ${colors.primary};
+
+  @media (max-width: 700px) {
+    width: 80%;
+  }
 `;
+
+const PostSubHeaderSmall = styled.h3`
+  margin: 4rem 0 0;
+  font-size: 2rem;
+  font-weight: 700;
+`;
+
 const PostBullets = styled.ul`
   margin: 0;
 `;
@@ -48,6 +75,10 @@ const PostItem = styled.li`
   list-style: none;
   font-size: 1.6rem;
   padding: 1rem 0;
+
+  @media (max-width: 700px) {
+    line-height: 3rem;
+  }
 
   &:before {
     background-image: url(${checkmark});
@@ -78,17 +109,52 @@ const Cutebar = styled.div`
   background: ${colors.primary};
   transform: translateX(10rem);
   box-shadow: 5px 5px ${colors.succes};
+  margin-bottom: 4rem;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    transform: translateX(0rem);
+  }
 `;
 
 const ScreenshotContainer = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 2rem 0;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+
+    img {
+      padding: 1rem 0;
+    }
+  }
+`;
+
+const HomeLink = styled(Link)`
+  display: inline-flex;
+  text-decoration: none;
+  max-height: 0rem;
+  max-width: 7rem;
+  flex: 0;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  color: #222;
+  transition: all 50ms ease-in-out;
+  padding-right: 2rem;
+
+  &:hover {
+    max-height: 1rem;
+    background: ${colors.succes};
+  }
 `;
 class NotificationsStudy extends Component {
   render() {
     return (
       <StudyContainer>
+        <HomeLink to="/">
+          <div>Home</div>
+        </HomeLink>{' '}
         <PostTitle>ABOSS Notifications</PostTitle>
         <Cutebar />
         <PostBlock>
@@ -111,9 +177,6 @@ class NotificationsStudy extends Component {
             </PostItem>
             <PostItem>
               <span>Neglecting already built features and not updating them style wise</span>
-            </PostItem>
-            <PostItem>
-              <span>And more</span>
             </PostItem>
           </PostBullets>
           <PostParagraph>
@@ -175,20 +238,21 @@ class NotificationsStudy extends Component {
             After much tinkering with the animations and the timings this is what our new notifications look like.
           </PostParagraph>
           <img src={steps} alt="Notification animation steps" /> <br />
-          Color Variations <br />
+          <PostSubHeaderSmall>Green - Succes / Confirmation</PostSubHeaderSmall>
           <ScreenshotContainer>
             <img src={greenBegin} alt="Green notification begin" />
             <img src={greenEnd} alt="Green notification end" />
           </ScreenshotContainer>
+          <PostSubHeaderSmall>Red - Error / Delete</PostSubHeaderSmall>
           <ScreenshotContainer>
             <img src={redBegin} alt="Red notification begin" />
             <img src={redEnd} alt="Red notification end" />
           </ScreenshotContainer>
+          <PostSubHeaderSmall>Blue - System notification</PostSubHeaderSmall>
           <ScreenshotContainer>
             <img src={blueBegin} alt="Blue notification begin" />
             <img src={blueEnd} alt="Blue notification end" />
           </ScreenshotContainer>
-          — IMAGE HERE —<br />
         </PostBlock>
       </StudyContainer>
     );

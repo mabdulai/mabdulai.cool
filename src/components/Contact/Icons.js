@@ -28,6 +28,10 @@ const Icon = styled.img`
   &:hover {
     opacity: 1;
   }
+
+  @media (max-width: 1200px) {
+    padding: 0 4rem;
+  }
 `;
 
 class Icons extends Component {

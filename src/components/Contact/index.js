@@ -8,8 +8,12 @@ import Icons from './Icons';
 
 const Container = styled.div`
   display: flex;
-
   min-height: 25rem;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    padding: 2rem 5rem;
+    min-height: 30rem;
+  }
 `;
 
 const LeftSide = styled.div`
@@ -19,6 +23,10 @@ const LeftSide = styled.div`
   background: ${colors.primary};
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 const RightSide = styled.div`
@@ -35,6 +43,14 @@ const RightSide = styled.div`
 
   ${Container}:hover & {
     transform: translate(-8rem, 5rem);
+  }
+
+  @media (max-width: 1200px) {
+    transform: translate(0rem, 0rem);
+    box-shadow: none;
+    ${Container}:hover & {
+      transform: translate(0rem, 0rem);
+    }
   }
 `;
 

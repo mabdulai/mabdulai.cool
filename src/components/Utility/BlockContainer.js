@@ -33,4 +33,8 @@ export default styled.div`
   &:nth-of-type(odd) {
     animation: ${slideRight};
   }
+
+  @media (max-width: 1200px) {
+    margin: 1rem 0 4rem;
+  }
 `;

@@ -6,4 +6,8 @@ export default styled.div`
   padding: 0 0 2rem;
   font-size: 4rem;
   font-weight: 600;
+
+  @media (max-width: 1200px) {
+    padding: 0 5rem;
+  }
 `;

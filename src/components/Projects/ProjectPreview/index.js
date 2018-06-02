@@ -10,6 +10,10 @@ const Container = styled.div`
 
   @media (max-width: 1200px) {
     flex-direction: column;
+    padding: 0 5rem;
+    align-items: center;
+    max-width: 66.7rem;
+    margin: 0 auto;
   }
 `;
 
@@ -23,6 +27,9 @@ const FeaturedLeft = styled.div`
   img {
     object-fit: cover;
     display: flex;
+    width: 100%;
+    max-width: 667px;
+    height: auto;
   }
 `;
 
@@ -37,6 +44,11 @@ const FeaturedRight = styled.div`
 
   ${Container}:hover & {
     transform: translateY(3.5rem);
+  }
+
+  @media (max-width: 1200px) {
+    max-width: 100%;
+    padding: 5rem;
   }
 `;
 
@@ -62,6 +74,9 @@ const Text = styled.div`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1200px) {
+  }
 `;
 
 const OverstatsButton = styled(Button)`
@@ -73,6 +88,14 @@ const OverstatsButton = styled(Button)`
 
   &:hover {
     transform: translateY(5rem) translateX(8.5rem);
+  }
+
+  @media (max-width: 1200px) {
+    transform: translateX(0rem) translateY(0rem);
+
+    &:hover {
+      transform: translateX(0rem) translateY(0rem);
+    }
   }
 `;
 
