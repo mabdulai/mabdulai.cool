@@ -17,10 +17,7 @@ const PageWrapper = styled.div`
 
 const TemplateWrapper = ({ children }) => (
   <PageWrapper>
-    <Helmet
-      title="Mabdulai.io"
-      meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
-    />
+    <Helmet title="Mabdulai.io" />
     {children()}
   </PageWrapper>
 );
