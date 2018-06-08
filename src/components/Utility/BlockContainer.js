@@ -25,6 +25,7 @@ export default styled.div`
   overflow: hidden;
   margin: 1rem 0 16rem;
   animation-fill-mode: forwards;
+  overflow: visible;
 
   &:nth-of-type(even) {
     animation: ${slideLeft};

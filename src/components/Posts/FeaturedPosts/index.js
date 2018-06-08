@@ -3,7 +3,7 @@ import Post from './Post';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
-import shadows from '../../../styles/shadows';
+import { shadows } from '../../../styles/';
 
 const Container = styled.ul`
   width: 100%;

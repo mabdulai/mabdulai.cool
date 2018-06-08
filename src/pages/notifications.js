@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
-import colors from '../styles/colors';
-
+import { colors } from '../styles/';
 import BlockContainer from '../components/Utility/BlockContainer';
 import checkmark from '../icons/check-mark.svg';
 import notif from '../projects/notif.gif';
@@ -19,6 +18,7 @@ const StudyContainer = styled.main`
   margin: 0 auto;
   max-width: 120rem;
   width: 100%;
+  overflow: hidden;
 `;
 
 const PostBlock = styled(BlockContainer)`
@@ -27,15 +27,7 @@ const PostBlock = styled(BlockContainer)`
   flex-direction: column;
   background: ${colors.background};
   img {
-    margin: 0 auto;
-    width: 100%:
-    height: auto;
-  }
-
-  @media (max-width: 700px) {
-    img {
-      width: 100%;
-    }
+    max-width: 100rem;
   }
 `;
 
@@ -45,17 +37,18 @@ const PostTitle = styled.h1`
 `;
 
 const PostParagraph = styled.p`
-  max-width: 80rem;
+  max-width: 40rem;
   font-size: 1.6rem;
   line-height: 3rem;
   padding: 1rem 0;
 `;
 const PostSubHeader = styled.h2`
-  width: 40%;
+  width: 60%;
   margin: 4rem 0 0;
   font-size: 4rem;
   font-weight: 700;
   border-bottom: 1rem solid ${colors.primary};
+  padding-bottom: 1rem;
 
   @media (max-width: 700px) {
     width: 80%;
@@ -70,11 +63,13 @@ const PostSubHeaderSmall = styled.h3`
 
 const PostBullets = styled.ul`
   margin: 0;
+  padding: 5rem 0;
 `;
 const PostItem = styled.li`
   list-style: none;
   font-size: 1.6rem;
-  padding: 1rem 0;
+  padding: 1rem 0 1rem 5rem;
+  margin: 0 auto;
 
   @media (max-width: 700px) {
     line-height: 3rem;
@@ -140,13 +135,25 @@ const HomeLink = styled(Link)`
   flex-wrap: nowrap;
   align-items: flex-end;
   color: #222;
-  transition: all 50ms ease-in-out;
+  transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   padding-right: 2rem;
+  font-size: 2rem;
+
+  div {
+    font-weight: 600;
+  }
 
   &:hover {
     max-height: 1rem;
     background: ${colors.succes};
   }
+`;
+
+const Img = styled.img`
+  display: block;
+  max-width: ${props => (props.width ? props.width : '100%')};
+  height: auto;
+  margin-left: 300px;
 `;
 class NotificationsStudy extends Component {
   render() {
@@ -158,7 +165,7 @@ class NotificationsStudy extends Component {
         <PostTitle>ABOSS Notifications</PostTitle>
         <Cutebar />
         <PostBlock>
-          <img src={notif} alt="ABOSS Notification" />
+          <Img width="667px" src={notif} alt="ABOSS Notification" />
           <PostParagraph>
             Working at ABOSS for the last 2 years, I have been able to work on some amazing new functionalities and
             working with some of the cutting edge technologies in the field of Frontend development. But as time goes on

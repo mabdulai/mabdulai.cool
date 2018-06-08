@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import colors from '../styles/colors';
-import shadows from '../styles/shadows';
+import { colors, shadows } from '../styles/';
 import LatestPosts from '../components/Posts/FeaturedPosts';
 import AllPosts from '../components/Posts/AllPosts';
 import ProjectPreview from '../components/Projects/ProjectPreview';

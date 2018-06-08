@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import colors from '../../../styles/colors';
-
+import { colors } from '../../../styles/';
 const PostLink = styled(Link)`
   text-decoration: none;
   color: ${colors.fontMain};

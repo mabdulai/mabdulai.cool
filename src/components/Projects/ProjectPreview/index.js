@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Button from '../../Utility/MainButton';
-import colors from '../../../styles/colors';
-import shadows from '../../../styles/shadows';
+import { colors, shadows } from '../../../styles/';
 
 const Container = styled.div`
   display: flex;
@@ -18,10 +17,10 @@ const Container = styled.div`
 `;
 
 const FeaturedLeft = styled.div`
-  transition: all 150ms ease-out;
+  transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.8);
 
   ${Container}:hover & {
-    transform: translateY(-1rem);
+    transform: translateY(-2rem);
   }
 
   img {
@@ -40,10 +39,10 @@ const FeaturedRight = styled.div`
   background: ${colors.primary};
   transform: translateY(3rem);
   max-width: 33.3rem;
-  transition: all 50ms linear;
+  transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.575);
 
   ${Container}:hover & {
-    transform: translateY(3.5rem);
+    transform: translateY(5rem);
   }
 
   @media (max-width: 1200px) {
@@ -79,15 +78,16 @@ const TextContainer = styled.div`
   }
 `;
 
-const OverstatsButton = styled(Button)`
+const ProjectButton = styled(Button)`
   padding: 3rem 12rem;
   transform: translateX(8rem) translateY(5rem);
   box-shadow: ${shadows.mainShadow};
   white-space: nowrap;
-  transition: all 50ms ease-in-out;
+  transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.475);
 
   &:hover {
-    transform: translateY(5rem) translateX(8.5rem);
+    transform: ${({ reverse }) =>
+      reverse ? 'translateY(5rem) translateX(12rem)' : 'translateY(5rem) translateX(4rem)'};
   }
 
   @media (max-width: 1200px) {
@@ -111,9 +111,9 @@ class ProjectPreview extends Component {
           <TextContainer>
             <Title>{title}</Title>
             <Text> {text} </Text>
-            <OverstatsButton to={link} fontSize="1.2rem">
+            <ProjectButton to={link} reverse={reverse} fontSize="1.2rem">
               Go to {title}
-            </OverstatsButton>
+            </ProjectButton>
           </TextContainer>
         </FeaturedRight>
       </Container>

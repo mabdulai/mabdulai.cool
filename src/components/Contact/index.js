@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import colors from '../../styles/colors';
-import shadows from '../../styles/shadows';
+import { colors, shadows } from '../../styles/';
 
 import Icons from './Icons';
 
@@ -39,7 +38,7 @@ const RightSide = styled.div`
   background: #fff;
   max-height: 15rem;
   box-shadow: ${shadows.mainShadow};
-  transition: all 150ms linear;
+  transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.475);
 
   ${Container}:hover & {
     transform: translate(-8rem, 5rem);

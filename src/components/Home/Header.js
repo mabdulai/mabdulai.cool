@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import React from 'react';
-import colors from '../../styles/colors';
-import shadow from '../../styles/shadows';
+import { colors, shadows } from '../../styles/';
 import Intro from '../Utility/Intro';
 
 import { flash } from 'react-animations';

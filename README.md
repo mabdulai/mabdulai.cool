@@ -1,13 +1,19 @@
-# gatsby-starter-default
-The default Gatsby starter
+# Mabdulai
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+[![build status][build-badge]][build-url]
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+> Source for <TODO: Place website here>
 
-## Deploy
+My personal portfolio, a place where I put my personal projects and also have some fun with small experiments.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+## Tech
+
+This page is made possible with the following amazing technologies:
+
+* [Gatsby](https://www.gatsbyjs.org/)
+* [Styled Components](https://www.styled-components.com/)
+* [Netlify](http://www.netlify.com)
+
+## license
+
+[MIT](http://ismay.mit-license.org/)

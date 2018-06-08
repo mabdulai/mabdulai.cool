@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
-import colors from '../../styles/colors';
+import { colors } from '../../styles/';
 
 const Button = styled(Link)`
   text-decoration: none;

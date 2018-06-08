@@ -4,7 +4,7 @@ import Twitter from '../../icons/twitter.svg';
 import Github from '../../icons/github.svg';
 import Dribbble from '../../icons/dribbble.svg';
 import Codepen from '../../icons/codepen.svg';
-import colors from '../../styles/colors';
+import { colors } from '../../styles/';
 
 const icons = [
   { icon: Twitter, name: 'Twitter', link: 'http://www.twitter.com/mabdulai90' },

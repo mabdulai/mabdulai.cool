@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
 import './index.css';
-import colors from '../styles/colors';
+import { colors } from '../styles/';
 
 const PageWrapper = styled.div`
   display: flex;
