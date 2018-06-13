@@ -17,7 +17,7 @@ const PageWrapper = styled.div`
 
 const TemplateWrapper = ({ children }) => (
   <PageWrapper>
-    <Helmet title="Mabdulai.io" />
+    <Helmet title="Mabdulai.cool" />
     {children()}
   </PageWrapper>
 );

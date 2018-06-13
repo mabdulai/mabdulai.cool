@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Mabdulai.io'
+    title: 'Mabdulai.cool'
   },
   plugins: [
     'gatsby-plugin-styled-components',
