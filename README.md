@@ -1,7 +1,5 @@
 # Mabdulai
 
-[![build status][build-badge]][build-url]
-
 > Source for <TODO: Place website here>
 
 My personal portfolio, a place where I put my personal projects and also have some fun with small experiments.
