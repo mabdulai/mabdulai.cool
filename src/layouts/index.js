@@ -11,7 +11,7 @@ const PageWrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
   background: #fafeff;
-  background-image: url('https://uploads-ssl.webflow.com/58da70ea373f4eae11a376f7/590103995825ce6d0ed48f02_bg-pattern.svg');
+  border: 1.2rem solid ${colors.primary};
   background-repeat: repeat;
 `;
 
