@@ -1,88 +1,107 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import { colors, shadows } from '../styles/';
-import LatestPosts from '../components/Posts/FeaturedPosts';
-import AllPosts from '../components/Posts/AllPosts';
-import ProjectPreview from '../components/Projects/ProjectPreview';
-import AllProjects from '../components/Projects/AllProjects';
-import Contact from '../components/Contact/';
-import Header from '../components/Home/Header';
-import Intro from '../components/Utility/Intro';
-import BlockContainer from '../components/Utility/BlockContainer';
-
-import overstats from '../projects/overstats.jpg';
-import notif from '../projects/notif.gif';
-import { flash } from 'react-animations';
-
-const IndexContainer = styled.main`
-  padding: 15rem 0 0rem;
-  width: 100%;
-  max-width: 120rem;
-  margin: 0 auto;
-`;
-
-const TextHeader = styled.div`
-  font-size: 4rem;
-`;
-
-const FlexContainer = styled.div`
+import Img from 'gatsby-image';
+import Layout from '../components/layout';
+const Container = styled.div`
   display: flex;
-`;
-const SectionTitle = styled(Intro)`
-  font-size: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 `;
 
-const FooterContainer = styled(BlockContainer)`
-  margin-bottom: 5rem;
+const Hero = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  min-width: 100vw;
+  background: #000;
+  color: #fff;
+`;
+
+const Title = styled.h1`
+  font-size: 48px;
+  padding: 0 100px;
+`;
+
+const SubTitle = styled.h2`
+  padding-bottom: 30px;
+`;
+
+const HeroButton = styled.button`
+  padding: 16px 24px;
+  background: #fff;
+  border-radius: 3px;
+  border: none;
+  font-weight: 700;
+  color: #000;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+`;
+
+const MikaImg = styled(Img)`
+  display: flex;
+  flex: 1;
+`;
+
+const ImgContainer = styled.div`
+  display: flex;
+  height: 1000px;
+  min-width: 1000px;
 `;
 
 const IndexPage = ({ data }) => {
   return (
-    <IndexContainer>
-      <Header />
-      <SectionTitle>Projects</SectionTitle>
-      <BlockContainer animate>
-        <ProjectPreview
-          title="Overstats"
-          img={overstats}
-          text=" A fun experiment with the overwatch API. Getting the more fun stats of your user account."
-          link="https://mabdulai.github.io/overstats"
-          target="_blank"
-        />
-      </BlockContainer>
-      <BlockContainer>
-        <ProjectPreview
-          title="Notifications"
-          img={notif}
-          text="A case study of a redesign of our new notification system."
-          link="/notifications"
-          reverse
-        />
-      </BlockContainer>
-      <FooterContainer>
-        <Contact />
-      </FooterContainer>
-    </IndexContainer>
+    <Layout>
+      <Container>
+        <Hero>
+          <Title>Welcome to your new Gatsby site.</Title>
+          <SubTitle>Now go build something great.</SubTitle>
+          <a
+            target="_blank"
+            href="https://github.com/mabdulai/mabdulai-gatsby-starter"
+            rel="noopener noreferrer"
+          >
+            <HeroButton>Check out the Github </HeroButton>
+          </a>
+        </Hero>
+      </Container>
+      <ImgContainer>
+        <MikaImg fluid={data.imageOne.childImageSharp.fluid} />1
+        <MikaImg fluid={data.imageTwo.childImageSharp.fluid} />2
+        <MikaImg fluid={data.imageThree.childImageSharp.fluid} />3
+      </ImgContainer>
+    </Layout>
   );
 };
 
 export default IndexPage;
 
-export const query = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___title], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          html
-          frontmatter {
-            title
-            date
-            path
-          }
-        }
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
       }
+    }
+  }
+`;
+
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "1.jpg" }) {
+      ...fluidImage
+    }
+    imageTwo: file(relativePath: { eq: "2.jpg" }) {
+      ...fluidImage
+    }
+    imageThree: file(relativePath: { eq: "3.jpg" }) {
+      ...fluidImage
     }
   }
 `;
