@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Mabdulai Gatsby Starter',
+    title: 'Mabdulai.cool'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -10,23 +10,23 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images`,
-        name: 'images',
-      },
+        name: 'images'
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'mabdulai-gatsby-starter',
-        short_name: 'mabdulai-starter',
-        start_url: '/',
-      },
+        name: 'Mabdulai.cool',
+        short_name: 'mabdulai.cool',
+        start_url: '/'
+      }
     },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
-      },
+      }
     },
-    'gatsby-plugin-offline',
-  ],
+    'gatsby-plugin-offline'
+  ]
 };
