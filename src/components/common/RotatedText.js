@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Text = styled.div`
+  display: flex;
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  height: 100%;
+  right: 50px;
+  top: -55px;
+  max-width: 0;
   transform: rotate(90deg);
+  transform-origin: 0 50%;
   font-size: 100px;
   font-weight: 700;
   text-transform: uppercase;

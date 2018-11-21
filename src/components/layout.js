@@ -1,10 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
-
-const Container = styled.div``;
+import './globalStyles';
 
 const Layout = ({ children }) => (
   <StaticQuery
