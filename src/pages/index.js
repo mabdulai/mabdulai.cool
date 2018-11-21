@@ -15,10 +15,11 @@ const GridContainer = styled.div`
   grid-template-rows: 80px auto;
   grid-template-areas:
     'header header header header'
-    'project_title projects travel_title travels';
+    'travel_title travels project_title projects';
   max-width: 1400px;
   min-height: 100vh;
   margin: 0 auto;
+  padding: 0 20px;
 `;
 
 const IndexPage = ({ data }) => {

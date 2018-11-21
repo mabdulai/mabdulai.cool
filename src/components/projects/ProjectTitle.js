@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import RotatedText from '../common/RotatedText';
 
 const Container = styled.section`
+  position: relative;
   grid-area: project_title;
-  overflow: hidden;
 `;
 
 class ProjectTitle extends Component {

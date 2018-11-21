@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Project from './Project';
 
 const Container = styled.section`
   grid-area: projects;
-  background: green;
 `;
 
 class Projects extends Component {
   render() {
     return (
       <Container>
-        <div>Hey</div>
-        <div>Dit</div>
-        <div>Is</div>
-        <div>Dope</div>
+        <Project>Overstats</Project>
+        <Project>Notification Rewrite</Project>
+        <Project>Testing</Project>
+        <Project>Dope</Project>
       </Container>
     );
   }
