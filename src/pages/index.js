@@ -1,22 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
 import Layout from '../components/layout';
-import ProjectTitle from '../components/projects/ProjectTitle';
 import Projects from '../components/projects/Projects';
-import TravelTitle from '../components/travel/TravelTitle';
 import Travels from '../components/travel/Travels';
-import Header from '../components/common/header';
+import Intro from '../components/intro/';
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 4fr;
-  grid-column-gap: 20px;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 32px;
   grid-template-rows: 80px auto;
   grid-template-areas:
-    'header header header header'
-    'travel_title travels project_title projects';
-  max-width: 1400px;
+    'header header'
+    'travels projects';
+  max-width: 800px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 20px;
@@ -26,10 +23,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <GridContainer>
-        <Header />
-        <ProjectTitle />
+        <Intro />
         <Projects />
-        <TravelTitle />
         <Travels />
       </GridContainer>
     </Layout>

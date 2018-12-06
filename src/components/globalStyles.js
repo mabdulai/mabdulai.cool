@@ -1,6 +1,7 @@
 import { injectGlobal } from 'styled-components';
 
 injectGlobal`
+
   * {
     border: none;
     margin: 0;
@@ -15,5 +16,10 @@ injectGlobal`
   a:visited {
     text-decoration: none;
     color: inherit;
+
+  }
+  body {
+    position: relative;
+    background: #fa7268;
   }
 `;

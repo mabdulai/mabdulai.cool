@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
+
+const TravelLink = styled(Link)``;
 
 const Container = styled.div`
   position: relative;
@@ -8,15 +11,13 @@ const Container = styled.div`
   height: 400px;
   margin-bottom: 50px;
   overflow: hidden;
-  border: 1px solid #aaa;
-  border-radius: 4px;
 `;
 
 const TravelDescription = styled.div`
   position: absolute;
   bottom: 0;
   padding: 20px;
-  width: 100%;
+  width: 600px;
   color: #fff;
   font-size: 20px;
   background: linear-gradient(
@@ -28,16 +29,20 @@ const TravelDescription = styled.div`
 `;
 
 const TravelImage = styled.img`
-  object-fit: cover;
   max-width: 600px;
+  height: auto;
 `;
 
 class Travel extends Component {
   render() {
+    const { thumb, link = '', title = '' } = this.props;
     return (
       <Container>
-        <TravelImage src={this.props.thumb} alt="" />
-        <TravelDescription>Title: {this.props.title}</TravelDescription>
+        <TravelImage src={thumb} alt="" />
+
+        <TravelDescription>
+          <TravelLink to={link}>Title: {title}</TravelLink>
+        </TravelDescription>
       </Container>
     );
   }

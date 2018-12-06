@@ -9,11 +9,7 @@ const Container = styled.section`
 
 class TravelTitle extends Component {
   render() {
-    return (
-      <Container>
-        <RotatedText>TravelTitle</RotatedText>
-      </Container>
-    );
+    return <Container />;
   }
 }
 
