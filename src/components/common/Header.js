@@ -5,17 +5,38 @@ const Container = styled.nav`
   position: sticky;
   display: flex;
   align-items: center;
-  padding-left: 24px;
+  justify-content: space-between;
   top: 0;
-  height: 56px;
+  height: 100px;
   background: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  z-index: 1000;
+`;
+
+const NavList = styled.ul`
+  display: flex;
+`;
+
+const NavItem = styled.li`
+  list-style-type: none;
+  margin-right: 24px;
+  font-family: 'Roboto Mono';
 `;
 
 class Header extends Component {
   render() {
-    return <Container>Header!</Container>;
+    return (
+      <Container>
+        <NavItem>Logo</NavItem>
+        <NavList>
+          <NavItem>About</NavItem>
+          <NavItem>Thoughts</NavItem>
+          <NavItem>Contact</NavItem>
+        </NavList>
+      </Container>
+    );
   }
 }
 

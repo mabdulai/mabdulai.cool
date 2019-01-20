@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy/Gilroy-ExtraBold.eot');
+  src: url('../fonts/Gilroy/Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy/Gilroy-ExtraBold.woff2') format('woff2'),
+  url('../fonts/Gilroy/Gilroy-ExtraBold.woff') format('woff'),
+  url('../fonts/Gilroy/Gilroy-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy/Gilroy-Light.eot');
+  src: url('../fonts/Gilroy/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy/Gilroy-Light.woff2') format('woff2'),
+  url('../fonts/Gilroy/Gilroy-Light.woff') format('woff'),
+  url('../fonts/Gilroy/Gilroy-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Roboto-Mono-regular/Roboto-Mono-regular.eot');
+  src: url('../fonts/Roboto-Mono-regular/Roboto-Mono-regular.eot?#iefix') format('embedded-opentype'),
+       local('Roboto Mono'),
+       local('Roboto-Mono-regular'),
+       url('../fonts/Roboto-Mono-regular/Roboto-Mono-regular.woff2') format('woff2'),
+       url('../fonts/Roboto-Mono-regular/Roboto-Mono-regular.woff') format('woff'),
+       url('../fonts/Roboto-Mono-regular/Roboto-Mono-regular.ttf') format('truetype'),
+       url('../fonts/Roboto-Mono-regular/Roboto-Mono-regular.svg#RobotoMono') format('svg');
+}
+
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+a,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+
+}
+body {
+  position: relative;
+  background: #fff;
+}
+
+body > div > div {
+  padding-bottom: 250px;
+}
+
+h1 {
+  font-family: 'Gilroy'
+}
+
+h2 {
+  font-family: 'Roboto Mono'
+}
+
+
