@@ -12,7 +12,7 @@ const GridContainer = styled.main`
 const Row = styled.div`
   position: relative;
   max-width: 1300px;
-  margin: 0 auto;
+  margin: ${props => (props.right ? '0 auto 110px' : '0 auto 150px')};
 `;
 
 const MediaItemLeft = styled.div`
@@ -52,6 +52,7 @@ const MediaItemRight = styled.div`
   height: 70vh;
   min-height: 530px;
   max-height: 600px;
+  overflow: hidden;
 `;
 
 const MediaImageRight = styled.div`
@@ -123,6 +124,20 @@ const PageHeading = styled.section`
   width: 100%;
 `;
 
+const DoubleRow = styled.section`
+  position: relative;
+  max-width: 1300px;
+  margin: ${props => (props.right ? '0 auto 110px' : '0 auto 150px')};
+  background: red;
+`;
+const ItemLeft = styled.div`
+  display: flex;
+`;
+const ItemRight = styled.div``;
+const ItemLeftContent = styled.div``;
+const ItemLeftImage = styled.div``;
+const ItemRightContent = styled.div``;
+
 const IndexPage = ({ data }) => {
   return (
     <Layout>
@@ -134,7 +149,7 @@ const IndexPage = ({ data }) => {
           </Row>
         </PageHeading>
         <section>
-          <Row>
+          <Row right>
             <MediaItemLeft>
               <MediaImageLeft image={data.imageOne.childImageSharp.fluid.src} />
             </MediaItemLeft>
@@ -164,6 +179,30 @@ const IndexPage = ({ data }) => {
               <MediaImageRight image={data.imageTwo.childImageSharp.fluid.src} />
             </MediaItemRight>
           </Row>
+          <Row>
+            <MediaItemLeft>
+              <MediaImageLeft image={data.imageOne.childImageSharp.fluid.src} />
+            </MediaItemLeft>
+            <ContentItemRight>
+              <Content full>
+                <Description>Travel - Photography</Description>
+                <div>
+                  <Title>New York</Title>
+                  <SubTitle>So much walking</SubTitle>
+                </div>
+                <Button>View photos</Button>
+              </Content>
+            </ContentItemRight>
+          </Row>
+          <DoubleRow>
+            <ItemLeft>
+              <ItemLeftContent>hi</ItemLeftContent>
+              <ItemLeftIamge>Image</ItemLeftIamge>
+            </ItemLeft>
+            <ItemRight>
+              <ItemRightContent>hi</ItemRightContent>
+            </ItemRight>
+          </DoubleRow>
         </section>
       </GridContainer>
     </Layout>
