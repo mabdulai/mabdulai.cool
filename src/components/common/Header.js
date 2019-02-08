@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const Container = styled.nav`
   position: sticky;
@@ -29,11 +30,19 @@ class Header extends Component {
   render() {
     return (
       <Container>
-        <NavItem>Logo</NavItem>
+        <NavItem>
+          <Link to="/">Logo</Link>
+        </NavItem>
         <NavList>
-          <NavItem>About</NavItem>
-          <NavItem>Thoughts</NavItem>
-          <NavItem>Contact</NavItem>
+          <NavItem>
+            <Link to="/about">About</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/thoughts">Thoughts</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/uses">Uses</Link>
+          </NavItem>
         </NavList>
       </Container>
     );

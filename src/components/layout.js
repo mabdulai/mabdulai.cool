@@ -5,6 +5,14 @@ import { StaticQuery, graphql } from 'gatsby';
 import Header from './common/Header';
 import Footer from './common/Footer';
 import './global.css';
+import styled from 'styled-components';
+
+const GridContainer = styled.main`
+  z-index: 2;
+  background: #fff;
+  position: relative;
+  padding-bottom: 300px;
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -26,7 +34,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header />
-        <>{children}</>
+        <GridContainer>{children}</GridContainer>
         <Footer />
       </>
     )}

@@ -2,12 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout';
 
-const GridContainer = styled.main`
-  z-index: 2;
-  background: #fff;
-  position: relative;
-  padding-bottom: 300px;
-`;
+const minHeight = '530px';
+const maxHeight = '600px';
 
 const Row = styled.div`
   position: relative;
@@ -19,8 +15,8 @@ const MediaItemLeft = styled.div`
   position: relative;
   width: 85%;
   height: 70vh;
-  min-height: 530px;
-  max-height: 600px;
+  min-height: ${minHeight};
+  max-height: ${maxHeight};
 `;
 
 const MediaImageLeft = styled.div`
@@ -37,8 +33,8 @@ const MediaImageLeft = styled.div`
 const ContentItemLeft = styled.div`
   background-color: #141424;
   height: 70vh;
-  min-height: 530px;
-  max-height: 600px;
+  min-height: ${minHeight};
+  max-height: ${maxHeight};
   width: 60%;
   margin-top: 100px;
   color: #fff;
@@ -86,11 +82,36 @@ const Title = styled.div`
 
 const Button = styled.div`
   min-width: 100%;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
+  position: relative;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    transform: translateY(2px);
+    outline-width: 0;
+
+    &:after {
+      width: 98%;
+      height: 4px;
+    }
+  }
+
+  &:after {
+    content: '';
+    top: 100%;
+    left: 50%;
+    height: 5px;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: all 0.2s ease-out;
+    width: 96%;
+    z-index: -1;
+    background-color: #fff;
+  }
 `;
 const Content = styled.div`
   display: flex;
@@ -125,86 +146,133 @@ const PageHeading = styled.section`
 `;
 
 const DoubleRow = styled.section`
+  display: flex;
   position: relative;
+  justify-content: space-between;
   max-width: 1300px;
   margin: ${props => (props.right ? '0 auto 110px' : '0 auto 150px')};
-  background: red;
+  height: 70vh;
+  min-height: ${minHeight};
+  max-height: ${maxHeight};
 `;
-const ItemLeft = styled.div`
+const ItemLeft = styled.div``;
+const ItemRight = styled.div`
+  width: calc(33.333333333% - 33.333333333px);
+  position: absolute;
+  right: 0;
+  top: 100px;
+  height: 100%;
+`;
+const ItemLeftContent = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(33.333333333% - 33.333333333px);
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+  top: 100px;
+  background: #eee;
+  padding: 40px;
 `;
-const ItemRight = styled.div``;
-const ItemLeftContent = styled.div``;
-const ItemLeftImage = styled.div``;
-const ItemRightContent = styled.div``;
+const ItemLeftImage = styled.div`
+  background-image: url(${props => props.image});
+  background-size: cover;
+  background-position: 50%;
+  position: absolute;
+  left: 100px;
+  height: 100%;
+  width: calc(66.666666666% - 166.666666667px);
+`;
+const ItemRightContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  z-index: 2;
+  background: #eee;
+  padding: 40px;
+`;
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <GridContainer>
-        <PageHeading>
-          <Row>
-            <MainTitle>Michael Abdulai</MainTitle>
-            <SubTitle>My personal playground for everything that sparks my creativity.</SubTitle>
-          </Row>
-        </PageHeading>
-        <section>
-          <Row right>
-            <MediaItemLeft>
-              <MediaImageLeft image={data.imageOne.childImageSharp.fluid.src} />
-            </MediaItemLeft>
-            <ContentItemRight>
-              <Content full>
-                <Description>Travel - Photography</Description>
-                <div>
-                  <Title>New York</Title>
-                  <SubTitle>So much walking</SubTitle>
-                </div>
-                <Button>View photos</Button>
-              </Content>
-            </ContentItemRight>
-          </Row>
-          <Row>
-            <ContentItemLeft>
-              <Content>
-                <Description>Personal project - Code</Description>
-                <div>
-                  <Title>Overstats</Title>
-                  <SubTitle>Getting the most out of your overwatch games</SubTitle>
-                </div>
-                <Button>Case Study</Button>
-              </Content>
-            </ContentItemLeft>
-            <MediaItemRight>
-              <MediaImageRight image={data.imageTwo.childImageSharp.fluid.src} />
-            </MediaItemRight>
-          </Row>
-          <Row>
-            <MediaItemLeft>
-              <MediaImageLeft image={data.imageOne.childImageSharp.fluid.src} />
-            </MediaItemLeft>
-            <ContentItemRight>
-              <Content full>
-                <Description>Travel - Photography</Description>
-                <div>
-                  <Title>New York</Title>
-                  <SubTitle>So much walking</SubTitle>
-                </div>
-                <Button>View photos</Button>
-              </Content>
-            </ContentItemRight>
-          </Row>
-          <DoubleRow>
-            <ItemLeft>
-              <ItemLeftContent>hi</ItemLeftContent>
-              <ItemLeftIamge>Image</ItemLeftIamge>
-            </ItemLeft>
-            <ItemRight>
-              <ItemRightContent>hi</ItemRightContent>
-            </ItemRight>
-          </DoubleRow>
-        </section>
-      </GridContainer>
+      <PageHeading>
+        <Row>
+          <MainTitle>Michael Abdulai</MainTitle>
+          <SubTitle>My personal playground for everything that sparks my creativity.</SubTitle>
+        </Row>
+      </PageHeading>
+      <section>
+        <Row right>
+          <MediaItemLeft>
+            <MediaImageLeft image={data.imageOne.childImageSharp.fluid.src} />
+          </MediaItemLeft>
+          <ContentItemRight>
+            <Content full>
+              <Description>Travel - Photography</Description>
+              <div>
+                <Title>New York</Title>
+                <SubTitle>So much walking</SubTitle>
+              </div>
+              <Button>View photos</Button>
+            </Content>
+          </ContentItemRight>
+        </Row>
+        <Row>
+          <ContentItemLeft>
+            <Content>
+              <Description>Personal project - Code</Description>
+              <div>
+                <Title>Overstats</Title>
+                <SubTitle>Getting the most out of your overwatch games</SubTitle>
+              </div>
+              <Button>Case Study</Button>
+            </Content>
+          </ContentItemLeft>
+          <MediaItemRight>
+            <MediaImageRight image={data.imageTwo.childImageSharp.fluid.src} />
+          </MediaItemRight>
+        </Row>
+        <Row>
+          <MediaItemLeft>
+            <MediaImageLeft image={data.imageOne.childImageSharp.fluid.src} />
+          </MediaItemLeft>
+          <ContentItemRight>
+            <Content full>
+              <Description>Travel - Photography</Description>
+              <div>
+                <Title>New York</Title>
+                <SubTitle>So much walking</SubTitle>
+              </div>
+              <Button>View photos</Button>
+            </Content>
+          </ContentItemRight>
+        </Row>
+        <DoubleRow>
+          <ItemLeft>
+            <ItemLeftContent>
+              <Description>Personal project - Code</Description>
+              <div>
+                <Title>Overstats</Title>
+                <SubTitle>Getting the most out of your overwatch games</SubTitle>
+              </div>
+              <Button>View photos</Button>
+            </ItemLeftContent>
+            <ItemLeftImage image={data.imageThree.childImageSharp.fluid.src}>Image</ItemLeftImage>
+          </ItemLeft>
+          <ItemRight>
+            <ItemRightContent>
+              <Description>Personal project - Code</Description>
+              <div>
+                <Title>Overstats</Title>
+                <SubTitle>Getting the most out of your overwatch games</SubTitle>
+              </div>
+              <Button>View photos</Button>
+            </ItemRightContent>
+          </ItemRight>
+        </DoubleRow>
+      </section>
     </Layout>
   );
 };
