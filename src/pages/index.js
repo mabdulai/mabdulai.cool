@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout';
+import { Link } from 'gatsby';
 
 const minHeight = '530px';
 const maxHeight = '600px';
@@ -80,7 +81,7 @@ const Title = styled.div`
   padding-bottom: 8px;
 `;
 
-const Button = styled.div`
+const Button = styled(Link)`
   min-width: 100%;
   border: 2px solid #fff;
   display: flex;
@@ -215,7 +216,7 @@ const IndexPage = ({ data }) => {
                 <Title>New York</Title>
                 <SubTitle>So much walking</SubTitle>
               </div>
-              <Button>View photos</Button>
+              <Button to="/travel/new-york">View photos</Button>
             </Content>
           </ContentItemRight>
         </Row>
@@ -224,10 +225,10 @@ const IndexPage = ({ data }) => {
             <Content>
               <Description>Personal project - Code</Description>
               <div>
-                <Title>Overstats</Title>
-                <SubTitle>Getting the most out of your overwatch games</SubTitle>
+                <Title>React Hooks</Title>
+                <SubTitle>My learnings into React Hooks</SubTitle>
               </div>
-              <Button>Case Study</Button>
+              <Button to="/code/hooks">Subject Study</Button>
             </Content>
           </ContentItemLeft>
           <MediaItemRight>
