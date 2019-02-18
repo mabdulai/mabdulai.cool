@@ -79,6 +79,9 @@ const Description = styled.div`
 const Title = styled.div`
   font-size: 64px;
   padding-bottom: 8px;
+  font-family: 'Gilroy';
+  font-weight: 800;
+  line-height: 56px;
 `;
 
 const Button = styled(Link)`
@@ -90,7 +93,7 @@ const Button = styled(Link)`
   padding: 24px;
   position: relative;
   transition: all 0.2s ease-out;
-
+  font-family: 'roboto mono';
   &:hover {
     transform: translateY(2px);
     outline-width: 0;
@@ -110,7 +113,7 @@ const Button = styled(Link)`
     transform: translateX(-50%);
     transition: all 0.2s ease-out;
     width: 96%;
-    z-index: -1;
+    z-index: 0;
     background-color: #fff;
   }
 `;
@@ -142,7 +145,7 @@ const SubTitle = styled.h2`
 `;
 
 const PageHeading = styled.section`
-  padding: 80px 0;
+  padding: 80px 0 0px;
   width: 100%;
 `;
 
@@ -196,6 +199,8 @@ const ItemRightContent = styled.div`
 `;
 
 const IndexPage = ({ data }) => {
+  console.log(data);
+
   return (
     <Layout>
       <PageHeading>
@@ -207,7 +212,7 @@ const IndexPage = ({ data }) => {
       <section>
         <Row right>
           <MediaItemLeft>
-            <MediaImageLeft image={data.imageOne.childImageSharp.fluid.src} />
+            <MediaImageLeft image={data.newYorkImage.childImageSharp.fluid.src} />
           </MediaItemLeft>
           <ContentItemRight>
             <Content full>
@@ -223,7 +228,7 @@ const IndexPage = ({ data }) => {
         <Row>
           <ContentItemLeft>
             <Content>
-              <Description>Personal project - Code</Description>
+              <Description>Learning - Code</Description>
               <div>
                 <Title>React Hooks</Title>
                 <SubTitle>My learnings into React Hooks</SubTitle>
@@ -232,19 +237,19 @@ const IndexPage = ({ data }) => {
             </Content>
           </ContentItemLeft>
           <MediaItemRight>
-            <MediaImageRight image={data.imageTwo.childImageSharp.fluid.src} />
+            <MediaImageRight image={data.newYorkImage.childImageSharp.fluid.src} />
           </MediaItemRight>
         </Row>
         <Row>
           <MediaItemLeft>
-            <MediaImageLeft image={data.imageOne.childImageSharp.fluid.src} />
+            <MediaImageLeft image={data.hongKongImage.childImageSharp.fluid.src} />
           </MediaItemLeft>
           <ContentItemRight>
             <Content full>
               <Description>Travel - Photography</Description>
               <div>
-                <Title>New York</Title>
-                <SubTitle>So much walking</SubTitle>
+                <Title>Hong Kong & Seoul</Title>
+                <SubTitle>A great vacation with friends</SubTitle>
               </div>
               <Button>View photos</Button>
             </Content>
@@ -260,7 +265,7 @@ const IndexPage = ({ data }) => {
               </div>
               <Button>View photos</Button>
             </ItemLeftContent>
-            <ItemLeftImage image={data.imageThree.childImageSharp.fluid.src}>Image</ItemLeftImage>
+            <ItemLeftImage image={data.newYorkImage.childImageSharp.fluid.src} />
           </ItemLeft>
           <ItemRight>
             <ItemRightContent>
@@ -292,13 +297,10 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    imageOne: file(relativePath: { eq: "1.jpg" }) {
+    newYorkImage: file(relativePath: { eq: "newyork.jpg" }) {
       ...fluidImage
     }
-    imageTwo: file(relativePath: { eq: "2.jpg" }) {
-      ...fluidImage
-    }
-    imageThree: file(relativePath: { eq: "3.jpg" }) {
+    hongKongImage: file(relativePath: { eq: "hongkong.jpg" }) {
       ...fluidImage
     }
   }

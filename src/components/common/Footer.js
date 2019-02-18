@@ -15,6 +15,8 @@ const FooterContainer = styled.footer`
 `;
 
 const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
   max-width: 1300px;
   margin: 0 auto;
   padding: 16px 0;
@@ -23,11 +25,21 @@ const Content = styled.div`
 const Contact = styled.div``;
 const Label = styled.div`
   font-family: 'roboto mono';
-  padding-bottom: 32px;
+  padding: 16px 0;
 `;
 const Item = styled.div`
   font-family: 'roboto mono';
+  padding: 2px 0;
 `;
+
+const Copyright = styled.div`
+  display: flex;
+  align-items: center;
+  color: #76757d;
+  padding: 16px 0;
+  font-family: 'roboto mono';
+`;
+
 class Footer extends Component {
   render() {
     return (
@@ -39,6 +51,9 @@ class Footer extends Component {
             <Item>+31 6 200 92 864</Item>
             <Item>T: @mabdulai90</Item>
             <Item>I: @mabdulai90</Item>
+          </Contact>
+          <Contact>
+            <Copyright>© Michael Abdulai 2019</Copyright>
           </Contact>
         </Content>
       </FooterContainer>
