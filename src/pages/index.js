@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import Fade from 'react-reveal/Fade';
+import hooks from '../images/hooks.jpg';
+import newyork from '../images/newyork.jpg';
+import hongkong from '../images/hongkong.jpg';
 
 const minHeight = '530px';
 const maxHeight = '600px';
@@ -122,7 +126,7 @@ const Content = styled.div`
   width: ${props => (props.full ? '100%' : '50%')};
   flex: 1;
   height: 100%;
-  padding: 40px;
+  padding: 48px;
   flex-direction: column;
   justify-content: space-between;
 `;
@@ -203,81 +207,91 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <PageHeading>
-        <Row>
-          <MainTitle>Michael Abdulai</MainTitle>
-          <SubTitle>My personal playground for everything that sparks my creativity.</SubTitle>
-        </Row>
-      </PageHeading>
+      <Fade left>
+        <PageHeading>
+          <Row>
+            <MainTitle>Michael Abdulai</MainTitle>
+            <SubTitle>My personal playground for everything that sparks my creativity.</SubTitle>
+          </Row>
+        </PageHeading>
+      </Fade>
       <section>
-        <Row right>
-          <MediaItemLeft>
-            <MediaImageLeft image={data.newYorkImage.childImageSharp.fluid.src} />
-          </MediaItemLeft>
-          <ContentItemRight>
-            <Content full>
-              <Description>Travel - Photography</Description>
-              <div>
-                <Title>New York</Title>
-                <SubTitle>So much walking</SubTitle>
-              </div>
-              <Button to="/travel/new-york">View photos</Button>
-            </Content>
-          </ContentItemRight>
-        </Row>
-        <Row>
-          <ContentItemLeft>
-            <Content>
-              <Description>Learning - Code</Description>
-              <div>
-                <Title>React Hooks</Title>
-                <SubTitle>My learnings into React Hooks</SubTitle>
-              </div>
-              <Button to="/code/hooks">Subject Study</Button>
-            </Content>
-          </ContentItemLeft>
-          <MediaItemRight>
-            <MediaImageRight image={data.newYorkImage.childImageSharp.fluid.src} />
-          </MediaItemRight>
-        </Row>
-        <Row>
-          <MediaItemLeft>
-            <MediaImageLeft image={data.hongKongImage.childImageSharp.fluid.src} />
-          </MediaItemLeft>
-          <ContentItemRight>
-            <Content full>
-              <Description>Travel - Photography</Description>
-              <div>
-                <Title>Hong Kong & Seoul</Title>
-                <SubTitle>A great vacation with friends</SubTitle>
-              </div>
-              <Button>View photos</Button>
-            </Content>
-          </ContentItemRight>
-        </Row>
-        <DoubleRow>
-          <ItemLeft>
-            <ItemLeftContent>
-              <Description>Personal project - Code</Description>
-              <div>
-                <Title>Overstats</Title>
-                <SubTitle>Getting the most out of your overwatch games</SubTitle>
-              </div>
-              <Button>View photos</Button>
-            </ItemLeftContent>
-            <ItemLeftImage image={data.newYorkImage.childImageSharp.fluid.src} />
-          </ItemLeft>
-          <ItemRight>
-            <ItemRightContent>
-              <Description>Personal project - Code</Description>
-              <div>
-                <Title>Overstats</Title>
-                <SubTitle>Getting the most out of your overwatch games</SubTitle>
-              </div>
-              <Button>View photos</Button>
-            </ItemRightContent>
-          </ItemRight>
-        </DoubleRow>
+        <Fade up>
+          <Row>
+            <MediaItemLeft>
+              <MediaImageLeft image={newyork} />
+            </MediaItemLeft>
+            <ContentItemRight>
+              <Content full>
+                <Description>Travel - Photography</Description>
+                <div>
+                  <Title>New York</Title>
+                  <SubTitle>So much walking</SubTitle>
+                </div>
+                <Button to="/travel/new-york">View photos</Button>
+              </Content>
+            </ContentItemRight>
+          </Row>
+        </Fade>
+        <Fade up>
+          <Row>
+            <ContentItemLeft>
+              <Content>
+                <Description>Learning - Code</Description>
+                <div>
+                  <Title>React Hooks</Title>
+                  <SubTitle>My learnings into React Hooks</SubTitle>
+                </div>
+                <Button to="/code/hooks">Subject Study</Button>
+              </Content>
+            </ContentItemLeft>
+            <MediaItemRight>
+              <MediaImageRight image={hooks} />
+            </MediaItemRight>
+          </Row>
+        </Fade>
+        <Fade up>
+          <Row>
+            <MediaItemLeft>
+              <MediaImageLeft image={hongkong} />
+            </MediaItemLeft>
+            <ContentItemRight>
+              <Content full>
+                <Description>Travel - Photography</Description>
+                <div>
+                  <Title>Hong Kong & Seoul</Title>
+                  <SubTitle>A great vacation with friends</SubTitle>
+                </div>
+                <Button to="/travel/hong-kong">View photos</Button>
+              </Content>
+            </ContentItemRight>
+          </Row>
+        </Fade>
+        <Fade up>
+          <DoubleRow>
+            <ItemLeft>
+              <ItemLeftContent>
+                <Description>Personal project - Code</Description>
+                <div>
+                  <Title>Overstats</Title>
+                  <SubTitle>Getting the most out of your overwatch games</SubTitle>
+                </div>
+                <Button>View photos</Button>
+              </ItemLeftContent>
+              <ItemLeftImage image={data.newYorkImage.childImageSharp.fluid.src} />
+            </ItemLeft>
+            <ItemRight>
+              <ItemRightContent>
+                <Description>Personal project - Code</Description>
+                <div>
+                  <Title>Overstats</Title>
+                  <SubTitle>Getting the most out of your overwatch games</SubTitle>
+                </div>
+                <Button>View photos</Button>
+              </ItemRightContent>
+            </ItemRight>
+          </DoubleRow>
+        </Fade>
       </section>
     </Layout>
   );
@@ -288,7 +302,7 @@ export default IndexPage;
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 1000) {
+      fluid(maxWidth: 2000) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -301,6 +315,9 @@ export const pageQuery = graphql`
       ...fluidImage
     }
     hongKongImage: file(relativePath: { eq: "hongkong.jpg" }) {
+      ...fluidImage
+    }
+    hooksImage: file(relativePath: { eq: "hooks.jpg" }) {
       ...fluidImage
     }
   }

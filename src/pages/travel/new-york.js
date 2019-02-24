@@ -40,13 +40,13 @@ const BlockText = styled.div`
   font-size: 16px;
 `;
 
-class HooksPage extends Component {
+class NewYorkPage extends Component {
   render() {
     return (
       <Layout>
         <Container>
-          <Title>React Hooks</Title>
-          <Subtitle>Small experiments and general studies</Subtitle>
+          <Title>New York</Title>
+          <Subtitle>So much walking</Subtitle>
           <Block>
             <BlockTitle>What are React Hooks</BlockTitle>
             <BlockText>
@@ -87,4 +87,4 @@ class HooksPage extends Component {
   }
 }
 
-export default HooksPage;
+export default NewYorkPage;
