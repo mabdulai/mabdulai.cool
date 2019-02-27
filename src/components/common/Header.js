@@ -38,12 +38,6 @@ class Header extends Component {
             <Link to="/about">About</Link>
           </NavItem>
           <NavItem>
-            <Link to="/code">Code</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/thoughts">Thoughts</Link>
-          </NavItem>
-          <NavItem>
             <Link to="/uses">Uses</Link>
           </NavItem>
         </NavList>

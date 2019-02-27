@@ -50,35 +50,33 @@ class HooksPage extends Component {
           <Block>
             <BlockTitle>What are React Hooks</BlockTitle>
             <BlockText>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
-              ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
-              ut est reprehenderit aliquam quis necessitatibus tempore nisi illum in quam omnis voluptas obcaecati,
-              eligendi non sapiente pariatur. Libero tempore sequi ipsam eaque placeat illum ipsa nulla eius voluptatem
-              vero, nobis doloribus velit est beatae esse quis suscipit, ut impedit! Corrupti, ullam. Quae asperiores
-              quos architecto, accusantium iste similique eius dignissimos perferendis debitis deleniti porro iure ut
-              eum aspernatur. In odio assumenda repudiandae nam illo sit quo blanditiis, minima ducimus, ab odit!
+              Writing React Components has gone through different phases since the beginning. We started out with.
+              CreateReactClass. This was because ES6 was not yet fully available and therefor we couldn't use Classes
+              yet. With the release of React 16 we would have a new way of creating React components. The before
+              mentioned createReactClass was deprecated for the new ES6 syntax of writing classes with React.component
+              Extends ComponentName. This was the way of writing stateful components with React. If you had simple
+              components that did not have any state you could also write Stateless Components. These components did not
+              rely on the Class syntax that would often confuse newcomers. Stateless components are regular Javascript
+              functions this brings in some constraints but also some benefits.
             </BlockText>
           </Block>
           <Block>
             <BlockText>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
-              ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
-              ut est reprehenderit aliquam quis necessitatibus tempore nisi illum in quam omnis voluptas obcaecati,
-              eligendi non sapiente pariatur. Libero tempore sequi ipsam eaque placeat illum ipsa nulla eius voluptatem
-              vero, nobis doloribus velit est beatae esse quis suscipit, ut impedit! Corrupti, ullam. Quae asperiores
-              quos architecto, accusantium iste similique eius dignissimos perferendis debitis deleniti porro iure ut
-              eum aspernatur. In odio assumenda repudiandae nam illo sit quo blanditiis, minima ducimus, ab odit!
+              Writing React Components has gone through different phases since the beginning. We started out with.
+              CreateReactClass. This was because ES6 was not yet fully available and therefor we couldn't use Classes
+              yet. With the release of React 16 we would have a new way of creating React components. The before
+              mentioned createReactClass was deprecated for the new ES6 syntax of writing classes with React.component
+              Extends ComponentName. This was the way of writing stateful components with React. If you had simple
+              components that did not have any state you could also write Stateless Components. These components did not
+              rely on the Class syntax that would often confuse newcomers. Stateless components are regular Javascript
+              functions this brings in some constraints but also some benefits.
             </BlockText>
           </Block>
           <Block>
             <BlockText>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
-              ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
-              ut est reprehenderit aliquam quis necessitatibus tempore nisi illum in quam omnis voluptas obcaecati,
-              eligendi non sapiente pariatur. Libero tempore sequi ipsam eaque placeat illum ipsa nulla eius voluptatem
-              vero, nobis doloribus velit est beatae esse quis suscipit, ut impedit! Corrupti, ullam. Quae asperiores
-              quos architecto, accusantium iste similique eius dignissimos perferendis debitis deleniti porro iure ut
-              eum aspernatur. In odio assumenda repudiandae nam illo sit quo blanditiis, minima ducimus, ab odit!
+              With the release of React 16.8.3 we now have a way to write React components with state without using the
+              Class syntax. There are some new functions added to the React library to achieve this and we will walk
+              through them throughout the rest of this study of React Hooks.
             </BlockText>
           </Block>
         </Container>
