@@ -87,13 +87,14 @@ const Block = styled.p`
 
 const BlockTitle = styled.h3`
   font-family: 'Gilroy';
-  font-size: 18px;
+  font-size: 32px;
   padding-bottom: 4px;
+  text-transform: uppercase;
 `;
 const BlockText = styled.div`
-  font-family: 'roboto mono';
-  font-size: 16px;
-  max-width: 100ch;
+  font-size: 18px;
+  line-height: 26px;
+  max-width: 60ch;
 `;
 
 const Gallery = styled(ImageGallery)`
@@ -114,13 +115,10 @@ class NewYorkPage extends Component {
           <Block>
             <BlockTitle>What did we do yo!</BlockTitle>
             <BlockText>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
-              ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
-              ut est reprehenderit aliquam quis necessitatibus tempore nisi illum in quam omnis voluptas obcaecati,
-              eligendi non sapiente pariatur. Libero tempore sequi ipsam eaque placeat illum ipsa nulla eius voluptatem
-              vero, nobis doloribus velit est beatae esse quis suscipit, ut impedit! Corrupti, ullam. Quae asperiores
-              quos architecto, accusantium iste similique eius dignissimos perferendis debitis deleniti porro iure ut
-              eum aspernatur. In odio assumenda repudiandae nam illo sit quo blanditiis, minima ducimus, ab odit!
+              As businesses prioritize employee experience and consider what it means to have a distributed workforce,
+              the real estate industry watches outsiders, such as WeWork and Convene, create new value and markets. With
+              the future of work in mind, EQ (formerly Equity Office Properties) is proactively reimagining how
+              businesses experience space as a service.
             </BlockText>
           </Block>
           <Spacer />
