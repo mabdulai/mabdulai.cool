@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const Container = styled.section`
   max-width: 1300px;
@@ -46,6 +47,7 @@ const BlockTitle = styled.h3`
   font-family: 'Gilroy';
   font-size: 18px;
   padding-bottom: 4px;
+  font-weight: 600;
 `;
 const BlockText = styled.p``;
 
@@ -74,52 +76,75 @@ class AboutsPage extends Component {
               <Title>Michael Abdulai</Title>
               <Subtitle>Frontend Developer @ ABOSS </Subtitle>
               <Block>
-                <BlockTitle>What are React Hooks</BlockTitle>
+                <BlockTitle>The developer</BlockTitle>
                 <BlockText>
-                  Writing React Components has gone through different phases since the beginning. We started out with.
-                  CreateReactClass. This was because ES6 was not yet fully available and therefor we couldn't use
-                  Classes yet. With the release of React 16 we would have a new way of creating React components. The
-                  before mentioned createReactClass was deprecated for the new ES6 syntax of writing classes with
-                  React.component Extends ComponentName. This was the way of writing stateful components with React. If
-                  you had simple components that did not have any state you could also write Stateless Components. These
-                  components did not rely on the Class syntax that would often confuse newcomers. Stateless components
-                  are regular Javascript functions this brings in some constraints but also some benefits.
+                  Learning new things is one of my favorite things in the world. Combine this with my love of design and
+                  the web, and you have the perfect recipe for a developer in a field that is always developing at a
+                  fast pace. Frontend has been the perfect cross section of all my interests and this is where I feel
+                  most comfortable. Learning new techniques, technologies and fundamentals makes Frontend amazingly fun
+                  and challenging for me. This website is a place where I can just have some fun and play around with
+                  all the wonderful things that the Frontend / Design world has to offer.
                 </BlockText>
               </Block>
               <Block>
+                <BlockTitle>The designer</BlockTitle>
                 <BlockText>
-                  Writing React Components has gone through different phases since the beginning. We started out with.
-                  CreateReactClass. This was because ES6 was not yet fully available and therefor we couldn't use
-                  Classes yet. With the release of React 16 we would have a new way of creating React components. The
-                  before mentioned createReactClass was deprecated for the new ES6 syntax of writing classes with
-                  React.component Extends ComponentName. This was the way of writing stateful components with React. If
-                  you had simple components that did not have any state you could also write Stateless Components. These
-                  components did not rely on the Class syntax that would often confuse newcomers. Stateless components
-                  are regular Javascript functions this brings in some constraints but also some benefits.
+                  I started my work career in graphic design for the advertisement industry, before I have ever written
+                  a single line of code. I knew I always wanted to create more interactive pieces while doing graphic
+                  design. But I still have a passion for pretty stuff. This made Frontend an easy choice.
                 </BlockText>
               </Block>
               <Block>
+                <BlockTitle>Goals</BlockTitle>
                 <BlockText>
-                  With the release of React 16.8.3 we now have a way to write React components with state without using
-                  the Class syntax. There are some new functions added to the React library to achieve this and we will
-                  walk through them throughout the rest of this study of React Hooks.
+                  With this website I want to express myself a bit more through different mediums, I want to write more,
+                  design more and code more. Having a place to display all the thing I create will motivate me to always
+                  improve and always keep creating. I also want to use this website to track the things I want to
+                  accomplish for the rest of this year and the coming years. Find more about this here{' '}
+                  <Link to="/goals">goals</Link>
+                </BlockText>
+              </Block>
+              <Block>
+                <BlockTitle>Other interests</BlockTitle>
+                <BlockText>
+                  Outside of the office and away from the keyboard I really enjoy sports. Recently I have started a
+                  journey in CrossFit. Being active and balancing out a job where you spend most of your day behind a
+                  computer screen is very important to me. I believe a healthy body will lead to a productive mind.
                 </BlockText>
               </Block>
             </Left>
             <Right>
               <Stats>
-                Stats
                 <StatBlock>
-                  <strong>INTERESTS</strong> reading, travel, finance, cars, running, photography, design, coffee,
-                  sushi, modern architecture, prototyping, a clean workspace, cooking
+                  <strong>Details</strong>
+                  <ul>
+                    <li>Age: 28 </li>
+                    <li>Heritage: Half Dutch, Half Ghanian</li>
+                    <li>Nickname: Mika</li>
+                    <li>Elsewhere: Twitter, Instagram, GitHub</li>
+                  </ul>
                 </StatBlock>
                 <StatBlock>
-                  <strong>INTERESTS</strong> reading, travel, finance, cars, running, photography, design, coffee,
-                  sushi, modern architecture, prototyping, a clean workspace, cooking
+                  <strong>Interests</strong>
+                  <ul>
+                    <li>coding</li>
+                    <li>design</li>
+                    <li>lettering</li>
+                    <li>gaming</li>
+                    <li>crossfit</li>
+                    <li>reading</li>
+                    <li>cooking</li>
+                  </ul>
                 </StatBlock>
                 <StatBlock>
-                  <strong>INTERESTS</strong> reading, travel, finance, cars, running, photography, design, coffee,
-                  sushi, modern architecture, prototyping, a clean workspace, cooking
+                  <strong>Gear</strong>
+                  <ul>
+                    <li>work: Mackbook Air</li>
+                    <li>home: Windows - I7 7700K - 16GB DD3 - Nvidia GTX970</li>
+                    <li>gaming: steam - switch</li>
+                    <li>editor:VSCode</li>
+                    <li>phone: Samsung Galaxy S10 Plus</li>
+                  </ul>
                 </StatBlock>
               </Stats>
             </Right>
