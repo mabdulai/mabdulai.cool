@@ -24,6 +24,7 @@ const NavItem = styled.li`
   list-style-type: none;
   margin-right: 24px;
   font-family: 'Roboto Mono';
+  font-size: 16px;
 `;
 
 const Logo = styled(Link)`
