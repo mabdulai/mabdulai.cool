@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Layout from '../components/layout';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import michael from '../images/michael.png';
 
 const Container = styled.section`
   max-width: 1300px;
@@ -29,13 +30,14 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
   display: inline-block;
-  font-size: 12px;
+  font-size: 16px;
   font-family: 'roboto mono';
   text-transform: uppercase;
   font-weight: 300;
-  background: #000;
+  background: #ff6e6e;
   color: #fff;
   padding: 4px 8px;
+  margin-top: 8px;
 `;
 
 const Block = styled.p`
@@ -55,7 +57,7 @@ const StatBlock = styled.div`
   padding-bottom: 24px;
 
   strong {
-    background: #000;
+    background: #ff6e6e;
     color: #fff;
     font-weight: 300;
     padding: 4px 8px;
@@ -65,6 +67,24 @@ const StatBlock = styled.div`
 const Stats = styled.p`
   display: flex;
   flex-direction: column;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+const Social = styled.a`
+  padding: 4px 8px;
+  border: 2px solid #aee6e6;
+  border-radius: 10px;
+  transition: all 150ms ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    border: 2px solid #ff6e6e;
+    cursor: pointer;
+  }
 `;
 class AboutsPage extends Component {
   render() {
@@ -73,7 +93,7 @@ class AboutsPage extends Component {
         <Container>
           <ContentContainer>
             <Left>
-              <Title>Michael Abdulai</Title>
+              <Title>Hi, I'm Michael</Title>
               <Subtitle>Frontend Developer @ ABOSS </Subtitle>
               <Block>
                 <BlockTitle>The developer</BlockTitle>
@@ -115,13 +135,16 @@ class AboutsPage extends Component {
             </Left>
             <Right>
               <Stats>
+                <img src={michael} alt="Michael Abdulai"/>
                 <StatBlock>
                   <strong>Details</strong>
                   <ul>
-                    <li>Age: 28 </li>
-                    <li>Heritage: Half Dutch, Half Ghanian</li>
-                    <li>Nickname: Mika</li>
-                    <li>Elsewhere: Twitter, Instagram, GitHub</li>
+                    <li>age: 28 </li>
+                    <li>heritage: half Dutch, half Ghanian</li>
+                    <li>nickname: Mika</li>
+                    <li>
+                      elsewhere: <Social>Twitter</Social>, <Social>Instagram</Social>, <Social>GitHub</Social>
+                    </li>
                   </ul>
                 </StatBlock>
                 <StatBlock>
@@ -142,7 +165,7 @@ class AboutsPage extends Component {
                     <li>work: Mackbook Air</li>
                     <li>home: Windows - I7 7700K - 16GB DD3 - Nvidia GTX970</li>
                     <li>gaming: steam - switch</li>
-                    <li>editor:VSCode</li>
+                    <li>editor: VSCode</li>
                     <li>phone: Samsung Galaxy S10 Plus</li>
                   </ul>
                 </StatBlock>

@@ -98,7 +98,7 @@ const BlockText = styled.p`
   max-width: 100ch;
 `
 
-const BlockText1 = styled.div`
+const BlockText2 = styled.div`
   font-size: 18px;
   line-height: 26px;
   max-width: 60ch;

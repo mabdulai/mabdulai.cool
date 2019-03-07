@@ -169,10 +169,21 @@ const Content = styled.div`
 const MainTitle = styled.h1`
   font-size: 80px;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   max-width: 800px;
   transform: translateY(0) scale(1);
   transform-origin: left bottom;
+`;
+
+const MainSubTitle = styled.h2`
+  font-size: 16px;
+  font-family: Roboto\ Mono, monospace;
+  font-weight: 300;
+  line-height: 1.6;
+  background: #FF6E6E;
+  color: #fff;
+  padding: 4px 8px;
+  display: inline-block;
 `;
 
 const SubTitle = styled.h2`
@@ -246,7 +257,7 @@ const IndexPage = ({ data }) => {
         <PageHeading>
           <Row>
             <MainTitle>Michael Abdulai</MainTitle>
-            <SubTitle>My personal playground for everything that sparks my creativity.</SubTitle>
+            <MainSubTitle>My personal playground for everything that sparks my creativity.</MainSubTitle>
           </Row>
         </PageHeading>
       </Fade>
