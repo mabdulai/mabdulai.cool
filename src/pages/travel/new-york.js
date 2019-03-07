@@ -91,17 +91,17 @@ const BlockTitle = styled.h3`
   padding-bottom: 4px;
   text-transform: uppercase;
 `;
-<<<<<<< HEAD
+
 const BlockText = styled.p`
   font-family: 'roboto mono';
   font-size: 16px;
   max-width: 100ch;
-=======
-const BlockText = styled.div`
+`
+
+const BlockText1 = styled.div`
   font-size: 18px;
   line-height: 26px;
   max-width: 60ch;
->>>>>>> b9ce21bbada17914eeb07e18937a3033b69a09b4
 `;
 
 const Gallery = styled(ImageGallery)`
