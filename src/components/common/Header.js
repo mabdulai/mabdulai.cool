@@ -26,19 +26,23 @@ const NavItem = styled.li`
   font-family: 'Roboto Mono';
 `;
 
+const Logo = styled(Link)`
+  font-family: 'gilroy';
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+`;
+
 class Header extends Component {
   render() {
     return (
       <Container>
         <NavItem>
-          <Link to="/">Logo</Link>
+          <Logo to="/">MA.</Logo>
         </NavItem>
         <NavList>
           <NavItem>
             <Link to="/about">About</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/uses">Uses</Link>
           </NavItem>
         </NavList>
       </Container>

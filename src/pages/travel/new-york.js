@@ -76,7 +76,7 @@ const Subtitle = styled.h2`
   margin: 0 0 140px;
 `;
 
-const Block = styled.p`
+const Block = styled.div`
   padding-top: 100px;
   margin: 0 auto;
   display: flex;
@@ -90,7 +90,7 @@ const BlockTitle = styled.h3`
   font-size: 18px;
   padding-bottom: 4px;
 `;
-const BlockText = styled.div`
+const BlockText = styled.p`
   font-family: 'roboto mono';
   font-size: 16px;
   max-width: 100ch;

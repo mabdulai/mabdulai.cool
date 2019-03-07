@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade';
 import hooks from '../images/hooks.jpg';
 import newyork from '../images/newyork.jpg';
 import hongkong from '../images/hongkong.jpg';
+import overwatch from '../images/overwatch.jpg';
 
 const minHeight = '530px';
 const maxHeight = '600px';
@@ -89,6 +90,40 @@ const Title = styled.div`
 `;
 
 const Button = styled(Link)`
+  min-width: 100%;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  transition: all 0.2s ease-out;
+  font-family: 'roboto mono';
+  &:hover {
+    transform: translateY(2px);
+    outline-width: 0;
+
+    &:after {
+      width: 98%;
+      height: 4px;
+    }
+  }
+
+  &:after {
+    content: '';
+    top: 100%;
+    left: 50%;
+    height: 5px;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: all 0.2s ease-out;
+    width: 96%;
+    z-index: 0;
+    background-color: #fff;
+  }
+`;
+
+const ExternalButton = styled.a`
   min-width: 100%;
   border: 2px solid #fff;
   display: flex;
@@ -276,19 +311,19 @@ const IndexPage = ({ data }) => {
                   <Title>Overstats</Title>
                   <SubTitle>Getting the most out of your overwatch games</SubTitle>
                 </div>
-                <Button>View photos</Button>
+                <ExternalButton target="_blank" href="https://mabdulai.github.io/overstats/">View project</ExternalButton>
               </ItemLeftContent>
-              <ItemLeftImage image={data.newYorkImage.childImageSharp.fluid.src} />
+              <ItemLeftImage image={overwatch} />
             </ItemLeft>
             <ItemRight>
-              <ItemRightContent>
+              {/* <ItemRightContent>
                 <Description>Personal project - Code</Description>
                 <div>
                   <Title>Overstats</Title>
                   <SubTitle>Getting the most out of your overwatch games</SubTitle>
                 </div>
                 <Button>View photos</Button>
-              </ItemRightContent>
+              </ItemRightContent> */}
             </ItemRight>
           </DoubleRow>
         </Fade>
@@ -299,26 +334,26 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage;
 
-export const fluidImage = graphql`
-  fragment fluidImage on File {
-    childImageSharp {
-      fluid(maxWidth: 2000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`;
+// export const fluidImage = graphql`
+//   fragment fluidImage on File {
+//     childImageSharp {
+//       fluid(maxWidth: 2000) {
+//         ...GatsbyImageSharpFluid
+//       }
+//     }
+//   }
+// `;
 
-export const pageQuery = graphql`
-  query {
-    newYorkImage: file(relativePath: { eq: "newyork.jpg" }) {
-      ...fluidImage
-    }
-    hongKongImage: file(relativePath: { eq: "hongkong.jpg" }) {
-      ...fluidImage
-    }
-    hooksImage: file(relativePath: { eq: "hooks.jpg" }) {
-      ...fluidImage
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query {
+//     newYorkImage: file(relativePath: { eq: "newyork.jpg" }) {
+//       ...fluidImage
+//     }
+//     hongKongImage: file(relativePath: { eq: "hongkong.jpg" }) {
+//       ...fluidImage
+//     }
+//     hooksImage: file(relativePath: { eq: "hooks.jpg" }) {
+//       ...fluidImage
+//     }
+//   }
+// `;
