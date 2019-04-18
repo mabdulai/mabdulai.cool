@@ -14,11 +14,11 @@ const ContentContainer = styled.div`
 `;
 
 const Left = styled.div`
-  width: 65%;
+  width: 60%;
   padding-right: 120px;
 `;
 const Right = styled.div`
-  width: 35%;
+  width: 40%;
 `;
 
 const Title = styled.h1`
@@ -135,7 +135,7 @@ class AboutsPage extends Component {
             </Left>
             <Right>
               <Stats>
-                <img src={michael} alt="Michael Abdulai"/>
+                <img src={michael} alt="Michael Abdulai" />
                 <StatBlock>
                   <strong>Details</strong>
                   <ul>
@@ -163,7 +163,7 @@ class AboutsPage extends Component {
                   <strong>Gear</strong>
                   <ul>
                     <li>work: Mackbook Air</li>
-                    <li>home: Windows - I7 7700K - 16GB DD3 - Nvidia GTX970</li>
+                    <li>home: Win - I7 7700K - 16GB DD3 - Nvidia GTX970</li>
                     <li>gaming: steam - switch</li>
                     <li>editor: VSCode</li>
                     <li>phone: Samsung Galaxy S10 Plus</li>
