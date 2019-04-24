@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Layout from '../../components/layout';
 import styled from 'styled-components';
 import ImageGallery from 'react-image-gallery';
+import LazyLoad from 'react-lazyload';
 import { folder1, folder2, folder3, centralPark } from '../../images/new-york';
 const Container = styled.section`
   max-width: 1300px;
@@ -78,7 +79,9 @@ class NewYorkPage extends Component {
             </BlockText>
           </Block>
           <Spacer />
-          <Gallery items={folder1} />
+          <LazyLoad>
+            <Gallery items={folder1} />
+          </LazyLoad>
           <Block>
             <BlockTitle>Central Park is beautiful</BlockTitle>
             <BlockText>
@@ -93,7 +96,9 @@ class NewYorkPage extends Component {
           </Block>
           <Spacer />
 
-          <Gallery items={centralPark} />
+          <LazyLoad>
+            <Gallery items={centralPark} />
+          </LazyLoad>
           <Block>
             <BlockTitle>So much food</BlockTitle>
             <BlockText>
@@ -122,7 +127,9 @@ class NewYorkPage extends Component {
           </Block>
           <Spacer />
 
-          <Gallery items={folder3} />
+          <LazyLoad>
+            <Gallery items={folder3} />
+          </LazyLoad>
         </Container>
       </Layout>
     );
