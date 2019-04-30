@@ -70,12 +70,12 @@ class NewYorkPage extends Component {
           <Title>New York</Title>
           <Subtitle>So much walking</Subtitle>
           <Block>
-            <BlockTitle>Intro New York</BlockTitle>
             <BlockText>
-              As businesses prioritize employee experience and consider what it means to have a distributed workforce,
-              the real estate industry watches outsiders, such as WeWork and Convene, create new value and markets. With
-              the future of work in mind, EQ (formerly Equity Office Properties) is proactively reimagining how
-              businesses experience space as a service.
+              The Big Apple. After a pretty relaxing flight filled with sleep and onboard movies we arrived at JFK
+              Airport. We stayed at the Wellington Hotel on 7th avenue close to Times Squares. It felt like a perfect
+              location for a Tourist. Close to all the action and everything we wanted to see easily reachable. We
+              visited Times Square multiple times just because it was so close to our Hotel and we liked the atmosphere
+              that it had. We also had plans to visit a broadway show and that was just off Times Square.
             </BlockText>
           </Block>
           <Spacer />
@@ -85,13 +85,16 @@ class NewYorkPage extends Component {
           <Block>
             <BlockTitle>Central Park is beautiful</BlockTitle>
             <BlockText>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
-              ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
-              ut est reprehenderit aliquam quis necessitatibus tempore nisi illum in quam omnis voluptas obcaecati,
-              eligendi non sapiente pariatur. Libero tempore sequi ipsam eaque placeat illum ipsa nulla eius voluptatem
-              vero, nobis doloribus velit est beatae esse quis suscipit, ut impedit! Corrupti, ullam. Quae asperiores
-              quos architecto, accusantium iste similique eius dignissimos perferendis debitis deleniti porro iure ut
-              eum aspernatur. In odio assumenda repudiandae nam illo sit quo blanditiis, minima ducimus, ab odit!
+              You can not visit New York without having a walk through Central Park. What a beautiful contrast to the
+              rest of the city. New York really feels like a city that never sleeps. With constant reminders of the
+              large population filling the streets, subways and buildings. You can't go for five minutes without at
+              least hearing a sirene, or the beeps of a cop car. But walking towards Central Park you already notice a
+              big difference. Where normally the view of the sky is blocked by the immensly tall buildings of New York
+              you suddenly start to see more and more blue of sky. You are greeted at the beginning of Central Park with
+              the many horse carriages wanting to take you on a stroll through the park. The city was in full
+              preperations for the New York marathon at the time when we arrived. This was amazing because of all of the
+              setup for the event around Central Park. We actually walked across the finish line of the marathon. From
+              the park we made a quick detour to visit the Metropolitan Museum (The Met). Such a beautiful building.
             </BlockText>
           </Block>
           <Spacer />
@@ -102,27 +105,27 @@ class NewYorkPage extends Component {
           <Block>
             <BlockTitle>So much food</BlockTitle>
             <BlockText>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
-              ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
-              ut est reprehenderit aliquam quis necessitatibus tempore nisi illum in quam omnis voluptas obcaecati,
-              eligendi non sapiente pariatur. Libero tempore sequi ipsam eaque placeat illum ipsa nulla eius voluptatem
-              vero, nobis doloribus velit est beatae esse quis suscipit, ut impedit! Corrupti, ullam. Quae asperiores
-              quos architecto, accusantium iste similique eius dignissimos perferendis debitis deleniti porro iure ut
-              eum aspernatur. In odio assumenda repudiandae nam illo sit quo blanditiis, minima ducimus, ab odit!
+              Our days were filled with walking around the city. Planning out a route and things we wanted to see and
+              foods we wanted to eat in the morning. And relaxing and eating some more food in the evenings. The city is
+              just brimming with those classic american foods that every tourists wants to eat. From New York Pizza,
+              donuts, hot dogs and all kinds of other tasty fast food to some more of the sweeter foods America has to
+              offer. We needed to test out all of the candies we can not get in Holland and see if they live up to their
+              reputations (Spoilers: they did).
             </BlockText>
           </Block>
           <Spacer />
           <Gallery items={folder2} />
           <Block>
-            <BlockTitle>What did we do yo!</BlockTitle>
+            <BlockTitle>Being the perfect tourist</BlockTitle>
             <BlockText>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
-              ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
-              ut est reprehenderit aliquam quis necessitatibus tempore nisi illum in quam omnis voluptas obcaecati,
-              eligendi non sapiente pariatur. Libero tempore sequi ipsam eaque placeat illum ipsa nulla eius voluptatem
-              vero, nobis doloribus velit est beatae esse quis suscipit, ut impedit! Corrupti, ullam. Quae asperiores
-              quos architecto, accusantium iste similique eius dignissimos perferendis debitis deleniti porro iure ut
-              eum aspernatur. In odio assumenda repudiandae nam illo sit quo blanditiis, minima ducimus, ab odit!
+              There are ofcourse certain spots you have to visit when you are in New York. We were there for a limited
+              time so we had to make some choices of the places we really wanted to see and some things that we had or
+              wanted to skip. After reading a lot of mediocre reviews we decided to skip the Statue of liberty. We did
+              get a good view of it when we crossed the Brooklyn Bridge by foot. In the end we felt like we made a good
+              choice. Some of the highlights of things we visited and saw were. Rockafeller building, Little Italy,
+              China Town, Broadway, Brooklyn. But one of the most amazing things we did was being in America for
+              Halloween 👻. We went to the parade down town and it was just a spectical. It was just like in the movies,
+              big, well organised and just all around American Halloween. We had an amazing time!
             </BlockText>
           </Block>
           <Spacer />
