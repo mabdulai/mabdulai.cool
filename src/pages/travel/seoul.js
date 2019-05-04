@@ -3,7 +3,7 @@ import Layout from '../../components/layout';
 import styled from 'styled-components';
 import ImageGallery from 'react-image-gallery';
 import LazyLoad from 'react-lazyload';
-import { folder1, folder2, folder3, folder4 } from '../../images/hong-kong';
+import { folder1, folder2, folder3 } from '../../images/seoul';
 
 const Container = styled.section`
   max-width: 1300px;
@@ -64,8 +64,8 @@ class HongKongPage extends Component {
     return (
       <Layout>
         <Container>
-          <Title>Hong Kong & Seoul</Title>
-          <Subtitle>Amazing time with friends and lots of food :)</Subtitle>
+          <Title>Seoul</Title>
+          <Subtitle>A short trip to such an exciting city</Subtitle>
           <Block>
             <BlockTitle>What did we do yo!</BlockTitle>
             <BlockText>
@@ -126,10 +126,6 @@ class HongKongPage extends Component {
               eum aspernatur. In odio assumenda repudiandae nam illo sit quo blanditiis, minima ducimus, ab odit!
             </BlockText>
           </Block>
-          <Spacer />
-          <LazyLoad>
-            <Gallery items={folder4} />
-          </LazyLoad>
         </Container>
       </Layout>
     );

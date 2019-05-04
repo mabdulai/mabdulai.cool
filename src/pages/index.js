@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import Fade from 'react-reveal/Fade';
 import hooks from '../images/hooks.jpg';
 import newyork from '../images/newyork.jpg';
@@ -75,7 +75,7 @@ const ContentItemRight = styled.div`
   right: 0;
   width: calc(33.33% - 33.33px);
   z-index: 2;
-  background-color: #fdd95f;
+  background-color: #eee;
 `;
 
 const Description = styled.div`
@@ -180,7 +180,7 @@ const MainSubTitle = styled.h2`
   font-family: Roboto\ Mono, monospace;
   font-weight: 300;
   line-height: 1.6;
-  background: #FF6E6E;
+  background: #ff6e6e;
   color: #fff;
   padding: 4px 8px;
   display: inline-block;
@@ -244,7 +244,8 @@ const ItemRightContent = styled.div`
   justify-content: space-between;
   height: 100%;
   z-index: 2;
-  background: #eee;
+  background: #141424;
+  color: #fff;
   padding: 40px;
 `;
 
@@ -305,7 +306,7 @@ const IndexPage = ({ data }) => {
               <Content full>
                 <Description>Travel - Photography</Description>
                 <div>
-                  <Title>Hong Kong & Seoul</Title>
+                  <Title>Hong Kong</Title>
                   <SubTitle>A great vacation with friends</SubTitle>
                 </div>
                 <Button to="/travel/hong-kong">View photos</Button>
@@ -322,19 +323,21 @@ const IndexPage = ({ data }) => {
                   <Title>Overstats</Title>
                   <SubTitle>Getting the most out of your overwatch games</SubTitle>
                 </div>
-                <ExternalButton target="_blank" href="https://mabdulai.github.io/overstats/">View project</ExternalButton>
+                <ExternalButton target="_blank" href="https://mabdulai.github.io/overstats/">
+                  View project
+                </ExternalButton>
               </ItemLeftContent>
               <ItemLeftImage image={overwatch} />
             </ItemLeft>
             <ItemRight>
-              {/* <ItemRightContent>
-                <Description>Personal project - Code</Description>
+              <ItemRightContent>
+                <Description>Travel - Photography</Description>
                 <div>
-                  <Title>Overstats</Title>
-                  <SubTitle>Getting the most out of your overwatch games</SubTitle>
+                  <Title>Seoul</Title>
+                  <SubTitle>A short trip to such an exciting city</SubTitle>
                 </div>
-                <Button>View photos</Button>
-              </ItemRightContent> */}
+                <Button to="/travel/seoul">View photos</Button>
+              </ItemRightContent>
             </ItemRight>
           </DoubleRow>
         </Fade>
@@ -344,27 +347,3 @@ const IndexPage = ({ data }) => {
 };
 
 export default IndexPage;
-
-// export const fluidImage = graphql`
-//   fragment fluidImage on File {
-//     childImageSharp {
-//       fluid(maxWidth: 2000) {
-//         ...GatsbyImageSharpFluid
-//       }
-//     }
-//   }
-// `;
-
-// export const pageQuery = graphql`
-//   query {
-//     newYorkImage: file(relativePath: { eq: "newyork.jpg" }) {
-//       ...fluidImage
-//     }
-//     hongKongImage: file(relativePath: { eq: "hongkong.jpg" }) {
-//       ...fluidImage
-//     }
-//     hooksImage: file(relativePath: { eq: "hooks.jpg" }) {
-//       ...fluidImage
-//     }
-//   }
-// `;
