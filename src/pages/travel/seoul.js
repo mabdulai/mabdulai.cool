@@ -67,7 +67,7 @@ class HongKongPage extends Component {
           <Title>Seoul</Title>
           <Subtitle>A short trip to such an exciting city</Subtitle>
           <Block>
-            <BlockTitle>What did we do yo!</BlockTitle>
+            <BlockTitle>Welcome to Korea!</BlockTitle>
             <BlockText>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
               ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
@@ -83,7 +83,7 @@ class HongKongPage extends Component {
             <Gallery items={folder1} />
           </LazyLoad>
           <Block>
-            <BlockTitle>What did we do yo!</BlockTitle>
+            <BlockTitle>They love to party</BlockTitle>
             <BlockText>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
               ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
@@ -99,7 +99,7 @@ class HongKongPage extends Component {
             <Gallery items={folder2} />
           </LazyLoad>
           <Block>
-            <BlockTitle>What did we do yo!</BlockTitle>
+            <BlockTitle>Nature & Hiking</BlockTitle>
             <BlockText>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam beatae veniam quidem ab, harum provident
               ut quam mollitia fugiat consequatur quos nostrum magni expedita molestiae veritatis aspernatur! Eveniet,
