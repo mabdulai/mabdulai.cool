@@ -1,0 +1,14 @@
+import React, { Component } from 'react';
+import Layout from '../components/layout';
+
+class UsesPage extends Component {
+  render() {
+    return (
+      <Layout>
+        <div>Uses</div>
+      </Layout>
+    );
+  }
+}
+
+export default UsesPage;

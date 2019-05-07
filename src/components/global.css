@@ -1,0 +1,48 @@
+@import "../../node_modules/react-image-gallery/styles/css/image-gallery.css";
+@import "../fonts/fonts.css";
+
+
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+a,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+
+}
+body {
+  position: relative;
+  background: #fff;
+}
+
+div {
+
+  line-height: 32px;
+}
+
+body > div > div {
+  padding-bottom: 250px;
+}
+
+h1 {
+  font-family: 'Gilroy'
+}
+
+h2 {
+  font-family: 'Roboto Mono';
+  line-height: 20px;
+}
+
+p {
+  font-family: 'Roboto Mono';
+  font-weight: 300;
+  font-size: 16px;
+}
