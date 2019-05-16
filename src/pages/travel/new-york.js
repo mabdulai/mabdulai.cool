@@ -8,6 +8,11 @@ const Container = styled.section`
   max-width: 1300px;
   margin: 0 auto;
   text-align: center;
+
+  @media screen and (max-width: 800px) {
+    padding: 0 30px;
+    text-align: left;
+  }
 `;
 
 const Title = styled.h1`
@@ -37,6 +42,10 @@ const Block = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: left;
+
+  @media screen and (max-width: 800px) {
+    align-items: flex-start;
+  }
 `;
 
 const BlockTitle = styled.h3`
@@ -44,6 +53,9 @@ const BlockTitle = styled.h3`
   font-size: 32px;
   padding-bottom: 4px;
   text-transform: uppercase;
+  @media screen and (max-width: 800px) {
+    padding: 0 0 20px;
+  }
 `;
 
 const BlockText = styled.p`
@@ -90,8 +102,8 @@ class NewYorkPage extends Component {
               large population filling the streets, subways and buildings. You can't go for five minutes without at
               least hearing a sirene, or the beeps of a cop car. But walking towards Central Park you already notice a
               big difference. Where normally the view of the sky is blocked by the immensely tall buildings of New York
-              you suddenly start to see more and more the blue of the sky. You are greeted at the beginning of Central Park with
-              the many horse carriages wanting to take you on a ride through the park. The city was in full
+              you suddenly start to see more and more the blue of the sky. You are greeted at the beginning of Central
+              Park with the many horse carriages wanting to take you on a ride through the park. The city was in full
               preperations for the New York marathon at the time when we arrived. This was amazing because of all of the
               setup for the event around Central Park. We actually walked across the finish line of the marathon. From
               the park we made a quick detour to visit the Metropolitan Museum (The Met). Such a beautiful building.

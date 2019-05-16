@@ -15,6 +15,12 @@ const Row = styled.div`
   position: relative;
   max-width: 1300px;
   margin: ${props => (props.right ? '0 auto 110px' : '0 auto 150px')};
+
+  @media screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 50px;
+  }
 `;
 
 const MediaItemLeft = styled.div`
@@ -23,6 +29,10 @@ const MediaItemLeft = styled.div`
   height: 70vh;
   min-height: ${minHeight};
   max-height: ${maxHeight};
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const MediaImageLeft = styled.div`
@@ -44,6 +54,13 @@ const ContentItemLeft = styled.div`
   width: 60%;
   margin-top: 100px;
   color: #fff;
+
+  @media screen and (max-width: 800px) {
+    position: static;
+    width: 100%;
+    min-height: 380px;
+    max-height: 380px;
+  }
 `;
 
 const MediaItemRight = styled.div`
@@ -52,9 +69,15 @@ const MediaItemRight = styled.div`
   top: 100px;
   width: 60%;
   height: 70vh;
-  min-height: 530px;
-  max-height: 600px;
+  min-height: ${minHeight};
+  max-height: ${maxHeight};
   overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    position: static;
+    height: 380px;
+    width: 100%;
+  }
 `;
 
 const MediaImageRight = styled.div`
@@ -66,6 +89,12 @@ const MediaImageRight = styled.div`
   position: absolute;
   top: 100px;
   width: 100%;
+
+  @media screen and (max-width: 800px) {
+    position: static;
+    width: 100%;
+    height: 380px;
+  }
 `;
 
 const ContentItemRight = styled.div`
@@ -76,6 +105,12 @@ const ContentItemRight = styled.div`
   width: calc(33.33% - 33.33px);
   z-index: 2;
   background-color: #eee;
+
+  @media screen and (max-width: 800px) {
+    position: static;
+    width: 100%;
+    height: 380px;
+  }
 `;
 
 const Description = styled.div`
@@ -164,6 +199,12 @@ const Content = styled.div`
   padding: 48px;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    min-height: 380px;
+    max-height: 380px;
+  }
 `;
 
 const MainTitle = styled.h1`
@@ -173,6 +214,12 @@ const MainTitle = styled.h1`
   max-width: 800px;
   transform: translateY(0) scale(1);
   transform-origin: left bottom;
+
+  @media screen and (max-width: 800px) {
+    line-height: 80px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+  }
 `;
 
 const MainSubTitle = styled.h2`
@@ -184,6 +231,12 @@ const MainSubTitle = styled.h2`
   color: #fff;
   padding: 4px 8px;
   display: inline-block;
+
+  @media screen and (max-width: 800px) {
+    padding: 0 20px;
+    width: 95%;
+    margin: 0 auto;
+  }
 `;
 
 const SubTitle = styled.h2`
@@ -208,14 +261,31 @@ const DoubleRow = styled.section`
   height: 70vh;
   min-height: ${minHeight};
   max-height: ${maxHeight};
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    margin-bottom: 200px;
+  }
 `;
-const ItemLeft = styled.div``;
+const ItemLeft = styled.div`
+  @media screen and (max-width: 800px) {
+    position: static;
+    width: 100%;
+    margin-bottom: 400px;
+  }
+`;
 const ItemRight = styled.div`
   width: calc(33.333333333% - 33.333333333px);
   position: absolute;
   right: 0;
   top: 100px;
   height: 100%;
+
+  @media screen and (max-width: 800px) {
+    position: static;
+    width: 100%;
+    max-height: 380px;
+  }
 `;
 const ItemLeftContent = styled.div`
   display: flex;
@@ -228,6 +298,11 @@ const ItemLeftContent = styled.div`
   top: 100px;
   background: #eee;
   padding: 40px;
+
+  @media screen and (max-width: 800px) {
+    position: static;
+    width: 100%;
+  }
 `;
 const ItemLeftImage = styled.div`
   background-image: url(${props => props.image});
@@ -237,6 +312,11 @@ const ItemLeftImage = styled.div`
   left: 100px;
   height: 100%;
   width: calc(66.666666666% - 166.666666667px);
+
+  @media screen and (max-width: 800px) {
+    position: static;
+    width: 100%;
+  }
 `;
 const ItemRightContent = styled.div`
   display: flex;
@@ -249,9 +329,7 @@ const ItemRightContent = styled.div`
   padding: 40px;
 `;
 
-const IndexPage = ({ data }) => {
-  console.log(data);
-
+const IndexPage = () => {
   return (
     <Layout>
       <Fade left>

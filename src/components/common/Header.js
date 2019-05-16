@@ -13,7 +13,11 @@ const Container = styled.nav`
   z-index: 2;
   max-width: 1300px;
   margin: 0 auto;
-  z-index: 1000;
+  z-index: 100;
+
+  @media screen and (max-width: 800px) {
+    padding: 0 20px;
+  }
 `;
 
 const NavList = styled.ul`

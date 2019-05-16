@@ -9,6 +9,11 @@ const Container = styled.section`
   max-width: 1300px;
   margin: 0 auto;
   text-align: center;
+
+  @media screen and (max-width: 800px) {
+    padding: 0 30px;
+    text-align: left;
+  }
 `;
 
 const Title = styled.h1`
@@ -17,6 +22,10 @@ const Title = styled.h1`
   text-transform: uppercase;
   font-weight: 900;
   margin: 140px 0 0;
+
+  @media screen and (max-width: 800px) {
+    line-height: 80px;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -29,6 +38,10 @@ const Subtitle = styled.h2`
   color: #fff;
   padding: 8px 16px;
   margin: 40px 0 140px;
+
+  @media screen and (max-width: 800px) {
+    line-height: 40px;
+  }
 `;
 
 const Block = styled.div`
@@ -38,6 +51,10 @@ const Block = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: left;
+
+  @media screen and (max-width: 800px) {
+    align-items: flex-start;
+  }
 `;
 
 const BlockTitle = styled.h3`

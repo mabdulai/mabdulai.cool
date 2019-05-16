@@ -9,6 +9,11 @@ const Container = styled.section`
   max-width: 1300px;
   margin: 0 auto;
   text-align: center;
+
+  @media screen and (max-width: 800px) {
+    padding: 0 30px;
+    text-align: left;
+  }
 `;
 
 const Title = styled.h1`
@@ -29,6 +34,10 @@ const Subtitle = styled.h2`
   color: #fff;
   padding: 8px 16px;
   margin: 40px 0 140px;
+
+  @media screen and (max-width: 800px) {
+    line-height: 40px;
+  }
 `;
 
 const Block = styled.div`

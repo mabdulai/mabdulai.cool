@@ -12,6 +12,10 @@ const GridContainer = styled.main`
   background: #fff;
   position: relative;
   padding-bottom: 300px;
+
+  @media screen and (max-width: 800px) {
+    padding-bottom: 380px;
+  }
 `;
 
 const Layout = ({ children }) => (

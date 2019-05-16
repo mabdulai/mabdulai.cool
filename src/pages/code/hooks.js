@@ -2,9 +2,21 @@ import React, { Component } from 'react';
 import Layout from '../../components/layout';
 import styled from 'styled-components';
 
+const LayoutContainer = styled(Layout)`
+  background: red;
+  @media screen and (max-width: 800px) {
+    padding-bottom: 100px;
+  }
+`;
+
 const Container = styled.section`
   max-width: 1300px;
   margin: 0 auto;
+
+  @media screen and (max-width: 800px) {
+    padding: 0 30px;
+    text-align: left;
+  }
 `;
 
 const Title = styled.h1`
@@ -43,7 +55,7 @@ const BlockText = styled.div`
 class HooksPage extends Component {
   render() {
     return (
-      <Layout>
+      <LayoutContainer>
         <Container>
           <Title>React Hooks</Title>
           <Subtitle>Small experiments and general studies</Subtitle>
@@ -80,7 +92,7 @@ class HooksPage extends Component {
             </BlockText>
           </Block>
         </Container>
-      </Layout>
+      </LayoutContainer>
     );
   }
 }

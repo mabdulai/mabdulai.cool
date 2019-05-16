@@ -12,6 +12,10 @@ const FooterContainer = styled.footer`
   line-height: 1.7;
   position: fixed;
   z-index: 1;
+
+  @media screen and (max-width: 800px) {
+    padding: 0 30px;
+  }
 `;
 
 const Content = styled.div`
@@ -20,6 +24,10 @@ const Content = styled.div`
   max-width: 1300px;
   margin: 0 auto;
   padding: 16px 0;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const Contact = styled.div``;
