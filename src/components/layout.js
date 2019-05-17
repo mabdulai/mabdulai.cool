@@ -14,7 +14,7 @@ const GridContainer = styled.main`
   padding-bottom: 300px;
 
   @media screen and (max-width: 800px) {
-    padding-bottom: 380px;
+    padding: 0 20px 20px;
   }
 `;
 

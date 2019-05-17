@@ -37,6 +37,7 @@ const Subtitle = styled.h2`
 
   @media screen and (max-width: 800px) {
     line-height: 40px;
+    margin: 40px 0 40px;
   }
 `;
 

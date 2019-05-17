@@ -21,6 +21,11 @@ const Title = styled.h1`
   text-transform: uppercase;
   font-weight: 900;
   margin: 140px 0 0;
+
+  @media screen and (max-width: 800px) {
+    padding: 0 20px;
+    line-height: 80px;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -33,6 +38,10 @@ const Subtitle = styled.h2`
   color: #fff;
   padding: 8px 16px;
   margin: 40px 0 140px;
+
+  @media screen and (max-width: 800px) {
+    margin: 40px 0 40px;
+  }
 `;
 
 const Block = styled.div`

@@ -271,7 +271,7 @@ const ItemLeft = styled.div`
   @media screen and (max-width: 800px) {
     position: static;
     width: 100%;
-    margin-bottom: 400px;
+    margin-bottom: 20px;
   }
 `;
 const ItemRight = styled.div`
@@ -302,6 +302,7 @@ const ItemLeftContent = styled.div`
   @media screen and (max-width: 800px) {
     position: static;
     width: 100%;
+    height: 380px;
   }
 `;
 const ItemLeftImage = styled.div`
@@ -314,8 +315,7 @@ const ItemLeftImage = styled.div`
   width: calc(66.666666666% - 166.666666667px);
 
   @media screen and (max-width: 800px) {
-    position: static;
-    width: 100%;
+    display: none;
   }
 `;
 const ItemRightContent = styled.div`
