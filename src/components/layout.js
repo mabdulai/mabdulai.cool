@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Header from './common/Header';
 import Footer from './common/Footer';
 import './global.css';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 const GridContainer = styled.main`
   z-index: 2;
@@ -17,6 +17,11 @@ const GridContainer = styled.main`
     padding: 0 20px 20px;
   }
 `;
+
+const theme = {
+  minHeight: '530px',
+  maxHeight: '600px'
+};
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -30,17 +35,22 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[{ name: 'description', content: 'Mabdulai.cool' }, { name: 'keywords', content: 'sample, something' }]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header />
-        <GridContainer>{children}</GridContainer>
-        <Footer />
-      </>
+      <ThemeProvider theme={theme}>
+        <>
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              { name: 'description', content: 'Mabdulai.cool' },
+              { name: 'keywords', content: 'sample, something' }
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
+          <Header />
+          <GridContainer>{children}</GridContainer>
+          <Footer />
+        </>
+      </ThemeProvider>
     )}
   />
 );

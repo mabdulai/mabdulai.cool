@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Layout from '../components/layout';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import michael from '../images/michael.png';
+import michael from '../images/about/michael.png';
 
 const Container = styled.section`
   max-width: 1300px;
