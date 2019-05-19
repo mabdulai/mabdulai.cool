@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Layout from '../../components/layout';
+import { Layout } from '../../components/common/';
 import styled from 'styled-components';
 
 const LayoutContainer = styled(Layout)`

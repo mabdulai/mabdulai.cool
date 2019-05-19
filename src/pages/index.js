@@ -1,7 +1,6 @@
 import React from 'react';
-import Layout from '../components/layout';
+import { Layout } from '../components/common/';
 import Fade from 'react-reveal/Fade';
-
 import newyork from '../images/home/newyork.jpg';
 import hooks from '../images/home/hooks.jpg';
 import hongkong from '../images/home/hongkong.jpg';

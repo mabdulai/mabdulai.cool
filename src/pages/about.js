@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Layout from '../components/layout';
+import { Layout } from '../components/common/';
+
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import michael from '../images/about/michael.png';

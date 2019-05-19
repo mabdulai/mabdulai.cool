@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import Header from './common/Header';
-import Footer from './common/Footer';
+import { Footer, Header } from './';
 import './global.css';
 import styled, { ThemeProvider } from 'styled-components';
 
