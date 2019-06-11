@@ -15,14 +15,14 @@ const BlockContainer = styled.div`
 `;
 
 const BlockTitle = styled.h3`
-  font-family: 'Gilroy';
-  font-size: 18px;
+  font-family: 'Medium Era';
+  font-size: 32px;
   padding-bottom: 4px;
 `;
-const BlockText = styled.p`
-  font-family: 'roboto mono';
+const BlockText = styled.div`
+  font-family: 'Medium Era';
   font-size: 16px;
-  max-width: 100ch;
+  max-width: 80ch;
 `;
 
 export const Block = props => {

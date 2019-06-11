@@ -32,7 +32,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   display: inline-block;
   font-size: 16px;
-  font-family: 'roboto mono';
+  font-family: 'Medium Era';
   text-transform: uppercase;
   font-weight: 300;
   background: #ff6e6e;
@@ -43,7 +43,7 @@ const Subtitle = styled.h2`
 
 const Block = styled.p`
   padding-top: 32px;
-  max-width: 100ch;
+  max-width: 80ch;
 `;
 
 const BlockTitle = styled.h3`
@@ -57,7 +57,12 @@ const BlockText = styled.p``;
 const StatBlock = styled.div`
   padding-bottom: 24px;
 
-  strong {
+  li {
+    list-style-type: none;
+    padding: 4px 0;
+  }
+
+  > strong {
     background: #ff6e6e;
     color: #fff;
     font-weight: 300;
@@ -140,34 +145,65 @@ class AboutsPage extends Component {
                 <StatBlock>
                   <strong>Details</strong>
                   <ul>
-                    <li>age: 28 </li>
-                    <li>heritage: half Dutch, half Ghanian</li>
-                    <li>nickname: Mika</li>
                     <li>
-                      elsewhere: <Social>Twitter</Social>, <Social>Instagram</Social>, <Social>GitHub</Social>
+                      <strong>Age:</strong> 28{' '}
+                    </li>
+                    <li>
+                      <strong>Heritage:</strong> half Dutch, half Ghanian
+                    </li>
+                    <li>
+                      <strong>Nickname:</strong> Mika
+                    </li>
+                    <li>
+                      <strong>Elsewhere:</strong> <Social>Twitter</Social>, <Social>Instagram</Social>,{' '}
+                      <Social>GitHub</Social>
                     </li>
                   </ul>
                 </StatBlock>
                 <StatBlock>
                   <strong>Interests</strong>
                   <ul>
-                    <li>coding</li>
-                    <li>design</li>
-                    <li>lettering</li>
-                    <li>gaming</li>
-                    <li>crossfit</li>
-                    <li>reading</li>
-                    <li>cooking</li>
+                    <li>
+                      <strong>coding</strong>
+                    </li>
+                    <li>
+                      <strong>design</strong>
+                    </li>
+                    <li>
+                      <strong>lettering</strong>
+                    </li>
+                    <li>
+                      <strong>gaming</strong>
+                    </li>
+                    <li>
+                      <strong>crossfit</strong>
+                    </li>
+                    <li>
+                      <strong>reading</strong>
+                    </li>
+                    <li>
+                      <strong>cooking</strong>
+                    </li>
                   </ul>
                 </StatBlock>
                 <StatBlock>
                   <strong>Gear</strong>
                   <ul>
-                    <li>work: Mackbook Air</li>
-                    <li>home: Win - I7 7700K - 16GB DD3 - Nvidia GTX970</li>
-                    <li>gaming: steam - switch</li>
-                    <li>editor: VSCode</li>
-                    <li>phone: Samsung Galaxy S10 Plus</li>
+                    <li>
+                      <strong>work:</strong> Mackbook Air
+                    </li>
+                    <li>
+                      <strong>home:</strong> Win - I7 7700K - 16GB DD3 - Nvidia GTX970
+                    </li>
+                    <li>
+                      <strong>gaming:</strong> Steam - Switch
+                    </li>
+                    <li>
+                      <strong>editor:</strong> VSCode
+                    </li>
+                    <li>
+                      <strong>phone:</strong> Samsung Galaxy S10 Plus
+                    </li>
                   </ul>
                 </StatBlock>
               </Stats>

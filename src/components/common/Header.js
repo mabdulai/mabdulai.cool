@@ -27,7 +27,7 @@ const NavList = styled.ul`
 const NavItem = styled.li`
   list-style-type: none;
   margin-right: 24px;
-  font-family: 'Roboto Mono';
+  font-family: 'Medium Era';
   font-size: 16px;
 `;
 
@@ -38,7 +38,7 @@ const Logo = styled(Link)`
   text-transform: uppercase;
 `;
 
-class Header extends Component {
+export class Header extends Component {
   render() {
     return (
       <Container>
@@ -54,5 +54,3 @@ class Header extends Component {
     );
   }
 }
-
-export default Header;

@@ -10,7 +10,7 @@ const LayoutContainer = styled(Layout)`
 `;
 
 const Container = styled.section`
-  max-width: 1300px;
+  max-width: 800px;
   margin: 0 auto;
 
   @media screen and (max-width: 800px) {
@@ -29,7 +29,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   display: inline-block;
   font-size: 12px;
-  font-family: 'roboto mono';
+  font-family: 'Medium Era';
   text-transform: uppercase;
   font-weight: 300;
   background: #000;
@@ -39,18 +39,16 @@ const Subtitle = styled.h2`
 
 const Block = styled.p`
   padding-top: 32px;
-  max-width: 100ch;
+  max-width: 80ch;
 `;
 
 const BlockTitle = styled.h3`
-  font-family: 'Gilroy';
+  font-family: 'Modern Era';
   font-size: 18px;
   padding-bottom: 4px;
+  font-weight: 600;
 `;
-const BlockText = styled.div`
-  font-family: 'roboto mono';
-  font-size: 16px;
-`;
+const BlockText = styled.div``;
 
 class HooksPage extends Component {
   render() {
@@ -62,33 +60,41 @@ class HooksPage extends Component {
           <Block>
             <BlockTitle>What are React Hooks</BlockTitle>
             <BlockText>
-              Writing React Components has gone through different phases since the beginning. We started out with.
-              CreateReactClass. This was because ES6 was not yet fully available and therefor we couldn't use Classes
-              yet. With the release of React 16 we would have a new way of creating React components. The before
-              mentioned createReactClass was deprecated for the new ES6 syntax of writing classes with React.component
-              Extends ComponentName. This was the way of writing stateful components with React. If you had simple
-              components that did not have any state you could also write Stateless Components. These components did not
-              rely on the Class syntax that would often confuse newcomers. Stateless components are regular Javascript
-              functions this brings in some constraints but also some benefits.
+              <p>
+                Writing React Components has gone through different phases since the beginning. We started out with.
+                CreateReactClass. This was because ES6 was not yet fully available and therefor we couldn't use Classes
+                yet. With the release of React 16 we would have a new way of creating React components.
+              </p>{' '}
+              <p>
+                The before mentioned createReactClass was deprecated for the new ES6 syntax of writing classes with
+                React.component Extends ComponentName. This was the way of writing stateful components with React. If
+                you had simple components that did not have any state you could also write Stateless Components.{' '}
+                <p>These components did not rely on the Class syntax that would often confuse newcomers.</p>
+              </p>{' '}
+              <p>
+                Stateless components are regular Javascript functions this brings in some constraints but also some
+                benefits.
+              </p>
             </BlockText>
           </Block>
           <Block>
+            <BlockTitle>What are React Hooks</BlockTitle>
             <BlockText>
-              Writing React Components has gone through different phases since the beginning. We started out with.
-              CreateReactClass. This was because ES6 was not yet fully available and therefor we couldn't use Classes
-              yet. With the release of React 16 we would have a new way of creating React components. The before
-              mentioned createReactClass was deprecated for the new ES6 syntax of writing classes with React.component
-              Extends ComponentName. This was the way of writing stateful components with React. If you had simple
-              components that did not have any state you could also write Stateless Components. These components did not
-              rely on the Class syntax that would often confuse newcomers. Stateless components are regular Javascript
-              functions this brings in some constraints but also some benefits.
-            </BlockText>
-          </Block>
-          <Block>
-            <BlockText>
-              With the release of React 16.8.3 we now have a way to write React components with state without using the
-              Class syntax. There are some new functions added to the React library to achieve this and we will walk
-              through them throughout the rest of this study of React Hooks.
+              <p>
+                Writing React Components has gone through different phases since the beginning. We started out with.
+                CreateReactClass. This was because ES6 was not yet fully available and therefor we couldn't use Classes
+                yet. With the release of React 16 we would have a new way of creating React components.
+              </p>{' '}
+              <p>
+                The before mentioned createReactClass was deprecated for the new ES6 syntax of writing classes with
+                React.component Extends ComponentName. This was the way of writing stateful components with React. If
+                you had simple components that did not have any state you could also write Stateless Components.{' '}
+                <p>These components did not rely on the Class syntax that would often confuse newcomers.</p>
+              </p>{' '}
+              <p>
+                Stateless components are regular Javascript functions this brings in some constraints but also some
+                benefits.
+              </p>
             </BlockText>
           </Block>
         </Container>

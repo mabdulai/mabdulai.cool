@@ -32,11 +32,11 @@ const Content = styled.div`
 
 const Contact = styled.div``;
 const Label = styled.div`
-  font-family: 'roboto mono';
+  font-family: 'Medium Era';
   padding: 16px 0;
 `;
 const Item = styled.div`
-  font-family: 'roboto mono';
+  font-family: 'Medium Era';
   padding: 2px 0;
 `;
 
@@ -45,10 +45,10 @@ const Copyright = styled.div`
   align-items: center;
   color: #76757d;
   padding: 16px 0;
-  font-family: 'roboto mono';
+  font-family: 'Medium Era';
 `;
 
-class Footer extends Component {
+export class Footer extends Component {
   render() {
     return (
       <FooterContainer>
@@ -68,5 +68,3 @@ class Footer extends Component {
     );
   }
 }
-
-export default Footer;

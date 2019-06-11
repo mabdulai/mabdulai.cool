@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Layout } from '../components/common/';
 import Fade from 'react-reveal/Fade';
 import newyork from '../images/home/newyork.jpg';
@@ -28,7 +29,7 @@ const IndexPage = () => {
           image={hooks}
           description="Learning - code"
           title="React Hooks"
-          subtitle="My learningsi into React Hooks"
+          subtitle="My learnings into React Hooks"
           link="/code/hooks"
           buttonText="Subject Study"
         />
@@ -39,7 +40,7 @@ const IndexPage = () => {
           description="Travel - Photography"
           title="Hong Kong"
           subtitle="A great vacation with friends"
-          link="/travel/new-york"
+          link="/travel/hong-kong"
           buttonText="View Photos"
         />
       </Fade>

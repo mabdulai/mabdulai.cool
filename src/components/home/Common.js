@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+export const P = styled.p``;
+
 export const Button = styled(Link)`
   min-width: 100%;
   border: 2px solid #fff;
@@ -10,7 +12,7 @@ export const Button = styled(Link)`
   padding: 24px;
   position: relative;
   transition: all 0.2s ease-out;
-  font-family: 'roboto mono';
+  font-family: 'Medium Era';
   &:hover {
     transform: translateY(2px);
     outline-width: 0;
@@ -36,7 +38,7 @@ export const Button = styled(Link)`
 `;
 
 export const Description = styled.div`
-  font-family: 'roboto mono';
+  font-family: 'Medium Era';
 `;
 
 export const Title = styled.div`
@@ -48,11 +50,12 @@ export const Title = styled.div`
 `;
 
 export const SubTitle = styled.h2`
-  font-size: 16px;
-  font-family: Roboto\ Mono, monospace;
+  font-size: 18px;
+  font-family: 'Medium Era', monospace;
   font-weight: 300;
   line-height: 1.6;
   max-width: 500px;
+  padding-top: 8px;
 `;
 
 export const Content = styled.div`

@@ -1,5 +1,4 @@
-import Footer from './Footer';
-import Layout from './Layout';
-import Header from './Header';
-
-export { Footer, Layout, Header };
+export * from './Footer';
+export * from './Layout';
+export * from './Header';
+export * from './Text';

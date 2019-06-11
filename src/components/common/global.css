@@ -37,12 +37,13 @@ h1 {
 }
 
 h2 {
-  font-family: 'Roboto Mono';
+  font-family: 'Medium Era';
   line-height: 20px;
 }
 
 p {
-  font-family: 'Roboto Mono';
+  font-family: 'Modern Era';
+  margin: 24px 0;
+  font-size: 20px;
   font-weight: 300;
-  font-size: 16px;
 }
