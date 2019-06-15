@@ -12,7 +12,7 @@ export const Button = styled(Link)`
   padding: 24px;
   position: relative;
   transition: all 0.2s ease-out;
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
   &:hover {
     transform: translateY(2px);
     outline-width: 0;
@@ -38,7 +38,7 @@ export const Button = styled(Link)`
 `;
 
 export const Description = styled.div`
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
 `;
 
 export const Title = styled.div`
@@ -51,7 +51,7 @@ export const Title = styled.div`
 
 export const SubTitle = styled.h2`
   font-size: 18px;
-  font-family: 'Medium Era', monospace;
+  font-family: 'Modern Era', monospace;
   font-weight: 300;
   line-height: 1.6;
   max-width: 500px;

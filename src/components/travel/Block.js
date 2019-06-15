@@ -15,12 +15,12 @@ const BlockContainer = styled.div`
 `;
 
 const BlockTitle = styled.h3`
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
   font-size: 32px;
   padding-bottom: 4px;
 `;
 const BlockText = styled.div`
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
   font-size: 16px;
   max-width: 80ch;
 `;

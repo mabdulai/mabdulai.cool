@@ -24,8 +24,7 @@ body {
 }
 
 div {
-
-  line-height: 32px;
+  line-height: 1.7;
 }
 
 body > div > div {
@@ -37,8 +36,12 @@ h1 {
 }
 
 h2 {
-  font-family: 'Medium Era';
-  line-height: 20px;
+  font-family: 'Modern Era';
+  line-height: 1.7;
+}
+
+li {
+  font-family: 'Modern Era';
 }
 
 p {
@@ -46,4 +49,8 @@ p {
   margin: 24px 0;
   font-size: 20px;
   font-weight: 300;
+}
+
+strong {
+  font-weight: 400;
 }

@@ -29,7 +29,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   display: inline-block;
   font-size: 12px;
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
   text-transform: uppercase;
   font-weight: 300;
   background: #000;

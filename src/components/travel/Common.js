@@ -34,7 +34,7 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   display: inline-block;
   font-size: 28px;
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
   text-transform: uppercase;
   font-weight: 300;
   background: #000;

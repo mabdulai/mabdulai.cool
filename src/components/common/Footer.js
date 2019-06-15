@@ -32,11 +32,11 @@ const Content = styled.div`
 
 const Contact = styled.div``;
 const Label = styled.div`
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
   padding: 16px 0;
 `;
 const Item = styled.div`
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
   padding: 2px 0;
 `;
 
@@ -45,7 +45,7 @@ const Copyright = styled.div`
   align-items: center;
   color: #76757d;
   padding: 16px 0;
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
 `;
 
 export class Footer extends Component {
@@ -57,8 +57,16 @@ export class Footer extends Component {
             <Label> Contact </Label>
             <Item>mabdulai90@gmail.com</Item>
             <Item>+31 6 200 92 864</Item>
-            <Item>T: @mabdulai90</Item>
-            <Item>I: @mabdulai90</Item>
+            <Item>
+              <a href="http://twitter.com/mabdulai90" target="_blank">
+                T: @mabdulai90
+              </a>
+            </Item>
+            <Item>
+              <a href="http://instagram.com/mabdulai90" target="_blank">
+                I: @mabdulai90
+              </a>
+            </Item>
           </Contact>
           <Contact>
             <Copyright>© Michael Abdulai 2019</Copyright>

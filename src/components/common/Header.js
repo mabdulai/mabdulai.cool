@@ -27,7 +27,7 @@ const NavList = styled.ul`
 const NavItem = styled.li`
   list-style-type: none;
   margin-right: 24px;
-  font-family: 'Medium Era';
+  font-family: 'Modern Era';
   font-size: 16px;
 `;
 

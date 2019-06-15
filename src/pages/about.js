@@ -20,6 +20,9 @@ const Left = styled.div`
 `;
 const Right = styled.div`
   width: 40%;
+  img {
+    margin-left: -100px;
+  }
 `;
 
 const Title = styled.h1`
@@ -32,16 +35,15 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   display: inline-block;
   font-size: 16px;
-  font-family: 'Medium Era';
-  text-transform: uppercase;
-  font-weight: 300;
+  font-family: 'Modern Era';
+  font-weight: 400;
   background: #ff6e6e;
   color: #fff;
   padding: 4px 8px;
   margin-top: 8px;
 `;
 
-const Block = styled.p`
+const Block = styled.div`
   padding-top: 32px;
   max-width: 80ch;
 `;
@@ -50,27 +52,34 @@ const BlockTitle = styled.h3`
   font-family: 'Gilroy';
   font-size: 18px;
   padding-bottom: 4px;
-  font-weight: 600;
+  font-weight: 400;
 `;
 const BlockText = styled.p``;
 
 const StatBlock = styled.div`
   padding-bottom: 24px;
+  font-family: 'Modern Era';
 
   li {
     list-style-type: none;
-    padding: 4px 0;
+    padding: 3px 0;
+
+    > strong {
+      display: inline-block;
+      min-width: 100px;
+      font-weight: 500;
+    }
   }
 
   > strong {
     background: #ff6e6e;
     color: #fff;
-    font-weight: 300;
     padding: 4px 8px;
+    font-weight: 500;
   }
 `;
 
-const Stats = styled.p`
+const Stats = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -82,16 +91,20 @@ const Stats = styled.p`
 
 const Social = styled.a`
   padding: 4px 8px;
-  border: 2px solid #aee6e6;
+  border: 1px solid #aee6e6;
   border-radius: 10px;
   transition: all 150ms ease-in-out;
   text-decoration: none;
+  font-size: 14px;
 
   &:hover {
-    border: 2px solid #ff6e6e;
+    border: 1px solid #ff6e6e;
     cursor: pointer;
   }
 `;
+
+const Socials = styled.li``;
+
 class AboutsPage extends Component {
   render() {
     return (
@@ -102,7 +115,7 @@ class AboutsPage extends Component {
               <Title>Hi, I'm Michael</Title>
               <Subtitle>Frontend Developer @ ABOSS </Subtitle>
               <Block>
-                <BlockTitle>The developer</BlockTitle>
+                <BlockTitle>The Developer</BlockTitle>
                 <BlockText>
                   Learning new things is one of my favorite things in the world. Combine this with my love of design and
                   the web, and you have the perfect recipe for a developer in a field that is always developing at a
@@ -113,7 +126,7 @@ class AboutsPage extends Component {
                 </BlockText>
               </Block>
               <Block>
-                <BlockTitle>The designer</BlockTitle>
+                <BlockTitle>The Designer</BlockTitle>
                 <BlockText>
                   I started my work career in graphic design for the advertisement industry, before I have ever written
                   a single line of code. I knew I always wanted to create more interactive pieces while doing graphic
@@ -131,7 +144,7 @@ class AboutsPage extends Component {
                 </BlockText>
               </Block>
               <Block>
-                <BlockTitle>Other interests</BlockTitle>
+                <BlockTitle>Other Interests</BlockTitle>
                 <BlockText>
                   Outside of the office and away from the keyboard I really enjoy sports. Recently I have started a
                   journey in CrossFit. Being active and balancing out a job where you spend most of your day behind a
@@ -154,35 +167,37 @@ class AboutsPage extends Component {
                     <li>
                       <strong>Nickname:</strong> Mika
                     </li>
-                    <li>
-                      <strong>Elsewhere:</strong> <Social>Twitter</Social>, <Social>Instagram</Social>,{' '}
-                      <Social>GitHub</Social>
-                    </li>
+                    <Socials>
+                      <strong>Elsewhere:</strong>{' '}
+                      <Social href="http://www.twitter.com/mabdulai90" target="_blank">
+                        Twitter
+                      </Social>{' '}
+                      <Social href="http://www.instagram.com/mabdulai90" target="_blank">
+                        Instagram
+                      </Social>{' '}
+                      <Social href="http://www.github.com/mabdulai" target="_blank">
+                        Github
+                      </Social>
+                    </Socials>
                   </ul>
                 </StatBlock>
                 <StatBlock>
                   <strong>Interests</strong>
                   <ul>
                     <li>
-                      <strong>coding</strong>
+                      <strong>Coding</strong>
                     </li>
                     <li>
-                      <strong>design</strong>
+                      <strong>Design</strong>
                     </li>
                     <li>
-                      <strong>lettering</strong>
+                      <strong>Crossfit</strong>
                     </li>
                     <li>
-                      <strong>gaming</strong>
+                      <strong>Gaming</strong>
                     </li>
                     <li>
-                      <strong>crossfit</strong>
-                    </li>
-                    <li>
-                      <strong>reading</strong>
-                    </li>
-                    <li>
-                      <strong>cooking</strong>
+                      <strong>Lettering</strong>
                     </li>
                   </ul>
                 </StatBlock>
@@ -190,19 +205,19 @@ class AboutsPage extends Component {
                   <strong>Gear</strong>
                   <ul>
                     <li>
-                      <strong>work:</strong> Mackbook Air
+                      <strong>Work:</strong> Mackbook Air
                     </li>
                     <li>
-                      <strong>home:</strong> Win - I7 7700K - 16GB DD3 - Nvidia GTX970
+                      <strong>Home:</strong> Win - I7 7700K - 16GB DD3 - Nvidia GTX970
                     </li>
                     <li>
-                      <strong>gaming:</strong> Steam - Switch
+                      <strong>Gaming:</strong> Steam - Switch - PS4
                     </li>
                     <li>
-                      <strong>editor:</strong> VSCode
+                      <strong>Editor:</strong> VSCode
                     </li>
                     <li>
-                      <strong>phone:</strong> Samsung Galaxy S10 Plus
+                      <strong>Phone:</strong> Samsung Galaxy S10 Plus
                     </li>
                   </ul>
                 </StatBlock>

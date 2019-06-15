@@ -5,7 +5,6 @@ import { Row } from './';
 const MainTitle = styled.h1`
   font-size: 80px;
   margin-top: 0;
-  margin-bottom: 32px;
   max-width: 800px;
   transform: translateY(0) scale(1);
   transform-origin: left bottom;
@@ -18,10 +17,10 @@ const MainTitle = styled.h1`
 `;
 
 const MainSubTitle = styled.h2`
-  font-size: 16px;
-  font-family: Roboto\ Mono, monospace;
+  font-size: 20px;
+  font-family: 'Modern Era', monospace;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.7;
   background: #ff6e6e;
   color: #fff;
   padding: 4px 8px;
