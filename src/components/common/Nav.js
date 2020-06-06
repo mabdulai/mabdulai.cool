@@ -14,7 +14,9 @@ const Content = styled(InnerContainer)`
   justify-content: space-between;
 `;
 
-const Quote = styled.div`
+const Quote = styled.a`
+  color: #fff;
+  text-decoration: none;
   text-transform: uppercase;
 `;
 
@@ -33,19 +35,27 @@ class Nav extends Component {
     return (
       <HeroContainer as="nav">
         <Content>
-          <Quote>Digital home of Michael Abdulai</Quote>
+          <Quote href="/">Digital home of Michael Abdulai</Quote>
           <NavList>
             <NavItem>
-              <Img src={insta} alt="@mabdulai90" />
+              <a href="http://www.instagram.com/mabdulai90">
+                <Img src={insta} alt="Instagram" />
+              </a>
             </NavItem>
             <NavItem>
-              <Img src={twitter} alt="@mabdulai90" />
+              <a href="http://www.twitter.com/mabdulai90">
+                <Img src={twitter} alt="Twitter" />
+              </a>
             </NavItem>
             <NavItem>
-              <Img src={link} alt="@mabdulai90" />
+              <a href="http://www.linkedin.com/michaelabdulai">
+                <Img src={link} alt="LinkedIn" />
+              </a>
             </NavItem>
             <NavItem>
-              <Img src={github} alt="@mabdulai90" />
+              <a href="http://www.github.com/mabdulai">
+                <Img src={github} alt="Github" />
+              </a>
             </NavItem>
           </NavList>
         </Content>

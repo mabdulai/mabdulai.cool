@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const InnerContainer = styled.div`
   display: flex;
-  flex: 1;
-  max-width: 1440px;
-  margin: auto;
+  flex: 0 0 1440px;
+  justify-content: center;
 `;
 
 export const HeroContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   background: ${({ theme }) => theme.navBackground};
   height: 100px;
   color: #fff;

@@ -15,6 +15,7 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   position: relative;
 `;
+
 class Home extends Component {
   render() {
     return (
