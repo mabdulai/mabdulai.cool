@@ -5,7 +5,7 @@ import Fade from "react-reveal/Fade";
 
 const Card = styled(Link)`
   display: flex;
-  flex: 0 1 345px;
+  flex: 0 1 320px;
   flex-wrap: nowrap;
   height: 600px;
   background: ${({ theme }) => theme.learnCardBackground};
