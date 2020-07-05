@@ -13,15 +13,12 @@ class Layout extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Helmet>
-          <link
-            href="https://fonts.googleapis.com/css?family=Poppins:400,800&display=swap"
-            rel="stylesheet"
-          />
-        </Helmet>
+        <Helmet></Helmet>
         <Container>
           <GlobalStyle whiteColor />
-          {this.props.children}
+          <Header></Header>
+          <Main>{this.props.children}</Main>
+          <Footer>bla</Footer>
         </Container>
       </ThemeProvider>
     );
@@ -29,3 +26,22 @@ class Layout extends Component {
 }
 
 export default Layout;
+
+const Header = styled.header`
+  border-top: 24px solid ${({ theme }) => theme.ochre};
+`;
+
+const Main = styled.main`
+  display: flex;
+  flex: 1;
+  background: ${({ theme }) => theme.black};
+`;
+
+const Footer = styled.footer`
+  display: flex;
+  align-items: center;
+  background: ${({ theme }) => theme.ochre};
+  color: ${({ theme }) => theme.black};
+  height: 220px;
+  padding: 0 72px;
+`;

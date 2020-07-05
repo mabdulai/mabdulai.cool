@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
+@font-face {
+  font-family: "Font Name";
+  src: url("../style/fonts/fontname.woff2");
+}
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -18,7 +22,6 @@ export default createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font-family: 'Poppins';
     vertical-align: baseline;
   }
   article, aside, details, figcaption, figure,

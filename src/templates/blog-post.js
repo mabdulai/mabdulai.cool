@@ -1,22 +1,15 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import Nav from "../components/common/Nav";
 import Layout from "../components/common/Layout";
-import SEO from "../components/common/seo";
 
 class BlogPostTemplate extends React.Component {
   render() {
     console.log(this.props);
     const post = this.props.data.mdx;
-    const { previous, next } = this.props.pageContext;
 
     return (
       <Layout displayHeader={false}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
         <article>
           <h1>{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>

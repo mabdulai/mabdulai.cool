@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import Layout from "../components/common/Layout";
 import styled from "styled-components";
 
 class Home extends Component {
   render() {
-    return <div>hi</div>;
+    return <Layout>hi</Layout>;
   }
 }
 
