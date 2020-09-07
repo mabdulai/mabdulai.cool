@@ -5,15 +5,13 @@ import Layout from "../components/common/Layout";
 
 class BlogPostTemplate extends React.Component {
   render() {
-    console.log(this.props);
-    const post = this.props.data.mdx;
-
+    const { mdx } = this.props.data;
     return (
       <Layout displayHeader={false}>
         <article>
-          <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-          <MDXRenderer>{post.body}</MDXRenderer>
+          <h1>{mdx.frontmatter.title}</h1>
+          <p>{mdx.frontmatter.date}</p>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
         </article>
       </Layout>
     );
