@@ -22,7 +22,6 @@ class Layout extends Component {
               </NavList>
             </Nav>
           </Header>
-
           <Main>
             <HeaderLogo>
               Mabdulai <br />{" "}
@@ -40,7 +39,18 @@ class Layout extends Component {
               genre at the moment is “HipHop”.
             </MainText>
           </Main>
-          <Footer>bla</Footer>
+          <Footer>
+            <FooterContainer>
+              <FooterList>
+                <FooterTitle>Site</FooterTitle>
+                <FooterItem>Home</FooterItem>
+                <FooterItem>Projects</FooterItem>
+                <FooterItem>Thoughts</FooterItem>
+                <FooterItem>Uses</FooterItem>
+                <FooterItem>Colophone</FooterItem>
+              </FooterList>
+            </FooterContainer>
+          </Footer>
         </Container>
       </ThemeProvider>
     );
@@ -53,6 +63,23 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+`;
+
+const FooterList = styled.div`
+  font-size: 20px;
+  font-family: "Mark Pro";
+  text-transform: uppercase;
+`;
+const FooterItem = styled.div`
+  font-weight: 500;
+  padding: 8px 0;
+`;
+const FooterTitle = styled.div`
+  font-weight: bold;
+  padding-bottom: 12px;
+`;
+const FooterContainer = styled.div`
+  padding: 32px 0;
 `;
 
 const Header = styled.header`
@@ -71,6 +98,19 @@ const Main = styled.main`
   flex: 1;
   background: ${({ theme }) => theme.black};
   padding: 0 160px;
+  max-width: ${({ theme }) => theme.layoutMaxWidth};
+  margin: 0 auto;
+`;
+
+const MainText = styled.div`
+  font-size: 24px;
+  font-family: ${({ theme }) => theme.fontMain};
+  font-weight: light;
+  letter-spacing: 0.22px;
+  line-height: 1.8;
+  color: ${({ theme }) => theme.offWhite};
+  margin: 60px 0;
+  max-width: 100%;
 `;
 
 const Footer = styled.footer`
@@ -78,7 +118,7 @@ const Footer = styled.footer`
   align-items: center;
   background: ${({ theme }) => theme.ochre};
   color: ${({ theme }) => theme.black};
-  height: 220px;
+  height: 400px;
   padding: 0 160px;
 `;
 
@@ -116,15 +156,4 @@ const NavItem = styled.li`
   font-weight: 500;
   text-transform: uppercase;
   color: ${({ theme }) => theme.offWhite};
-`;
-
-const MainText = styled.div`
-  font-size: 32px;
-  font-family: "Open Sans";
-  font-weight: 300;
-  letter-spacing: 0.72px;
-  line-height: 1.5;
-  color: ${({ theme }) => theme.offWhite};
-  margin: 120px 0;
-  max-width: 100%;
 `;

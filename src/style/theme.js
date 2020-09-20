@@ -5,5 +5,7 @@ export default {
   fontDisplay: "Tungsten",
   fontSubDisplay: "Open Sans",
   fontNav: "Maven Pro",
+  fontMain: "Sometype mono",
   bold: "900",
+  layoutMaxWidth: "1200px",
 };
