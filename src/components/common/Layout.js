@@ -13,42 +13,66 @@ class Layout extends Component {
         <Helmet></Helmet>
         <Container>
           <Header>
-            <Nav>
-              <Logo />
-              <NavList>
-                <NavItem>Home</NavItem>
-                <NavItem>Projects</NavItem>
-                <NavItem>Thoughts</NavItem>
-              </NavList>
-            </Nav>
+            <HeaderContainer>
+              <Nav>
+                <Logo />
+                <NavList>
+                  <NavItem>Home</NavItem>
+                  <NavItem>Projects</NavItem>
+                  <NavItem>Thoughts</NavItem>
+                </NavList>
+              </Nav>
+            </HeaderContainer>
           </Header>
           <Main>
-            <HeaderLogo>
-              Mabdulai <br />{" "}
-              <SubHeaderLogo>FRONTEND - DESIGN - PRODUCTIVITY</SubHeaderLogo>
-            </HeaderLogo>
-            <MainText>
-              <strong>
-                My name is Michael Abdulai, and I create software using
-                Javascript.
-              </strong>{" "}
-              Currently helping artists being in control of their data at ABOSS.
-              In the last 30 days, I’ve pushed 2 commits to GitHub and sent 16
-              tweets. I am reading 2 books at the moment: “The Phoenix Project”
-              by Gene Kim and “Dottir” by Katrin Davidsdottir and my most played
-              genre at the moment is “HipHop”.
-            </MainText>
+            <MainContainer>
+              <HeaderLogo>
+                Mabdulai <br />{" "}
+                <SubHeaderLogo>FRONTEND - DESIGN - PRODUCTIVITY</SubHeaderLogo>
+              </HeaderLogo>
+              {children}
+            </MainContainer>
           </Main>
           <Footer>
             <FooterContainer>
-              <FooterList>
-                <FooterTitle>Site</FooterTitle>
-                <FooterItem>Home</FooterItem>
-                <FooterItem>Projects</FooterItem>
-                <FooterItem>Thoughts</FooterItem>
-                <FooterItem>Uses</FooterItem>
-                <FooterItem>Colophone</FooterItem>
-              </FooterList>
+              <FooterLinks>
+                <FooterList>
+                  <FooterTitle>Site</FooterTitle>
+                  <FooterItem href="/">Home</FooterItem>
+                  <FooterItem href="/projects">Projects</FooterItem>
+                  <FooterItem href="/thoughts">Thoughts</FooterItem>
+                  <FooterItem href="/uses">Uses</FooterItem>
+                  <FooterItem href="/colophone">Colophone</FooterItem>
+                </FooterList>
+                <FooterList>
+                  <FooterTitle>Links</FooterTitle>
+                  <FooterItem target="_blank" href="www.github.com/mabdulai">
+                    Github
+                  </FooterItem>
+                  <FooterItem target="_blank" href="www.twitter.com/mabdulai90">
+                    Twitter
+                  </FooterItem>
+                  <FooterItem
+                    target="_blank"
+                    href="www.dribbble.com/mabdulai90"
+                  >
+                    Dribbble
+                  </FooterItem>
+                  <FooterItem target="_blank" href="www.linkedin.com">
+                    LinkedIn
+                  </FooterItem>
+                </FooterList>
+              </FooterLinks>
+              <LatestBlog>
+                <FooterTitle>Links</FooterTitle>
+                <BlogTitle>Lorem Ipsum Article #1</BlogTitle>
+                <BlogExcerpt>
+                  My name is Michael Abdulai, and I make things using
+                  Javascript. Currently, I’m helping recruiting stay human at
+                  HiringSolved. In the last 30 days, I’ve pushed 2 commits to
+                  GitHub, sent 16 tweets...
+                </BlogExcerpt>
+              </LatestBlog>
             </FooterContainer>
           </Footer>
         </Container>
@@ -65,25 +89,9 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
-const FooterList = styled.div`
-  font-size: 20px;
-  font-family: "Mark Pro";
-  text-transform: uppercase;
-`;
-const FooterItem = styled.div`
-  font-weight: 500;
-  padding: 8px 0;
-`;
-const FooterTitle = styled.div`
-  font-weight: bold;
-  padding-bottom: 12px;
-`;
-const FooterContainer = styled.div`
-  padding: 32px 0;
-`;
-
 const Header = styled.header`
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: space-between;
   border-top: 24px solid ${({ theme }) => theme.ochre};
@@ -92,50 +100,11 @@ const Header = styled.header`
   color: ${({ theme }) => theme.ochre};
 `;
 
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
+const HeaderContainer = styled.div`
   flex: 1;
-  background: ${({ theme }) => theme.black};
-  padding: 0 160px;
+  justify-content: space-between;
   max-width: ${({ theme }) => theme.layoutMaxWidth};
   margin: 0 auto;
-`;
-
-const MainText = styled.div`
-  font-size: 24px;
-  font-family: ${({ theme }) => theme.fontMain};
-  font-weight: light;
-  letter-spacing: 0.22px;
-  line-height: 1.8;
-  color: ${({ theme }) => theme.offWhite};
-  margin: 60px 0;
-  max-width: 100%;
-`;
-
-const Footer = styled.footer`
-  display: flex;
-  align-items: center;
-  background: ${({ theme }) => theme.ochre};
-  color: ${({ theme }) => theme.black};
-  height: 400px;
-  padding: 0 160px;
-`;
-
-const HeaderLogo = styled.div`
-  font-family: ${({ theme }) => theme.fontDisplay};
-  font-size: 200px;
-  font-weight: ${({ theme }) => theme.bold};
-  color: ${({ theme }) => theme.ochre};
-  text-transform: uppercase;
-  line-height: 0.85;
-`;
-
-const SubHeaderLogo = styled.div`
-  font-family: ${({ theme }) => theme.fontSubDisplay};
-  font-size: 40px;
-  font-weight: 700;
-  color: ${({ theme }) => theme.offWhite};
 `;
 
 const Nav = styled.nav`
@@ -156,4 +125,84 @@ const NavItem = styled.li`
   font-weight: 500;
   text-transform: uppercase;
   color: ${({ theme }) => theme.offWhite};
+`;
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: ${({ theme }) => theme.black};
+  padding: 0 160px;
+`;
+
+const MainContainer = styled.div`
+  max-width: ${({ theme }) => theme.layoutMaxWidth};
+  margin: 0 auto;
+`;
+
+const HeaderLogo = styled.div`
+  font-family: ${({ theme }) => theme.fontDisplay};
+  font-size: 200px;
+  font-weight: ${({ theme }) => theme.bold};
+  color: ${({ theme }) => theme.ochre};
+  text-transform: uppercase;
+  line-height: 0.85;
+`;
+
+const SubHeaderLogo = styled.div`
+  font-family: ${({ theme }) => theme.fontSubDisplay};
+  font-size: 40px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.offWhite};
+`;
+
+const LatestBlog = styled.div`
+  max-width: 500px;
+`;
+const BlogTitle = styled.div``;
+const BlogExcerpt = styled.div``;
+
+const Footer = styled.footer`
+  display: flex;
+  align-items: center;
+  background: ${({ theme }) => theme.ochre};
+  color: ${({ theme }) => theme.black};
+  height: 400px;
+  padding: 0 160px;
+`;
+
+const FooterContainer = styled.div`
+  max-width: ${({ theme }) => theme.layoutMaxWidth};
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  margin: 0 auto;
+  padding: 32px 0;
+`;
+
+const FooterLinks = styled.div`
+  display: flex;
+`;
+
+const FooterList = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-family: "Mark Pro";
+  text-transform: uppercase;
+  margin-right: 120px;
+`;
+const FooterItem = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.black};
+  font-weight: 500;
+  padding: 8px 0;
+  transition: all 100ms ease-in-out;
+  &:hover {
+    color: ${({ theme }) => theme.darkOcher};
+  }
+`;
+const FooterTitle = styled.div`
+  font-weight: bold;
+  padding-bottom: 12px;
 `;
