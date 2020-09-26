@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import Layout from "../components/common/Layout";
-import styled from "styled-components";
+import { MainText } from "../style/shared-components";
 
-class Home extends Component {
+class Thoughts extends Component {
   render() {
+    const { data } = this.props;
+    const posts = data.allMdx.edges;
+
     return (
       <Layout>
         <MainText>Thoughts!</MainText>
@@ -12,16 +15,28 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Thoughts;
 
-const MainText = styled.div`
-  font-size: 24px;
-  font-family: ${({ theme }) => theme.fontMain};
-  font-weight: light;
-  letter-spacing: 0.22px;
-  line-height: 1.8;
-  color: ${({ theme }) => theme.offWhite};
-  margin: 60px 0;
-  max-width: 100%;
-  padding: 0 0 200px;
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
 `;

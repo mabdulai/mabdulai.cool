@@ -1,11 +1,11 @@
 var plugins = [{
-      plugin: require('/Users/michaelabdulai/projects/reactprojects/mabdulai.io/node_modules/gatsby-plugin-mdx/gatsby-ssr'),
+      plugin: require('D:/web/mabdulai.cool/node_modules/gatsby-plugin-mdx/gatsby-ssr'),
       options: {"plugins":[],"extensions":[".mdx",".md"],"remarkPlugins":[null,null],"defaultLayouts":{"default":"./src/templates/blog-post.js"},"gatsbyRemarkPlugins":["gatsby-remark-prismjs"]},
     },{
-      plugin: require('/Users/michaelabdulai/projects/reactprojects/mabdulai.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('D:/web/mabdulai.cool/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/michaelabdulai/projects/reactprojects/mabdulai.io/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('D:/web/mabdulai.cool/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
