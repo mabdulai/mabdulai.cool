@@ -4,8 +4,9 @@ import { MainText } from "../style/shared-components";
 
 class Uses extends Component {
   render() {
+    const { path } = this.props;
     return (
-      <Layout>
+      <Layout path={path}>
         <MainText>Uses!</MainText>
       </Layout>
     );

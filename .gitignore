@@ -58,3 +58,6 @@ yarn.lock
 package-lock.json
 # ignore any lock file other than main lock file
 !/yarn.lock
+public/page-data/
+.cache/redux/
+.cache/async-requires.js

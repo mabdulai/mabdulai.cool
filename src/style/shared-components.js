@@ -8,6 +8,6 @@ export const MainText = styled.div`
   line-height: 1.8;
   color: ${({ theme }) => theme.offWhite};
   margin: 60px 0;
-  max-width: 100%;
-  padding: 0 0 200px;
+  max-width: 70%;
+  padding: 0 0 120px;
 `;

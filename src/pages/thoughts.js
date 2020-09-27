@@ -4,11 +4,9 @@ import { MainText } from "../style/shared-components";
 
 class Thoughts extends Component {
   render() {
-    const { data } = this.props;
-    const posts = data.allMdx.edges;
-
+    const { data, path } = this.props;
     return (
-      <Layout>
+      <Layout path={path}>
         <MainText>Thoughts!</MainText>
       </Layout>
     );

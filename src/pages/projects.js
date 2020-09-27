@@ -4,8 +4,10 @@ import { MainText } from "../style/shared-components";
 
 class Projects extends Component {
   render() {
+    const { path } = this.props;
+
     return (
-      <Layout>
+      <Layout path={path}>
         <MainText>Projects!</MainText>
       </Layout>
     );
