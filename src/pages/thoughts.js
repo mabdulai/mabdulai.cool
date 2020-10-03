@@ -1,40 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import Layout from "../components/common/Layout";
 import { MainText } from "../style/shared-components";
+import usePosts from "../hooks/usePosts";
 
-class Thoughts extends Component {
-  render() {
-    const { data, path } = this.props;
-    return (
-      <Layout path={path}>
-        <MainText>Thoughts!</MainText>
-      </Layout>
-    );
-  }
-}
+const Thoughts = ({ data, path }) => {
+  const posts = usePosts();
+  console.log(posts);
+  return (
+    <Layout path={path}>
+      <MainText>Thoughts!</MainText>
+    </Layout>
+  );
+};
 
 export default Thoughts;
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
-        }
-      }
-    }
-  }
-`;

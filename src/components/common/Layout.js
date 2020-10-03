@@ -1,17 +1,18 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
+import { Link } from "gatsby";
 import Helmet from "react-helmet";
 import Logo from "./logo";
 import PageTitle from "./PageTitle";
 import theme from "../../style/theme";
 import GlobalStyle from "../../style/global";
-import { usePosts } from "../../hooks/usePosts";
-import background from "../../assets/main-background.svg";
+import usePosts from "../../hooks/usePosts";
+// import background from "../../assets/main-background.svg";
+import background from "../../assets/bg.svg";
 
 const Layout = ({ children, path }) => {
   const posts = usePosts();
   const latestPost = posts[posts.length - 1].node;
-  console.log(latestPost);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle whiteColor />
@@ -23,13 +24,13 @@ const Layout = ({ children, path }) => {
               <Nav>
                 <Logo />
                 <NavList>
-                  <NavItem active={path === "/"} href="/">
+                  <NavItem $isActive={path === "/"} to="/">
                     Home
                   </NavItem>
-                  <NavItem active={path === "/projects"} href="/projects">
+                  <NavItem $isActive={path === "/projects/"} to="/projects">
                     Projects
                   </NavItem>
-                  <NavItem active={path === "/thoughts"} href="/thoughts">
+                  <NavItem $isActive={path === "/thoughts/"} to="/thoughts">
                     Thoughts
                   </NavItem>
                 </NavList>
@@ -48,31 +49,49 @@ const Layout = ({ children, path }) => {
             <FooterLinks>
               <FooterList>
                 <FooterTitle>Site</FooterTitle>
-                <FooterItem href="/">Home</FooterItem>
-                <FooterItem href="/projects">Projects</FooterItem>
-                <FooterItem href="/thoughts">Thoughts</FooterItem>
-                <FooterItem href="/uses">Uses</FooterItem>
-                <FooterItem href="/build-with">Build with</FooterItem>
+                <FooterItem to="/">Home</FooterItem>
+                <FooterItem to="/projects">Projects</FooterItem>
+                <FooterItem to="/thoughts">Thoughts</FooterItem>
+                <FooterItem to="/uses">Uses</FooterItem>
+                <FooterItem to="/build-with">Build with</FooterItem>
               </FooterList>
               <FooterList>
                 <FooterTitle>Links</FooterTitle>
-                <FooterItem target="_blank" href="www.github.com/mabdulai">
+                <FooterItem
+                  as="a"
+                  target="_blank"
+                  href="https://www.github.com/mabdulai"
+                >
                   Github
                 </FooterItem>
-                <FooterItem target="_blank" href="www.twitter.com/mabdulai90">
+                <FooterItem
+                  as="a"
+                  target="_blank"
+                  href="https://www.twitter.com/mabdulai90"
+                >
                   Twitter
                 </FooterItem>
-                <FooterItem target="_blank" href="www.dribbble.com/mabdulai90">
+                <FooterItem
+                  as="a"
+                  target="_blank"
+                  href="https://www.dribbble.com/mabdulai90"
+                >
                   Dribbble
                 </FooterItem>
-                <FooterItem target="_blank" href="www.linkedin.com">
+                <FooterItem
+                  as="a"
+                  target="_blank"
+                  href="https://www.linkedin.com"
+                >
                   LinkedIn
                 </FooterItem>
               </FooterList>
             </FooterLinks>
             <LatestBlog>
-              <FooterTitle>Latest thougts</FooterTitle>
-              <BlogTitle>{latestPost.frontmatter.title}</BlogTitle>
+              <FooterTitle>Latest Thougts</FooterTitle>
+              <BlogTitle href={latestPost.fields.slug}>
+                {latestPost.frontmatter.title}
+              </BlogTitle>
               <BlogExcerpt>{latestPost.excerpt}</BlogExcerpt>
             </LatestBlog>
           </FooterContainer>
@@ -93,6 +112,7 @@ const Container = styled.div`
 const BackgroundContainer = styled.div`
   background: ${({ theme }) => theme.black};
   background-image: url(${background});
+  background-size: cover;
 `;
 
 const Header = styled.header`
@@ -123,18 +143,17 @@ const NavList = styled.ul`
   font-family: ${({ theme }) => theme.fontNav};
 `;
 
-const NavItem = styled.a`
+const NavItem = styled(Link)`
   list-style: none;
   margin-right: 16px;
   font-size: 20px;
   font-weight: 500;
-  text-transform: uppercase;
   text-decoration: none;
-  color: ${({ theme }) => theme.offWhite};
-  transition: all 100ms ease-in-out;
+  color: ${({ theme }) => theme.ochre};
+  transition: all 50ms ease-in-out;
 
-  border-bottom: ${(theme, active) =>
-    active ? `2px solid ${theme.ochre}` : "none"};
+  border-bottom: ${({ theme, $isActive }) =>
+    $isActive ? `2px solid ${theme.ochre}` : "none"};
 
   &:hover {
     border-bottom: 2px solid ${({ theme }) => theme.offWhiteHover};
@@ -161,17 +180,25 @@ const LatestBlog = styled.div`
   font-family: ${({ theme }) => theme.fontFooter};
 `;
 
-const BlogTitle = styled.div`
+const BlogTitle = styled.a`
   font-family: ${({ theme }) => theme.fontDisplay};
   font-weight: ${({ theme }) => theme.bold};
-  font-size: 60px;
+  font-size: 40px;
   color: ${({ theme }) => theme.blackLinks};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
 `;
-const BlogExcerpt = styled.div``;
+
+const BlogExcerpt = styled.div`
+  font-family: ${({ theme }) => theme.fontMain};
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 8px;
+  font-size: 16px;
+`;
 
 const Footer = styled.footer`
   display: flex;
@@ -200,28 +227,27 @@ const FooterList = styled.div`
   flex-direction: column;
   font-size: 20px;
   font-family: ${({ theme }) => theme.fontFooter};
-  text-transform: uppercase;
   margin-right: 120px;
 `;
 
-const FooterItem = styled.a`
+const FooterItem = styled(Link)`
   text-decoration: none;
   color: ${({ theme }) => theme.black};
-  font-weight: 700;
+  font-weight: 500;
   padding: 8px 0;
   border-bottom: 2px solid ${({ theme }) => theme.ochre};
   transition: all 100ms ease-in-out;
 
   &:hover {
-    color: ${({ theme }) => theme.darkOcher};
-    border-bottom: 2px solid ${({ theme }) => theme.darkOcher};
+    color: ${({ theme }) => theme.black};
+    border-bottom: 2px solid ${({ theme }) => theme.black};
   }
 `;
 
 const FooterTitle = styled.div`
-  font-weight: 700;
+  font-weight: 900;
   padding-bottom: 24px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: ${({ theme }) => theme.fontFooter};
   text-transform: uppercase;
 `;

@@ -1,13 +1,13 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-export const usePosts = () => {
+const usePosts = () => {
   const posts = useStaticQuery(
     graphql`
       query {
         allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
-              excerpt(pruneLength: 280)
+              excerpt
               fields {
                 slug
               }
@@ -23,3 +23,5 @@ export const usePosts = () => {
   );
   return posts.allMdx.edges;
 };
+
+export default usePosts;
