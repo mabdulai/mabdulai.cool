@@ -6,10 +6,10 @@ export default {
   offWhite: "#fafafa",
   offWhiteHover: "#E3D8D8",
   fontDisplay: "Tungsten",
-  fontSubDisplay: "Maven Pro",
-  fontNav: "Maven Pro",
+  fontSubDisplay: "Tungsten",
+  fontNav: "Tungsten",
   fontMain: "Sometype mono",
-  fontFooter: "Maven Pro",
+  fontFooter: "Tungsten",
   bold: "900",
   layoutMaxWidth: "1200px",
 };

@@ -6,9 +6,7 @@ import Logo from "./logo";
 import PageTitle from "./PageTitle";
 import theme from "../../style/theme";
 import GlobalStyle from "../../style/global";
-import usePosts from "../../hooks/usePosts";
-// import background from "../../assets/main-background.svg";
-import background from "../../assets/bg.svg";
+import usePosts from "../../utils/usePosts";
 
 const Layout = ({ children, path }) => {
   const posts = usePosts();
@@ -49,11 +47,21 @@ const Layout = ({ children, path }) => {
             <FooterLinks>
               <FooterList>
                 <FooterTitle>Site</FooterTitle>
-                <FooterItem to="/">Home</FooterItem>
-                <FooterItem to="/projects">Projects</FooterItem>
-                <FooterItem to="/thoughts">Thoughts</FooterItem>
-                <FooterItem to="/uses">Uses</FooterItem>
-                <FooterItem to="/build-with">Build with</FooterItem>
+                <FooterItem to="/">
+                  <span>Home</span>
+                </FooterItem>
+                <FooterItem to="/projects">
+                  <span>Projects</span>
+                </FooterItem>
+                <FooterItem to="/thoughts">
+                  <span>Thoughts</span>
+                </FooterItem>
+                <FooterItem to="/uses">
+                  <span>Uses</span>
+                </FooterItem>
+                <FooterItem to="/build-with">
+                  <span>Build with</span>
+                </FooterItem>
               </FooterList>
               <FooterList>
                 <FooterTitle>Links</FooterTitle>
@@ -62,28 +70,28 @@ const Layout = ({ children, path }) => {
                   target="_blank"
                   href="https://www.github.com/mabdulai"
                 >
-                  Github
+                  <span>Github</span>
                 </FooterItem>
                 <FooterItem
                   as="a"
                   target="_blank"
                   href="https://www.twitter.com/mabdulai90"
                 >
-                  Twitter
+                  <span>Twitter</span>
                 </FooterItem>
                 <FooterItem
                   as="a"
                   target="_blank"
                   href="https://www.dribbble.com/mabdulai90"
                 >
-                  Dribbble
+                  <span>Dribbble</span>
                 </FooterItem>
                 <FooterItem
                   as="a"
                   target="_blank"
                   href="https://www.linkedin.com"
                 >
-                  LinkedIn
+                  <span>LinkedIn</span>
                 </FooterItem>
               </FooterList>
             </FooterLinks>
@@ -110,9 +118,9 @@ const Container = styled.div`
 `;
 
 const BackgroundContainer = styled.div`
-  background: ${({ theme }) => theme.black};
-  background-image: url(${background});
-  background-size: cover;
+  background: black;
+  min-height: 80vh;
+  background: linear-gradient(to bottom, #0f0c29, #111);
 `;
 
 const Header = styled.header`
@@ -146,11 +154,12 @@ const NavList = styled.ul`
 const NavItem = styled(Link)`
   list-style: none;
   margin-right: 16px;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 500;
   text-decoration: none;
   color: ${({ theme }) => theme.ochre};
   transition: all 50ms ease-in-out;
+  text-transform: uppercase;
 
   border-bottom: ${({ theme, $isActive }) =>
     $isActive ? `2px solid ${theme.ochre}` : "none"};
@@ -181,7 +190,7 @@ const LatestBlog = styled.div`
 `;
 
 const BlogTitle = styled.a`
-  font-family: ${({ theme }) => theme.fontDisplay};
+  font-family: ${({ theme }) => theme.fontFooter};
   font-weight: ${({ theme }) => theme.bold};
   font-size: 40px;
   color: ${({ theme }) => theme.blackLinks};
@@ -194,6 +203,8 @@ const BlogTitle = styled.a`
 
 const BlogExcerpt = styled.div`
   font-family: ${({ theme }) => theme.fontMain};
+  color: ${({ theme }) => theme.blackLinks};
+
   font-weight: 500;
   line-height: 1.4;
   margin-top: 8px;
@@ -225,29 +236,37 @@ const FooterLinks = styled.div`
 const FooterList = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 24px;
   font-family: ${({ theme }) => theme.fontFooter};
   margin-right: 120px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 `;
 
 const FooterItem = styled(Link)`
   text-decoration: none;
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.blackLinks};
   font-weight: 500;
   padding: 8px 0;
-  border-bottom: 2px solid ${({ theme }) => theme.ochre};
-  transition: all 100ms ease-in-out;
+
+  span {
+    transition: all 100ms ease-in-out;
+    border-bottom: 2px solid ${({ theme }) => theme.ochre};
+  }
 
   &:hover {
-    color: ${({ theme }) => theme.black};
-    border-bottom: 2px solid ${({ theme }) => theme.black};
+    span {
+      color: ${({ theme }) => theme.black};
+      border-bottom: 2px solid ${({ theme }) => theme.black};
+    }
   }
 `;
 
 const FooterTitle = styled.div`
   font-weight: 900;
   padding-bottom: 24px;
-  font-size: 18px;
+  font-size: 32px;
   font-family: ${({ theme }) => theme.fontFooter};
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 `;

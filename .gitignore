@@ -40,7 +40,7 @@ test/**/public
 public/
 node_modules/
 e2e-tests/gatsby-pnp/
-.cache/
+.cache/*/*
 .netlify
 .Rhistory
 
@@ -58,6 +58,7 @@ yarn.lock
 package-lock.json
 # ignore any lock file other than main lock file
 !/yarn.lock
-public/page-data/
-.cache/redux/
+public\*
+cache
 .cache/async-requires.js
+design
