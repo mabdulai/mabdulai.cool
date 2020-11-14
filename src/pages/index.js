@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/common/Layout";
 import { MainText } from "../style/shared-components";
 import getStats from "../utils/getStats";
+import styled from "styled-components";
 
 const initialStats = {
   commits: 0,
@@ -19,6 +20,7 @@ const initialStats = {
 };
 
 const Home = ({ path }) => {
+  const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState(initialStats);
   useEffect(() => {
     async function fetchStats() {
@@ -26,26 +28,37 @@ const Home = ({ path }) => {
       return stats;
     }
     try {
-      fetchStats().then((s) => setStats(s));
+      fetchStats().then((s) => {
+        setStats(s);
+        setLoading(false);
+      });
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   }, []);
   return (
     <Layout path={path}>
-      <MainText>
-        <strong>
-          My name is is Michael Abdulai, and I create software using Javascript.
-        </strong>{" "}
-        Currently helping artists being in control of their data at ABOSS. In
-        the last 30 days, I’ve pushed {stats.commits} commits to GitHub and sent{" "}
-        {stats.tweets} tweets. I'm reading “{stats.books[0].name}” at the moment
-        by {stats.books[0].autor}. When I have some free time I like to play one
-        of my {stats.games.owned_games} Steam games. The last one I played is{" "}
-        {stats.games.recently_played}
-      </MainText>
+      {!loading && (
+        <MainText>
+          My name is is Michael Abdulai, and I create software using Javascript.{" "}
+          Currently helping artists being in control of their data at ABOSS. In
+          the last 30 days, I’ve pushed{" "}
+          <DataText>{stats.commits} commits</DataText> to GitHub and sent{" "}
+          <DataText>{stats.tweets} tweets</DataText>. I'm reading “
+          <DataText>{stats.books[0].name}</DataText>” at the moment by{" "}
+          {stats.books[0].author}. When I have some free time I like to play one
+          of my <DataText>{stats.games.owned_games} Steam games</DataText>. The
+          last one I played is{" "}
+          <DataText>{stats.games.recently_played}</DataText>
+        </MainText>
+      )}
     </Layout>
   );
 };
 
 export default Home;
+
+const DataText = styled.span`
+  color: ${({ theme }) => theme.ochre};
+`;

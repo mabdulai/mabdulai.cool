@@ -7,6 +7,7 @@ import PageTitle from "./PageTitle";
 import theme from "../../style/theme";
 import GlobalStyle from "../../style/global";
 import usePosts from "../../utils/usePosts";
+import background from "../../assets/grunge.png";
 
 const Layout = ({ children, path }) => {
   const posts = usePosts();
@@ -16,32 +17,30 @@ const Layout = ({ children, path }) => {
       <GlobalStyle whiteColor />
       <Helmet></Helmet>
       <Container>
-        <BackgroundContainer>
-          <Header>
-            <HeaderContainer>
-              <Nav>
-                <Logo />
-                <NavList>
-                  <NavItem $isActive={path === "/"} to="/">
-                    Home
-                  </NavItem>
-                  <NavItem $isActive={path === "/projects/"} to="/projects">
-                    Projects
-                  </NavItem>
-                  <NavItem $isActive={path === "/thoughts/"} to="/thoughts">
-                    Thoughts
-                  </NavItem>
-                </NavList>
-              </Nav>
-            </HeaderContainer>
-          </Header>
-          <Main>
-            <MainContainer>
-              <PageTitle path={path} />
-              {children}
-            </MainContainer>
-          </Main>
-        </BackgroundContainer>
+        <Header>
+          <HeaderContainer>
+            <Nav>
+              <Logo />
+              <NavList>
+                <NavItem $isActive={path === "/"} to="/">
+                  Home
+                </NavItem>
+                <NavItem $isActive={path === "/projects/"} to="/projects">
+                  Projects
+                </NavItem>
+                <NavItem $isActive={path === "/thoughts/"} to="/thoughts">
+                  Thoughts
+                </NavItem>
+              </NavList>
+            </Nav>
+          </HeaderContainer>
+        </Header>
+        <Main>
+          <MainContainer>
+            <PageTitle path={path} />
+            {children}
+          </MainContainer>
+        </Main>
         <Footer>
           <FooterContainer>
             <FooterLinks>
@@ -115,12 +114,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-`;
 
-const BackgroundContainer = styled.div`
-  background: black;
-  min-height: 80vh;
-  background: linear-gradient(to bottom, #0f0c29, #111);
+  background-image: url(${background});
 `;
 
 const Header = styled.header`
@@ -181,6 +176,7 @@ const MainContainer = styled.div`
   width: ${({ theme }) => theme.layoutMaxWidth};
   max-width: ${({ theme }) => theme.layoutMaxWidth};
   margin: 0 auto;
+  position: relative;
 `;
 
 const LatestBlog = styled.div`
@@ -199,12 +195,12 @@ const BlogTitle = styled.a`
   text-overflow: ellipsis;
   text-decoration: none;
   text-transform: uppercase;
+  opacity: 0.9;
 `;
 
 const BlogExcerpt = styled.div`
   font-family: ${({ theme }) => theme.fontMain};
   color: ${({ theme }) => theme.blackLinks};
-
   font-weight: 500;
   line-height: 1.4;
   margin-top: 8px;
@@ -248,6 +244,7 @@ const FooterItem = styled(Link)`
   color: ${({ theme }) => theme.blackLinks};
   font-weight: 500;
   padding: 8px 0;
+  opacity: 0.9;
 
   span {
     transition: all 100ms ease-in-out;

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import background from "../assets/grunge.png";
 export default createGlobalStyle`
 @font-face {
   font-family: "Font Name";
@@ -30,6 +30,7 @@ export default createGlobalStyle`
   }
   body {
     line-height: 1;
+    background: #151515;
   }
   ol, ul {
     list-style: none;

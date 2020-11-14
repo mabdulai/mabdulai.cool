@@ -3,9 +3,12 @@ import styled from "styled-components";
 class PageTitle extends Component {
   render() {
     const { path } = this.props;
+    const text = getTitleText(path);
     return (
       <>
-        <PageTitleText>{getTitleText(path)}</PageTitleText>
+        <PageTitleText text={text}>
+          <span>{text}</span>
+        </PageTitleText>
         {path === "/" && <SubTitle>FRONTEND - DESIGN - PRODUCTIVITY</SubTitle>}
       </>
     );
@@ -32,6 +35,7 @@ const getTitleText = (path) => {
 export default PageTitle;
 
 const PageTitleText = styled.div`
+  position: relative;
   font-family: ${({ theme }) => theme.fontDisplay};
   font-size: 200px;
   font-weight: ${({ theme }) => theme.bold};
@@ -39,6 +43,33 @@ const PageTitleText = styled.div`
   text-transform: uppercase;
   line-height: 0.85;
   letter-spacing: 5px;
+
+  &:before {
+    content: '${({ text }) => text}';
+    position: absolute;
+    font-family: ${({ theme }) => theme.fontDisplay};
+    font-size: 200px;
+    font-weight: ${({ theme }) => theme.bold};
+    text-transform: uppercase;
+    top: 100px;
+    right: -20%;
+    font-size: 300px;
+    -webkit-text-stroke: 2px #cacaca;
+    color: transparent;
+    z-index: -1;
+  }
+
+  &:after {
+    position: absolute;
+    right: 0;
+    top: 200%;
+    content: "EST. 2020. ";
+    transform: rotate(90deg);
+    font-size: 12px;
+    text-transform: uppercase;
+    height: 10vw;
+    text-align: right;
+  }
 `;
 
 const SubTitle = styled.div`
