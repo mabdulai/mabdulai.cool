@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: "Jason’s Blog Theme — It’s SICK",
+    title: "Mabdulai",
     description: `
       This is a blog theme. The description will be showed in SEO results on pages
       without their own descriptions.
     `,
-    siteUrl: "https://example.com",
+    siteUrl: "https://mabdulai.cool",
     image: "https://lengstorf.com/images/jason-lengstorf.jpg",
     author: "Your Name",
     categories: [{ slug: "test", name: "Test Category" }],
