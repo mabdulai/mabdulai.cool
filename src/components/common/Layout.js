@@ -15,7 +15,7 @@ const Layout = ({ children, path }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle whiteColor />
-      <Helmet></Helmet>
+      <Helmet title="Mabdulai.cool"></Helmet>
       <Container>
         <Header>
           <HeaderContainer>
@@ -170,6 +170,7 @@ const Main = styled.main`
   flex-direction: column;
   flex: 1;
   padding: 0 160px;
+  overflow: hidden;
 `;
 
 const MainContainer = styled.div`
