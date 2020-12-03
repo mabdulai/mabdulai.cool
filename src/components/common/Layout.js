@@ -8,6 +8,7 @@ import theme from "../../style/theme";
 import GlobalStyle from "../../style/global";
 import usePosts from "../../utils/usePosts";
 import background from "../../assets/grunge.png";
+import favico from "../../assets/favicon.ico";
 
 const Layout = ({ children, path }) => {
   const posts = usePosts();
@@ -15,7 +16,9 @@ const Layout = ({ children, path }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle whiteColor />
-      <Helmet title="Mabdulai.cool"></Helmet>
+      <Helmet title="Mabdulai.cool">
+        <link rel="icon" type="image/png" href={favico} sizes="16x16" />
+      </Helmet>
       <Container>
         <Header>
           <HeaderContainer>
@@ -120,9 +123,9 @@ const Container = styled.div`
 
 const Header = styled.header`
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: space-between;
+  max-height: 200px;
   border-top: 24px solid ${({ theme }) => theme.ochre};
   padding: 70px 160px 50px;
   color: ${({ theme }) => theme.ochre};
@@ -168,9 +171,9 @@ const NavItem = styled(Link)`
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  flex: 1;
   padding: 0 160px;
   overflow: hidden;
+  min-height: calc(100vh - 600px);
 `;
 
 const MainContainer = styled.div`

@@ -22,7 +22,7 @@ class Uses extends Component {
             </Item>
 
             <Item>
-              <Title>Ducky one</Title>
+              <Title>Ducky One</Title>
               <Description>CherryMX Blue Switches</Description>
             </Item>
             <Item>
@@ -40,7 +40,7 @@ class Uses extends Component {
                   Framer Syntax
                 </a>
                 ,{" "}
-                <a target="_blank" href="#https://github.com/tonsky/FiraCode">
+                <a target="_blank" href="https://github.com/tonsky/FiraCode">
                   Fira Code
                 </a>
                 ,{" "}
@@ -100,6 +100,7 @@ const Item = ({ children }) => {
 const CategoryContainer = styled.div`
   display: flex;
   margin-bottom: 40px;
+  line-height: 28px;
   div:first-child {
     padding-right: 100px;
   }
