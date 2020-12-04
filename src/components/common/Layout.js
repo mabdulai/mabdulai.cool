@@ -125,7 +125,7 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-height: 200px;
+  height: 200px;
   border-top: 24px solid ${({ theme }) => theme.ochre};
   padding: 70px 160px 50px;
   color: ${({ theme }) => theme.ochre};
