@@ -39,8 +39,8 @@ const Home = ({ path, stats, fetching }) => {
         <DataText>{stats.tweets} tweets</DataText>. I'm reading “
         <DataText>{stats.books[0].name}</DataText>” at the moment by{" "}
         {stats.books[0].author}. When I have some free time I like to play one
-        of my <DataText>{stats.games.owned_games} Steam games</DataText>. The
-        last one I played is <DataText>{stats.games.recently_played}</DataText>
+        of my <DataText>{stats.games?.owned_games} Steam games</DataText>. The
+        last one I played is <DataText>{stats.games?.recently_played}</DataText>
       </MainText>
     </Layout>
   );
