@@ -1,23 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Layout from "../components/common/Layout";
-import { MainText } from "../style/shared-components";
-import getStats from "../utils/getStats";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 
-// const initialStats = {
-//   commits: 0,
-//   tweets: 0,
-//   games: {
-//     owned_games: 0,
-//     recently_played: "",
-//   },
-//   books: [
-//     {
-//       name: "",
-//       author: "",
-//     },
-//   ],
-// };
+import Layout from "../components/common/Layout";
+import { MainText } from "../style/shared-components";
 
 const Home = ({ path, stats, fetching }) => {
   if (fetching) {
@@ -39,8 +24,13 @@ const Home = ({ path, stats, fetching }) => {
         <DataText>{stats.tweets} tweets</DataText>. I'm reading “
         <DataText>{stats.books[0].name}</DataText>” at the moment by{" "}
         {stats.books[0].author}. When I have some free time I like to play one
-        of my <DataText>{stats.games?.owned_games} Steam games</DataText>. The
-        last one I played is <DataText>{stats.games?.recently_played}</DataText>
+        of my <DataText>{stats.games?.owned_games} Steam games</DataText>.{" "}
+        {stats.games?.recently_played.length && (
+          <Fragment>
+            The last one I played is{" "}
+            <DataText>{stats.games?.recently_played}</DataText>
+          </Fragment>
+        )}
       </MainText>
     </Layout>
   );

@@ -67,6 +67,7 @@ class Uses extends Component {
             </Item>
             <Item>
               <Title>Figma</Title>
+              <a target="_blank">&nbsp;</a>
             </Item>
             <Item>
               <Title>Notion</Title>
@@ -107,7 +108,8 @@ const CategoryContainer = styled.div`
 `;
 
 const CategoryTitle = styled.div`
-  color: #aaa;
+  color: #ccc;
+  font-weight: bold;
 `;
 
 const ItemContainer = styled.div`
@@ -116,9 +118,10 @@ const ItemContainer = styled.div`
 
 const Description = styled.div`
   font-size: 16px;
+  color: #ccc;
   a {
+    color: ${({ theme }) => theme.ochre};
     text-decoration: none;
-    color: currentColor;
 
     &:hover {
       text-decoration: underline;

@@ -7,14 +7,16 @@ import styled from "styled-components";
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const { mdx } = this.props.data;
+    const mdx = this.props.data.mdx;
     return (
       <Layout displayHeader={false}>
-        <ArticleContent>
-          <h1>{mdx.frontmatter.title}</h1>
-          <p>{mdx.frontmatter.date}</p>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </ArticleContent>
+        <ContentWrapper>
+          <ArticleContent>
+            <h1>{mdx.frontmatter.title}</h1>
+            <Date>{mdx.frontmatter.date}</Date>
+            <MDXRenderer>{mdx.body}</MDXRenderer>
+          </ArticleContent>
+        </ContentWrapper>
       </Layout>
     );
   }
@@ -41,21 +43,39 @@ export const pageQuery = graphql`
   }
 `;
 
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Date = styled.p`
+  text-align: center !important;
+  margin-top: -30px;
+`;
+
 const ArticleContent = styled.article`
-  max-width: 50em;
   color: ${({ theme }) => theme.offWhite};
+  padding-bottom: 100px;
   h1,
-  h2 {
+  h2,
+  h3,
+  ul {
     font-family: ${({ theme }) => theme.fontDisplay};
     margin: 40px 0;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
   h1 {
+    text-align: center;
     font-size: 60px;
   }
 
   h2 {
+    font-size: 40px;
+  }
+
+  h3 {
     font-size: 40px;
   }
   p {
@@ -64,5 +84,21 @@ const ArticleContent = styled.article`
     line-height: 1.6;
     text-align: justify;
     opacity: 0.9;
+    padding-bottom: 16px;
+    max-width: 100ch;
+  }
+  ul {
+    padding-left: 40px;
+  }
+  li {
+    list-style-type: disc;
+    padding: 8px;
+  }
+
+  div {
+    background: rgba(136, 136, 136, 0.1);
+    border-radius: 8px;
+    width: 120ch;
+    padding: 10px 60px 40px;
   }
 `;
