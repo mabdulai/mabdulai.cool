@@ -52,10 +52,11 @@ const ContentWrapper = styled.div`
 const Date = styled.p`
   text-align: center !important;
   margin-top: -30px;
+  color: ${({ theme }) => theme.offWhite};
 `;
 
 const ArticleContent = styled.article`
-  color: ${({ theme }) => theme.offWhite};
+  color: ${({ theme }) => theme.black};
   padding-bottom: 100px;
   h1,
   h2,
@@ -67,6 +68,7 @@ const ArticleContent = styled.article`
     letter-spacing: 1px;
   }
   h1 {
+    color: ${({ theme }) => theme.offWhite};
     text-align: center;
     font-size: 60px;
   }
@@ -84,7 +86,7 @@ const ArticleContent = styled.article`
     line-height: 1.6;
     text-align: justify;
     opacity: 0.9;
-    padding-bottom: 16px;
+    padding-bottom: 24px;
     max-width: 100ch;
   }
   ul {
@@ -96,7 +98,7 @@ const ArticleContent = styled.article`
   }
 
   div {
-    background: rgba(136, 136, 136, 0.1);
+    background: rgba(255, 218, 83, 0.9);
     border-radius: 8px;
     width: 120ch;
     padding: 10px 60px 40px;

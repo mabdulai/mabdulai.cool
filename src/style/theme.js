@@ -1,5 +1,5 @@
 export default {
-  ochre: "#FFDA53",
+  ochre: "#ffda53",
   darkOcher: "#9D852C",
   black: "#071018",
   blackLinks: "#151515",
