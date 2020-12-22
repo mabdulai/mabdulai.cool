@@ -1,20 +1,5 @@
 import React, { useEffect, useState } from "react";
-import getStats from "../utils/getStats";
-
-const initialStats = {
-  commits: 0,
-  tweets: 0,
-  games: {
-    owned_games: 0,
-    recently_played: "",
-  },
-  books: [
-    {
-      name: "",
-      author: "",
-    },
-  ],
-};
+import getStats, { initialStats } from "../utils/getStats";
 
 const Test = ({ children }) => {
   const [stats, setStats] = useState(initialStats);

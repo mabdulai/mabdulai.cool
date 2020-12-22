@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
+import { initialStats } from "../utils/getStats";
 
 import Layout from "../components/common/Layout";
 import Loader from "../components/common/Loader";
 import { MainText } from "../style/shared-components";
 
-const Home = ({ path, stats, fetching }) => {
+const Home = ({ path, stats = initialStats, fetching }) => {
   if (fetching) {
     return (
       <Layout path={path}>

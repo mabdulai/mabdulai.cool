@@ -37,3 +37,18 @@ const getStats = async () => {
 };
 
 export default getStats;
+
+export const initialStats = {
+  commits: 0,
+  tweets: 0,
+  games: {
+    owned_games: 0,
+    recently_played: "",
+  },
+  books: [
+    {
+      name: "",
+      author: "",
+    },
+  ],
+};

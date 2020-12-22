@@ -3,8 +3,6 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onPreBootstrap = ({ reporter }, options) => {
-  console.log(options);
-
   const contentPath = options.contentPath || "content";
   if (!fs.existsSync(contentPath)) {
     reporter.info(`creating the ${contentPath} directory`);
