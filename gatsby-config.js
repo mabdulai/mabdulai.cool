@@ -1,32 +1,35 @@
 module.exports = {
   siteMetadata: {
-    title: 'Mabdulai.cool'
+    title: "Mabdulai",
+    description: `
+      This is a blog theme. The description will be showed in SEO results on pages
+      without their own descriptions.
+    `,
+    siteUrl: "https://mabdulai.cool",
+    image: "https://lengstorf.com/images/jason-lengstorf.jpg",
+    author: "Your Name",
+    categories: [{ slug: "test", name: "Test Category" }],
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/images`,
-        name: 'images'
-      }
+        path: `./content/posts`,
+        name: `blog`,
+      },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-mdx",
       options: {
-        name: 'Mabdulai.cool',
-        short_name: 'mabdulai.cool',
-        start_url: '/'
-      }
+        extensions: [".mdx", ".md"],
+        remarkPlugins: [require("remark-slug"), require("remark-emoji")],
+        defaultLayouts: {
+          default: "./src/templates/blog-post.js",
+        },
+        gatsbyRemarkPlugins: [`gatsby-remark-prismjs`].filter(Boolean),
+      },
     },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here
-      }
-    },
-    'gatsby-plugin-offline'
-  ]
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+  ],
 };

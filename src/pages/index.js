@@ -1,54 +1,51 @@
-import React from 'react';
+import React, { Fragment } from "react";
+import styled from "styled-components";
 
-import { Layout } from '../components/common/';
-import Fade from 'react-reveal/Fade';
-import newyork from '../images/home/newyork.jpg';
-import hooks from '../images/home/hooks.jpg';
-import hongkong from '../images/home/hongkong.jpg';
+import Layout from "../components/common/Layout";
+import Loader from "../components/common/Loader";
+import { MainText } from "../style/shared-components";
 
-import { RowItemLeft, RowItemRight, Heading, DoubleRow } from '../components/home/';
-
-const IndexPage = () => {
+const Home = ({ path, stats, fetching }) => {
+  if (fetching) {
+    return (
+      <Layout path={path}>
+        <Filler>
+          <Loader />
+        </Filler>
+      </Layout>
+    );
+  }
   return (
-    <Layout>
-      <Fade left>
-        <Heading />
-      </Fade>
-      <Fade up>
-        <RowItemLeft
-          image={newyork}
-          description="Travel - Photography"
-          title="New York"
-          subtitle="So much walking"
-          link="/travel/new-york"
-          buttonText="View Photos"
-        />
-      </Fade>
-      <Fade up>
-        <RowItemRight
-          image={hooks}
-          description="Learning - code"
-          title="React Hooks"
-          subtitle="My learnings into React Hooks"
-          link="/code/hooks"
-          buttonText="Subject Study"
-        />
-      </Fade>
-      <Fade up>
-        <RowItemLeft
-          image={hongkong}
-          description="Travel - Photography"
-          title="Hong Kong"
-          subtitle="A great vacation with friends"
-          link="/travel/hong-kong"
-          buttonText="View Photos"
-        />
-      </Fade>
-      <Fade up>
-        <DoubleRow />
-      </Fade>
+    <Layout path={path}>
+      <MainText>
+        My name is is Michael Abdulai, and I create software using Javascript.{" "}
+        Currently helping artists being in control of their data at ABOSS. In
+        the last 30 days, I’ve pushed{" "}
+        <DataText>{stats.commits} commits</DataText> to GitHub and sent{" "}
+        <DataText>{stats.tweets} tweets</DataText>. I'm reading “
+        <DataText>{stats.books[0].name}</DataText>” at the moment by{" "}
+        {stats.books[0].author}. When I have some free time I like to play one
+        of my <DataText>{stats.games?.owned_games} Steam games</DataText>.{" "}
+        {stats.games?.recently_played.length && (
+          <Fragment>
+            The last one I played is{" "}
+            <DataText>{stats.games?.recently_played}</DataText>
+          </Fragment>
+        )}
+      </MainText>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default Home;
+
+const DataText = styled.span`
+  color: ${({ theme }) => theme.ochre};
+`;
+
+const Filler = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+`;
