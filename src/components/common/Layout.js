@@ -2,7 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { Link } from "gatsby";
 import Helmet from "react-helmet";
-import Logo from "./logo";
+import Logo from "./Logo";
 import PageTitle from "./PageTitle";
 import theme from "../../style/theme";
 import usePosts from "../../utils/usePosts";
