@@ -35,16 +35,21 @@ class Uses extends Component {
               <Description>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://github.com/framer/syntax#:~:text=Framer%20Syntax%20is%20a%20dark,amazing%20products%20for%20the%20Web."
                 >
                   Framer Syntax
                 </a>
                 ,{" "}
-                <a target="_blank" href="https://github.com/tonsky/FiraCode">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/tonsky/FiraCode"
+                >
                   Fira Code
                 </a>
                 ,{" "}
-                <a target="_blank" href="#">
+                <a target="_blank" rel="noreferrer">
                   My settings
                 </a>
               </Description>
@@ -55,19 +60,24 @@ class Uses extends Component {
               <Description>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Framer.itermcolors"
                 >
                   Framer theme
                 </a>
                 ,{" "}
-                <a target="_blank" href="https://github.com/tonsky/FiraCode">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/tonsky/FiraCode"
+                >
                   Fira Code
                 </a>
               </Description>
             </Item>
             <Item>
               <Title>Figma</Title>
-              <a target="_blank">&nbsp;</a>
+              <a target="_blank" rel="noreferrer" href="/"></a>
             </Item>
             <Item>
               <Title>Notion</Title>
@@ -102,14 +112,27 @@ const CategoryContainer = styled.div`
   display: flex;
   margin-bottom: 40px;
   line-height: 28px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
   div:first-child {
     padding-right: 100px;
+
+    @media (max-width: 1200px) {
+      padding-right: 0;
+    }
   }
 `;
 
 const CategoryTitle = styled.div`
   color: #ccc;
   font-weight: bold;
+
+  @media (max-width: 1200px) {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
 `;
 
 const ItemContainer = styled.div`
@@ -129,4 +152,9 @@ const Description = styled.div`
   }
 `;
 
-const Title = styled.div``;
+const Title = styled.div`
+  @media (max-width: 1200px) {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+`;

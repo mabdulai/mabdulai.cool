@@ -43,6 +43,10 @@ const PageTitleText = styled.div`
   text-transform: uppercase;
   line-height: 0.85;
   letter-spacing: 5px;
+  @media (max-width: 1200px) {
+    font-size: 80px;
+    letter-spacing: 1px;
+  }
 
   &:before {
     content: '${({ text }) => text}';
@@ -57,6 +61,10 @@ const PageTitleText = styled.div`
     -webkit-text-stroke: 2px #cacaca;
     color: transparent;
     z-index: -1;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
 
   &:after {
@@ -69,6 +77,10 @@ const PageTitleText = styled.div`
     text-transform: uppercase;
     height: 10vw;
     text-align: right;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
 `;
 
@@ -79,4 +91,7 @@ const SubTitle = styled.div`
   color: ${({ theme }) => theme.offWhite};
   margin-top: 4px;
   letter-spacing: 1px;
+  @media (max-width: 1200px) {
+    font-size: 25px;
+  }
 `;

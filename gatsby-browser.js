@@ -1,4 +1,6 @@
 require("prismjs/themes/prism-tomorrow.css");
+require("prismjs/plugins/line-numbers/prism-line-numbers.css");
+
 const React = require("react");
 const Layout = require("./src/components/StatsWrapper").default;
 

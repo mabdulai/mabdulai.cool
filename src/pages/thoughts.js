@@ -1,5 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
+
 import Layout from "../components/common/Layout";
 import { MainText } from "../style/shared-components";
 import usePosts from "../utils/usePosts";
@@ -14,7 +16,9 @@ const Thoughts = ({ data, path }) => {
           <YearNumber>2020</YearNumber>
           <Posts>
             {posts.map((post) => (
-              <div>{post.node.frontmatter.title}</div>
+              <PostLink key={post.node.fields.slug} to={post.node.fields.slug}>
+                {post.node.frontmatter.title}
+              </PostLink>
             ))}
           </Posts>
         </Year>
@@ -27,6 +31,14 @@ export default Thoughts;
 
 const Year = styled.div``;
 
-const YearNumber = styled.div``;
+const YearNumber = styled.div`
+  font-size: 64px;
+  font-family: ${({ theme }) => theme.fontDisplay};
+  font-weight: bold;
+`;
 
 const Posts = styled.div``;
+
+const PostLink = styled(Link)`
+  color: currentColor;
+`;

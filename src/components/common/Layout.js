@@ -5,18 +5,22 @@ import Helmet from "react-helmet";
 import Logo from "./logo";
 import PageTitle from "./PageTitle";
 import theme from "../../style/theme";
-import GlobalStyle from "../../style/global";
 import usePosts from "../../utils/usePosts";
 import background from "../../assets/grunge.png";
 import favico from "../../assets/favicon.ico";
+import "../../style/global.css";
 
 const Layout = ({ children, path }) => {
   const posts = usePosts();
   const latestPost = posts[posts.length - 1].node;
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle whiteColor />
       <Helmet title="Mabdulai.cool">
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+          rel="stylesheet"
+        />
         <link rel="icon" type="image/png" href={favico} sizes="16x16" />
       </Helmet>
       <Container>
@@ -61,9 +65,6 @@ const Layout = ({ children, path }) => {
                 <FooterItem to="/uses">
                   <span>Uses</span>
                 </FooterItem>
-                <FooterItem to="/build-with">
-                  <span>Build with</span>
-                </FooterItem>
               </FooterList>
               <FooterList>
                 <FooterTitle>Links</FooterTitle>
@@ -91,7 +92,7 @@ const Layout = ({ children, path }) => {
                 <FooterItem
                   as="a"
                   target="_blank"
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/in/michaelabdulai/"
                 >
                   <span>LinkedIn</span>
                 </FooterItem>
@@ -127,7 +128,6 @@ const Header = styled.header`
   justify-content: space-between;
   height: 200px;
   border-top: 24px solid ${({ theme }) => theme.ochre};
-  padding: 70px 160px 50px;
   color: ${({ theme }) => theme.ochre};
 `;
 
@@ -142,6 +142,11 @@ const Nav = styled.nav`
   display: flex;
   flex: 1;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 const NavList = styled.ul`
@@ -174,6 +179,12 @@ const Main = styled.main`
   padding: 0 160px;
   overflow: hidden;
   min-height: calc(100vh - 600px);
+
+  @media (max-width: 1200px) {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
 `;
 
 const MainContainer = styled.div`
@@ -181,12 +192,21 @@ const MainContainer = styled.div`
   max-width: ${({ theme }) => theme.layoutMaxWidth};
   margin: 0 auto;
   position: relative;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 `;
 
 const LatestBlog = styled.div`
   width: 600px;
   font-size: 20px;
   font-family: ${({ theme }) => theme.fontFooter};
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const BlogTitle = styled.a`
@@ -218,6 +238,12 @@ const Footer = styled.footer`
   color: ${({ theme }) => theme.blackLinks};
   height: 400px;
   padding: 0 160px;
+
+  @media (max-width: 1200px) {
+    height: 300px;
+    width: 100%;
+    padding: 0;
+  }
 `;
 
 const FooterContainer = styled.div`
@@ -227,10 +253,19 @@ const FooterContainer = styled.div`
   flex: 1;
   margin: 0 auto;
   padding: 32px 0;
+  @media (max-width: 1200px) {
+    width: 100%;
+    justify-content: space-between;
+  }
 `;
 
 const FooterLinks = styled.div`
   display: flex;
+
+  @media (max-width: 1200px) {
+    justify-content: space-around;
+    flex: 1;
+  }
 `;
 
 const FooterList = styled.div`
@@ -241,6 +276,9 @@ const FooterList = styled.div`
   margin-right: 120px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  @media (max-width: 1200px) {
+    margin-right: 0;
+  }
 `;
 
 const FooterItem = styled(Link)`

@@ -10,6 +10,6 @@ export default {
   fontNav: "Tungsten",
   fontMain: "Share Tech Mono",
   fontFooter: "Tungsten",
-  bold: "900",
+  bold: "bold",
   layoutMaxWidth: "1200px",
 };

@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 import Layout from "../components/common/Layout";
+import Loader from "../components/common/Loader";
 import { MainText } from "../style/shared-components";
 
 const Home = ({ path, stats, fetching }) => {
@@ -9,7 +10,7 @@ const Home = ({ path, stats, fetching }) => {
     return (
       <Layout path={path}>
         <Filler>
-          <MainText>Loading</MainText>
+          <Loader />
         </Filler>
       </Layout>
     );
@@ -43,5 +44,8 @@ const DataText = styled.span`
 `;
 
 const Filler = styled.div`
-  min-height: 34vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
 `;
