@@ -1,14 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: "Mabdulai",
+    title: "Mabdulai.cool",
     description: `
-      This is a blog theme. The description will be showed in SEO results on pages
-      without their own descriptions.
+      Mabdulai.cool is Michael Abdulai his personal page. Where I explore the topics of productivity, frontend development and design.
     `,
     siteUrl: "https://mabdulai.cool",
-    image: "https://lengstorf.com/images/jason-lengstorf.jpg",
-    author: "Your Name",
-    categories: [{ slug: "test", name: "Test Category" }],
+    image: "https://i.imgur.com/2ODZxe5.jpg",
+    author: "Michael Abdulai",
   },
   plugins: [
     {
@@ -30,6 +28,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: process.env.NODE_ENV === "production" ? false : true,
+      },
+    },
   ],
 };
