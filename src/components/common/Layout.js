@@ -22,6 +22,10 @@ const Layout = ({ children, path }) => {
           rel="stylesheet"
         />
         <link rel="icon" type="image/png" href={favico} sizes="16x16" />
+        <meta
+          name="description"
+          content="Mabdulai.cool is Michael Abdulai his personal page. Where I explore the topics of productivity, frontend development and design."
+        />
       </Helmet>
       <Container>
         <Header>
@@ -70,6 +74,7 @@ const Layout = ({ children, path }) => {
                 <FooterTitle>Links</FooterTitle>
                 <FooterItem
                   as="a"
+                  rel="noreferrer"
                   target="_blank"
                   href="https://www.github.com/mabdulai"
                 >
@@ -77,6 +82,7 @@ const Layout = ({ children, path }) => {
                 </FooterItem>
                 <FooterItem
                   as="a"
+                  rel="noreferrer"
                   target="_blank"
                   href="https://www.twitter.com/mabdulai90"
                 >
@@ -84,6 +90,7 @@ const Layout = ({ children, path }) => {
                 </FooterItem>
                 <FooterItem
                   as="a"
+                  rel="noreferrer"
                   target="_blank"
                   href="https://www.dribbble.com/mabdulai90"
                 >
@@ -91,6 +98,7 @@ const Layout = ({ children, path }) => {
                 </FooterItem>
                 <FooterItem
                   as="a"
+                  rel="noreferrer"
                   target="_blank"
                   href="https://www.linkedin.com/in/michaelabdulai/"
                 >
