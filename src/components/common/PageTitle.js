@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
 class PageTitle extends Component {
   render() {
     const { path } = this.props;
@@ -52,13 +59,12 @@ const PageTitleText = styled.div`
     content: '${({ text }) => text}';
     position: absolute;
     font-family: ${({ theme }) => theme.fontDisplay};
-    font-size: 200px;
     font-weight: ${({ theme }) => theme.bold};
     text-transform: uppercase;
-    top: 100px;
-    right: -20%;
+    top: ${() => getRandomInt(100, 200)}px;
+    right: ${() => getRandomInt(-20, 20)}%;
     font-size: 300px;
-    -webkit-text-stroke: 2px #cacaca;
+    -webkit-text-stroke: 2px rgba(202, 202, 202, 0.2);
     color: transparent;
     z-index: -1;
 

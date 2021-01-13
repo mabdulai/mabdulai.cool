@@ -123,8 +123,8 @@ const ArticleContent = styled.article`
   > div {
     background: rgba(255, 218, 83, 0.9);
     border-radius: 8px;
-    width: 960px;
-    padding: 10px 60px 40px;
+    width: 1200px;
+    padding: 10px 120px 40px;
 
     @media (max-width: 1200px) {
       padding: 1px 0 0;

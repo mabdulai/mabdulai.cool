@@ -52,3 +52,13 @@ export const initialStats = {
     },
   ],
 };
+
+export const getBooks = (books) => {
+  if (books === null) return ["Not reading any books at the moment", ""];
+  return [books[0].name, books[0].author];
+};
+
+export const getGames = (games) => {
+  if (games === null) return ["0", "Haven't been playing in a while"];
+  return [games.owned_games, games.recently_played];
+};

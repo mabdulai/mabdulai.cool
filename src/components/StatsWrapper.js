@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import getStats, { initialStats } from "../utils/getStats";
 
-const Test = ({ children }) => {
+const StatsWrapper = ({ children }) => {
   const [stats, setStats] = useState(initialStats);
   const [fetching, setFetching] = useState(false);
   useEffect(() => {
@@ -25,4 +25,4 @@ const Test = ({ children }) => {
   );
 };
 
-export default Test;
+export default StatsWrapper;

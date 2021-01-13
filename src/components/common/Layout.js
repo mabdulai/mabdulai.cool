@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider, keyframes } from "styled-components";
 import { Link } from "gatsby";
 import Helmet from "react-helmet";
 import Logo from "./Logo";
@@ -7,6 +7,7 @@ import PageTitle from "./PageTitle";
 import theme from "../../style/theme";
 import usePosts from "../../utils/usePosts";
 import background from "../../assets/grunge.png";
+import grain from "../../assets/grain.png";
 import favico from "../../assets/favicon.ico";
 import "../../style/global.css";
 
@@ -28,93 +29,97 @@ const Layout = ({ children, path }) => {
         />
       </Helmet>
       <Container>
-        <Header>
-          <HeaderContainer>
-            <Nav>
-              <Logo />
-              <NavList>
-                <NavItem $isActive={path === "/"} to="/">
-                  Home
-                </NavItem>
-                <NavItem $isActive={path === "/projects/"} to="/projects">
-                  Projects
-                </NavItem>
-                <NavItem $isActive={path === "/thoughts/"} to="/thoughts">
-                  Thoughts
-                </NavItem>
-              </NavList>
-            </Nav>
-          </HeaderContainer>
-        </Header>
-        <Main>
-          <MainContainer>
-            <PageTitle path={path} />
-            {children}
-          </MainContainer>
-        </Main>
-        <Footer>
-          <FooterContainer>
-            <FooterLinks>
-              <FooterList>
-                <FooterTitle>Site</FooterTitle>
-                <FooterItem to="/">
-                  <span>Home</span>
-                </FooterItem>
-                <FooterItem to="/projects">
-                  <span>Projects</span>
-                </FooterItem>
-                <FooterItem to="/thoughts">
-                  <span>Thoughts</span>
-                </FooterItem>
-                <FooterItem to="/uses">
-                  <span>Uses</span>
-                </FooterItem>
-              </FooterList>
-              <FooterList>
-                <FooterTitle>Links</FooterTitle>
-                <FooterItem
-                  as="a"
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.github.com/mabdulai"
-                >
-                  <span>Github</span>
-                </FooterItem>
-                <FooterItem
-                  as="a"
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.twitter.com/mabdulai90"
-                >
-                  <span>Twitter</span>
-                </FooterItem>
-                <FooterItem
-                  as="a"
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.dribbble.com/mabdulai90"
-                >
-                  <span>Dribbble</span>
-                </FooterItem>
-                <FooterItem
-                  as="a"
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.linkedin.com/in/michaelabdulai/"
-                >
-                  <span>LinkedIn</span>
-                </FooterItem>
-              </FooterList>
-            </FooterLinks>
-            <LatestBlog>
-              <FooterTitle>Latest Thougts</FooterTitle>
-              <BlogTitle href={latestPost.fields.slug}>
-                {latestPost.frontmatter.title}
-              </BlogTitle>
-              <BlogExcerpt>{latestPost.excerpt}</BlogExcerpt>
-            </LatestBlog>
-          </FooterContainer>
-        </Footer>
+        <ContentContainer>
+          <Header>
+            <HeaderContainer>
+              <Nav>
+                <Logo />
+                <NavList>
+                  <NavItem $isActive={path === "/"} to="/">
+                    Home
+                  </NavItem>
+                  <NavItem $isActive={path === "/projects/"} to="/projects">
+                    Projects
+                  </NavItem>
+                  <NavItem $isActive={path === "/thoughts/"} to="/thoughts">
+                    Thoughts
+                  </NavItem>
+                </NavList>
+              </Nav>
+            </HeaderContainer>
+          </Header>
+          <Main>
+            <MainContainer>
+              <PageTitle path={path} />
+              {children}
+            </MainContainer>
+          </Main>
+          <Footer>
+            <FooterContainer>
+              <FooterLinks>
+                <FooterList>
+                  <FooterTitle first text="SITE">
+                    Site
+                  </FooterTitle>
+                  <FooterItem to="/">
+                    <span>Home</span>
+                  </FooterItem>
+                  <FooterItem to="/projects">
+                    <span>Projects</span>
+                  </FooterItem>
+                  <FooterItem to="/thoughts">
+                    <span>Thoughts</span>
+                  </FooterItem>
+                  <FooterItem to="/uses">
+                    <span>Uses</span>
+                  </FooterItem>
+                </FooterList>
+                <FooterList>
+                  <FooterTitle text="LINKS">Links</FooterTitle>
+                  <FooterItem
+                    as="a"
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://www.github.com/mabdulai"
+                  >
+                    <span>Github</span>
+                  </FooterItem>
+                  <FooterItem
+                    as="a"
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://www.twitter.com/mabdulai90"
+                  >
+                    <span>Twitter</span>
+                  </FooterItem>
+                  <FooterItem
+                    as="a"
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://www.dribbble.com/mabdulai90"
+                  >
+                    <span>Dribbble</span>
+                  </FooterItem>
+                  <FooterItem
+                    as="a"
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/michaelabdulai/"
+                  >
+                    <span>LinkedIn</span>
+                  </FooterItem>
+                </FooterList>
+              </FooterLinks>
+              <LatestBlog>
+                <FooterTitle>Latest Thougts</FooterTitle>
+                <BlogTitle href={latestPost.fields.slug}>
+                  {latestPost.frontmatter.title}
+                </BlogTitle>
+                <BlogExcerpt>{latestPost.excerpt}</BlogExcerpt>
+              </LatestBlog>
+            </FooterContainer>
+          </Footer>
+        </ContentContainer>
       </Container>
     </ThemeProvider>
   );
@@ -122,11 +127,29 @@ const Layout = ({ children, path }) => {
 
 export default Layout;
 
+const ContentContainer = styled.div`
+  position: relative;
+  z-index: 3;
+  background: transparent;
+`;
+
+const grainAnim = keyframes`
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
+`;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
   background-image: url(${background});
 `;
 
@@ -246,6 +269,19 @@ const Footer = styled.footer`
   color: ${({ theme }) => theme.blackLinks};
   height: 400px;
   padding: 0 160px;
+  overflow: hidden;
+
+  /* &:after {
+    animation: ${grainAnim} 50s steps(200) infinite;
+    background-image: url(${grain});
+    content: "";
+    height: 300%;
+    left: 0%;
+    opacity: 0.5;
+    top: 100%;
+    width: 300%;
+    z-index: 1;
+  } */
 
   @media (max-width: 1200px) {
     height: 300px;
@@ -310,10 +346,30 @@ const FooterItem = styled(Link)`
 `;
 
 const FooterTitle = styled.div`
+  position: relative;
   font-weight: 900;
   padding-bottom: 24px;
   font-size: 32px;
   font-family: ${({ theme }) => theme.fontFooter};
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  z-index: 2;
+
+  &:before {
+    content: '${({ text, first }) => (first ? text : null)}';
+    position: absolute;
+    font-family: ${({ theme }) => theme.fontDisplay};
+    font-weight: ${({ theme }) => theme.bold};
+    text-transform: uppercase;
+    top: 0;
+    right: -20px;
+    font-size: 90px;
+    -webkit-text-stroke: 2px rgba(24, 24, 24, 0.3);
+    color: transparent;
+    z-index: 1;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
 `;
