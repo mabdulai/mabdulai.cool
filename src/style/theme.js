@@ -7,7 +7,7 @@ export default {
   offWhiteHover: "#E3D8D8",
   fontDisplay: "Tungsten",
   fontSubDisplay: "Tungsten",
-  fontNav: "Tungsten",
+  fontNav: "Share Tech Mono",
   fontMain: "Share Tech Mono",
   fontFooter: "Tungsten",
   bold: "bold",

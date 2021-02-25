@@ -165,8 +165,8 @@ const NavList = styled.ul`
 const NavItem = styled(Link)`
   list-style: none;
   margin-right: 16px;
-  font-size: 28px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
   text-decoration: none;
   color: ${({ theme }) => theme.ochre};
   transition: all 50ms ease-in-out;
