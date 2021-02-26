@@ -60,8 +60,7 @@ const PageTitleText = styled.div`
     font-size: 300px;
     -webkit-text-stroke: 2px #cacaca;
     color: transparent;
-    z-index: -1;
-
+    opacity: 0.1;
     @media (max-width: 1200px) {
       display: none;
     }
@@ -75,7 +74,6 @@ const PageTitleText = styled.div`
     transform: rotate(90deg);
     font-size: 12px;
     text-transform: uppercase;
-    height: 10vw;
     text-align: right;
 
     @media (max-width: 1200px) {
