@@ -10,9 +10,10 @@ class Projects extends Component {
 
     return (
       <Layout path={path}>
-        <MainText>
-          <Filler>Stay tuned for fun projects in the work.</Filler>
-        </MainText>
+        <Filler>
+          <Full>CURRENTLY</Full>
+          <Border>IN THE LAB</Border>
+        </Filler>
       </Layout>
     );
   }
@@ -21,5 +22,22 @@ class Projects extends Component {
 export default Projects;
 
 const Filler = styled.div`
-  height: 250px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 150px 0;
+  font-family: ${({ theme }) => theme.fontDisplay};
+  font-size: 300px;
+  line-height: 0.75;
+  font-weight: 900;
+  -webkit-text-stroke: 2px ${({ theme }) => theme.ochre};
+`;
+const Full = styled.div`
+  color: #fff;
+`;
+
+const Border = styled.div`
+  color: transparent;
 `;

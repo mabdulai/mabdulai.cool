@@ -10,10 +10,21 @@ const Footer = () => {
         </Wow>
         <Nav>
           <Links>
-            <Link href="https://www.twitter.com/mabdulai90">TWITTER</Link>
-            <Link href="https://www.linkedin.com/michaelabdulai">LINKEDIN</Link>
-            <Link href="https://www.instagram.com/mabdulai90">INSTAGRAM</Link>
-            <Link href="https://www.github.com/mabdulai">GITHUB</Link>
+            <Link target="_blank" href="https://www.twitter.com/mabdulai90">
+              TWITTER
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/in/michaelabdulai"
+            >
+              LINKEDIN
+            </Link>
+            <Link target="_blank" href="https://www.instagram.com/mabdulai90">
+              INSTAGRAM
+            </Link>
+            <Link target="_blank" href="https://www.github.com/mabdulai">
+              GITHUB
+            </Link>
           </Links>
           <Mail href="mailto:mabdulai90@gmail.com">MABDULAI90@GMAIL.COM</Mail>
         </Nav>
@@ -50,12 +61,15 @@ const Wow = styled.div`
   text-align: right;
   line-height: 0.75;
   color: ${({ theme }) => theme.ochre};
-  transition: all 100ms ease-in-out;
+  -webkit-text-stroke: 2px transparent;
+
+  transition: 200ms all ease-in-out;
   cursor: default;
 
   &:hover {
     color: #fff;
-    border-color: #fff;
+
+    -webkit-text-stroke: 2px ${({ theme }) => theme.ochre};
   }
 `;
 
