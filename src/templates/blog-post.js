@@ -11,8 +11,9 @@ class BlogPostTemplate extends React.Component {
       <Layout displayHeader={false}>
         <ContentWrapper>
           <ArticleContent>
+            <TitleImage image={mdx.frontmatter.titleImage} />
             <h1>{mdx.frontmatter.title}</h1>
-            <Date>{mdx.frontmatter.date}</Date>
+            <Date>READ TIME: {mdx.frontmatter.reading_time}</Date>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </ArticleContent>
         </ContentWrapper>
@@ -36,6 +37,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        reading_time
       }
       body
     }
@@ -49,7 +51,7 @@ const ContentWrapper = styled.div`
 `;
 
 const ArticleContent = styled.article`
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.ochre};
   padding-bottom: 100px;
 
   @media (max-width: 1200px) {
@@ -66,10 +68,11 @@ const ArticleContent = styled.article`
     letter-spacing: 1px;
   }
   h1 {
-    color: ${({ theme }) => theme.offWhite};
+    color: ${({ theme }) => theme.ochre};
     text-align: center;
-    font-size: 60px;
+    font-size: 100px;
     width: 960px;
+    margin-bottom: 8px;
 
     @media (max-width: 1200px) {
       font-size: 24px;
@@ -90,13 +93,15 @@ const ArticleContent = styled.article`
     }
   }
   p {
-    font-family: ${({ theme }) => theme.fontMain};
-    font-size: 20px;
+    font-family: ${({ theme }) => theme.fontBlog};
+    font-weight: 400;
+    color: #fff;
+    font-size: 18px;
     line-height: 1.4;
     text-align: justify;
-    opacity: 0.9;
+
     padding-bottom: 24px;
-    max-width: 100ch;
+    max-width: 700px;
 
     @media (max-width: 1200px) {
       font-size: 14px;
@@ -121,8 +126,6 @@ const ArticleContent = styled.article`
   }
 
   > div {
-    background: rgba(255, 218, 83, 0.9);
-    border-radius: 8px;
     width: 960px;
     padding: 10px 60px 40px;
 
@@ -134,12 +137,14 @@ const ArticleContent = styled.article`
   }
 `;
 
-const Date = styled.p`
+const Date = styled.span`
   display: flex;
-  justify-content: center;
-  margin-top: -30px;
+  justify-content: flex-start;
+  text-transform: uppercase;
   color: ${({ theme }) => theme.offWhite};
-
+  font-family: ${({ theme }) => theme.fontDisplay};
+  font-size: 20px;
+  letter-spacing: 1px;
   @media (max-width: 1200px) {
     font-size: 12px;
   }

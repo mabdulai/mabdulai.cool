@@ -30,6 +30,9 @@ exports.createPages = ({ graphql, actions }) => {
               frontmatter {
                 title
                 date
+                year
+                category
+                images
               }
               body
             }

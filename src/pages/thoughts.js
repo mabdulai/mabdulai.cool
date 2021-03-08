@@ -1,27 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 
 import Layout from "../components/common/Layout";
+import Post from "../components/post-item";
 import { MainText } from "../style/shared-components";
 import usePosts from "../utils/usePosts";
 
 const Thoughts = ({ path }) => {
-  const posts = usePosts();
+  const postsPerYear = usePosts();
+
   return (
     <Layout path={path}>
-      <MainText>
-        <Year>
-          <YearNumber>2020</YearNumber>
-          <Posts>
-            {posts.map((post) => (
-              <PostLink key={post.node.fields.slug} to={post.node.fields.slug}>
-                {post.node.frontmatter.title}
-              </PostLink>
+      {postsPerYear.map((year, index) => (
+        <YearGroup key={index}>
+          <YearNumber>‘ {year[0].node.frontmatter.year.slice(2, 4)}</YearNumber>
+          <PostsBlock>
+            {year.map((post, index) => (
+              <Post key={index} post={post} />
             ))}
-          </Posts>
-        </Year>
-      </MainText>
+          </PostsBlock>
+        </YearGroup>
+      ))}
+      <Year></Year>
     </Layout>
   );
 };
@@ -31,13 +31,31 @@ export default Thoughts;
 const Year = styled.div``;
 
 const YearNumber = styled.div`
-  font-size: 64px;
+  display: flex;
+  align-items: flex-start;
+  color: #fff;
+  font-size: 140px;
   font-family: ${({ theme }) => theme.fontDisplay};
   font-weight: bold;
+  line-height: 0.8;
+  width: 200px;
 `;
 
-const Posts = styled.div``;
+const YearGroup = styled.div`
+  display: flex;
+  align-items: flex-start;
+  border-radius: 1px;
+  font-family: ${({ theme }) => theme.fontMain};
+  margin-top: 80px;
+  &:not(:last-child) {
+    margin-bottom: 140px;
+  }
+`;
 
-const PostLink = styled(Link)`
-  color: currentColor;
+const PostsBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid ${({ theme }) => theme.ochre};
+  z-index: 2;
 `;

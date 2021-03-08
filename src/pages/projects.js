@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-
 import Layout from "../components/common/Layout";
-import { MainText } from "../style/shared-components";
-
 class Projects extends Component {
   render() {
     const { path } = this.props;

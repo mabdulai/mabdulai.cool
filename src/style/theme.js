@@ -9,6 +9,7 @@ export default {
   fontSubDisplay: "Tungsten",
   fontNav: "Share Tech Mono",
   fontMain: "Share Tech Mono",
+  fontBlog: "Share",
   fontFooter: "Tungsten",
   bold: "bold",
   layoutMaxWidth: "1200px",

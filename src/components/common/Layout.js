@@ -6,20 +6,21 @@ import Logo from "./Logo";
 import PageTitle from "./PageTitle";
 import Footer from "./footer";
 import theme from "../../style/theme";
-import usePosts from "../../utils/usePosts";
 import background from "../../assets/grunge.png";
 import favico from "../../assets/favicon.ico";
 import "../../style/global.css";
 
 const Layout = ({ children, path }) => {
-  const posts = usePosts();
-  const latestPost = posts[posts.length - 1].node;
   return (
     <ThemeProvider theme={theme}>
       <Helmet title="Mabdulai.cool">
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Share:wght@400;700&display=swap"
           rel="stylesheet"
         />
         <link rel="icon" type="image/png" href={favico} sizes="16x16" />
