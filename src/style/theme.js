@@ -2,7 +2,7 @@ export default {
   ochre: "#ffda53",
   darkOcher: "#9D852C",
   black: "#071018",
-  blackLinks: "#151515",
+  blackLinks: "#151515", 
   offWhite: "#fafafa",
   offWhiteHover: "#E3D8D8",
   fontDisplay: "Tungsten",

@@ -18,7 +18,6 @@ const usePosts = () => {
                   year
                   category
                   reading_time
-                  images
                 }
               }
             }

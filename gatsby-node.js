@@ -17,10 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
+        allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
           edges {
             node {
               id
@@ -32,7 +29,6 @@ exports.createPages = ({ graphql, actions }) => {
                 date
                 year
                 category
-                images
               }
               body
             }
@@ -49,8 +45,7 @@ exports.createPages = ({ graphql, actions }) => {
     const posts = result.data.allMdx.edges;
 
     posts.forEach((post, index) => {
-      const previous =
-        index === posts.length - 1 ? null : posts[index + 1].node;
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
 
       createPage({

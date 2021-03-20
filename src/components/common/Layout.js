@@ -68,7 +68,7 @@ const Container = styled.div`
   min-height: 100vh;
 
   background-image: url(${background});
-  background-repeat: no-repeat;
+  background-repeat: no-repeat-y;
   background-attachment: fixed;
 `;
 
@@ -114,8 +114,7 @@ const NavItem = styled(Link)`
   transition: all 50ms ease-in-out;
   text-transform: uppercase;
 
-  border-bottom: ${({ theme, $isActive }) =>
-    $isActive ? `2px solid ${theme.ochre}` : "none"};
+  border-bottom: ${({ theme, $isActive }) => ($isActive ? `2px solid ${theme.ochre}` : "none")};
 
   &:hover {
     border-bottom: 2px solid ${({ theme }) => theme.offWhiteHover};
