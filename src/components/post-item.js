@@ -3,11 +3,10 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 const PostItem = ({ post }) => {
-  console.log(post);
   return (
     <Container>
       <Image>
-        <img src="https://i.imgur.com/VLpPGDr.png" alt="" />
+        <img src={post.node.frontmatter.img} alt="" />
       </Image>
       <Info to={post.node.fields.slug}>
         <Category>#{post.node.frontmatter.category}</Category>
@@ -34,6 +33,14 @@ const Container = styled.div`
 
 const Image = styled.div`
   margin-right: 40px;
+  @media (max-width: 1200px) {
+    display: none;
+  }
+  img {
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 const Category = styled.div`

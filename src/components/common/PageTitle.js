@@ -69,7 +69,7 @@ const PageTitleText = styled.div`
   &:after {
     position: absolute;
     right: 0;
-    top: 200%;
+    top: 1000px;
     content: "EST. 2020. ";
     transform: rotate(90deg);
     font-size: 12px;

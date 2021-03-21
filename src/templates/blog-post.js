@@ -16,8 +16,10 @@ class BlogPostTemplate extends React.Component {
         <Layout displayHeader={false}>
           <ContentWrapper>
             <ArticleContent>
-              <h1>{mdx.frontmatter.title}</h1>
-              <Date>READ TIME: {mdx.frontmatter.reading_time}</Date>
+              <TitleContainer>
+                <h1>{mdx.frontmatter.title}</h1>
+                <Date>READ TIME: {mdx.frontmatter.reading_time}</Date>
+              </TitleContainer>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </ArticleContent>
           </ContentWrapper>
@@ -43,10 +45,16 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         reading_time
+        img
       }
       body
     }
   }
+`;
+const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const ContentWrapper = styled.div`
@@ -75,12 +83,13 @@ const ArticleContent = styled.article`
   h1 {
     color: ${({ theme }) => theme.ochre};
     font-size: 80px;
-    width: 960px;
     margin-bottom: 8px;
 
     @media (max-width: 1200px) {
       font-size: 40px;
-      width: 100%;
+      & + span {
+        font-size: 20px;
+      }
     }
   }
 
@@ -134,7 +143,7 @@ const ArticleContent = styled.article`
   }
 
   section {
-    justify-content: center;
+    margin: 0 auto;
     padding-bottom: 60px;
     width: 960px;
 

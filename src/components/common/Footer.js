@@ -93,13 +93,20 @@ const Nav = styled.nav`
 
   @media (max-width: 1200px) {
     flex-direction: column;
-    max-width: 90%;
   }
 `;
 
-const Mail = styled.a``;
+const Mail = styled.a`
+  @media (max-width: 1200px) {
+    text-align: right;
+  }
+`;
 
-const Links = styled.ul``;
+const Links = styled.ul`
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
 
 const Link = styled.a`
   margin-right: 50px;

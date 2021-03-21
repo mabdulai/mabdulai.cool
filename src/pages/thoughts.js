@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import Layout from "../components/common/Layout";
 import Post from "../components/post-item";
-import { MainText } from "../style/shared-components";
 import usePosts from "../utils/usePosts";
 
 const Thoughts = ({ path }) => {
@@ -39,6 +38,11 @@ const YearNumber = styled.div`
   font-weight: bold;
   line-height: 0.8;
   width: 200px;
+
+  @media (max-width: 1200px) {
+    margin-bottom: 10px;
+    font-size: 100px;
+  }
 `;
 
 const YearGroup = styled.div`
@@ -50,6 +54,10 @@ const YearGroup = styled.div`
   &:not(:last-child) {
     margin-bottom: 140px;
   }
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 
 const PostsBlock = styled.div`
@@ -58,4 +66,10 @@ const PostsBlock = styled.div`
   padding: 24px;
   border: 1px solid ${({ theme }) => theme.ochre};
   z-index: 2;
+
+  @media (max-width: 1200px) {
+    max-width: 80%;
+    border: 1px solid transparent};
+
+  }
 `;

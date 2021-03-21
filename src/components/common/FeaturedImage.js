@@ -12,9 +12,14 @@ const FeaturedImage = ({ src }) => {
 export default FeaturedImage;
 
 const Container = styled.div`
+  display: flex;
+  justify-content: center;
   width: 80%;
-  margin: 100px 0;
+  margin: 100px auto;
   img {
-    width: 100%;
+    width: 70%;
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
   }
 `;
