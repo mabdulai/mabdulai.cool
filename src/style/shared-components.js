@@ -13,6 +13,10 @@ export const MainText = styled.div`
   opacity: 0.9;
   text-align: justify;
 
+  p {
+    padding-bottom: 30px;
+  }
+
   @media (max-width: 1200px) {
     max-width: 100%;
     font-size: 20px;
