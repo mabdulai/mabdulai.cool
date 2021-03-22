@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import Helmet from "react-helmet";
 import Logo from "./Logo";
 import PageTitle from "./PageTitle";
+import Footer from "./Footer";
 import theme from "../../style/theme";
 import usePosts from "../../utils/usePosts";
 import background from "../../assets/grunge.png";
