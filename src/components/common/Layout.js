@@ -4,21 +4,23 @@ import { Link } from "gatsby";
 import Helmet from "react-helmet";
 import Logo from "./Logo";
 import PageTitle from "./PageTitle";
+import Footer from "./footer";
 import theme from "../../style/theme";
-import usePosts from "../../utils/usePosts";
 import background from "../../assets/grunge.png";
 import favico from "../../assets/favicon.ico";
 import "../../style/global.css";
 
 const Layout = ({ children, path }) => {
-  const posts = usePosts();
-  const latestPost = posts[posts.length - 1].node;
   return (
     <ThemeProvider theme={theme}>
       <Helmet title="Mabdulai.cool">
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Share:wght@400;700&display=swap"
           rel="stylesheet"
         />
         <link rel="icon" type="image/png" href={favico} sizes="16x16" />
@@ -52,69 +54,7 @@ const Layout = ({ children, path }) => {
             {children}
           </MainContainer>
         </Main>
-        <Footer>
-          <FooterContainer>
-            <FooterLinks>
-              <FooterList>
-                <FooterTitle>Site</FooterTitle>
-                <FooterItem to="/">
-                  <span>Home</span>
-                </FooterItem>
-                <FooterItem to="/projects">
-                  <span>Projects</span>
-                </FooterItem>
-                <FooterItem to="/thoughts">
-                  <span>Thoughts</span>
-                </FooterItem>
-                <FooterItem to="/uses">
-                  <span>Uses</span>
-                </FooterItem>
-              </FooterList>
-              <FooterList>
-                <FooterTitle>Links</FooterTitle>
-                <FooterItem
-                  as="a"
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.github.com/mabdulai"
-                >
-                  <span>Github</span>
-                </FooterItem>
-                <FooterItem
-                  as="a"
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.twitter.com/mabdulai90"
-                >
-                  <span>Twitter</span>
-                </FooterItem>
-                <FooterItem
-                  as="a"
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.dribbble.com/mabdulai90"
-                >
-                  <span>Dribbble</span>
-                </FooterItem>
-                <FooterItem
-                  as="a"
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.linkedin.com/in/michaelabdulai/"
-                >
-                  <span>LinkedIn</span>
-                </FooterItem>
-              </FooterList>
-            </FooterLinks>
-            <LatestBlog>
-              <FooterTitle>Latest Thougts</FooterTitle>
-              <BlogTitle href={latestPost.fields.slug}>
-                {latestPost.frontmatter.title}
-              </BlogTitle>
-              <BlogExcerpt>{latestPost.excerpt}</BlogExcerpt>
-            </LatestBlog>
-          </FooterContainer>
-        </Footer>
+        <Footer />
       </Container>
     </ThemeProvider>
   );
@@ -128,6 +68,8 @@ const Container = styled.div`
   min-height: 100vh;
 
   background-image: url(${background});
+  background-repeat: no-repeat-y;
+  background-attachment: fixed;
 `;
 
 const Header = styled.header`
@@ -165,15 +107,14 @@ const NavList = styled.ul`
 const NavItem = styled(Link)`
   list-style: none;
   margin-right: 16px;
-  font-size: 28px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
   text-decoration: none;
   color: ${({ theme }) => theme.ochre};
   transition: all 50ms ease-in-out;
   text-transform: uppercase;
 
-  border-bottom: ${({ theme, $isActive }) =>
-    $isActive ? `2px solid ${theme.ochre}` : "none"};
+  border-bottom: ${({ theme, $isActive }) => ($isActive ? `2px solid ${theme.ochre}` : "none")};
 
   &:hover {
     border-bottom: 2px solid ${({ theme }) => theme.offWhiteHover};
@@ -183,6 +124,7 @@ const NavItem = styled(Link)`
 
 const Main = styled.main`
   display: flex;
+  flex: 1;
   flex-direction: column;
   padding: 0 160px;
   overflow: hidden;
@@ -205,115 +147,4 @@ const MainContainer = styled.div`
     width: 100%;
     margin: 0 auto;
   }
-`;
-
-const LatestBlog = styled.div`
-  width: 600px;
-  font-size: 20px;
-  font-family: ${({ theme }) => theme.fontFooter};
-
-  @media (max-width: 1200px) {
-    display: none;
-  }
-`;
-
-const BlogTitle = styled.a`
-  font-family: ${({ theme }) => theme.fontFooter};
-  font-weight: ${({ theme }) => theme.bold};
-  font-size: 40px;
-  color: ${({ theme }) => theme.blackLinks};
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-decoration: none;
-  text-transform: uppercase;
-  opacity: 0.9;
-`;
-
-const BlogExcerpt = styled.div`
-  font-family: ${({ theme }) => theme.fontMain};
-  color: ${({ theme }) => theme.blackLinks};
-  font-weight: 500;
-  line-height: 1.4;
-  margin-top: 8px;
-  font-size: 16px;
-`;
-
-const Footer = styled.footer`
-  display: flex;
-  align-items: center;
-  background: ${({ theme }) => theme.ochre};
-  color: ${({ theme }) => theme.blackLinks};
-  height: 400px;
-  padding: 0 160px;
-
-  @media (max-width: 1200px) {
-    height: 300px;
-    width: 100%;
-    padding: 0;
-  }
-`;
-
-const FooterContainer = styled.div`
-  max-width: ${({ theme }) => theme.layoutMaxWidth};
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
-  margin: 0 auto;
-  padding: 32px 0;
-  @media (max-width: 1200px) {
-    width: 100%;
-    justify-content: space-between;
-  }
-`;
-
-const FooterLinks = styled.div`
-  display: flex;
-
-  @media (max-width: 1200px) {
-    justify-content: space-around;
-    flex: 1;
-  }
-`;
-
-const FooterList = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-size: 24px;
-  font-family: ${({ theme }) => theme.fontFooter};
-  margin-right: 120px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  @media (max-width: 1200px) {
-    margin-right: 0;
-  }
-`;
-
-const FooterItem = styled(Link)`
-  text-decoration: none;
-  color: ${({ theme }) => theme.blackLinks};
-  font-weight: 500;
-  padding: 8px 0;
-  opacity: 0.9;
-
-  span {
-    transition: all 100ms ease-in-out;
-    border-bottom: 2px solid ${({ theme }) => theme.ochre};
-  }
-
-  &:hover {
-    span {
-      color: ${({ theme }) => theme.black};
-      border-bottom: 2px solid ${({ theme }) => theme.black};
-    }
-  }
-`;
-
-const FooterTitle = styled.div`
-  font-weight: 900;
-  padding-bottom: 24px;
-  font-size: 32px;
-  font-family: ${({ theme }) => theme.fontFooter};
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 `;

@@ -49,7 +49,7 @@ class Uses extends Component {
                   Fira Code
                 </a>
                 ,{" "}
-                <a target="_blank" rel="noreferrer">
+                <a target="_blank" rel="noreferrer" href="#">
                   My settings
                 </a>
               </Description>
