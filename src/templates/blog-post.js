@@ -18,7 +18,6 @@ class BlogPostTemplate extends React.Component {
             <ArticleContent>
               <TitleContainer>
                 <h1>{mdx.frontmatter.title}</h1>
-                <Date>READ TIME: {mdx.frontmatter.reading_time}</Date>
               </TitleContainer>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </ArticleContent>
@@ -55,6 +54,10 @@ const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    align-items: flex-start;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -104,7 +107,7 @@ const ArticleContent = styled.article`
 
     @media (max-width: 1200px) {
       font-size: 30px;
-      padding: 0 20px;
+      padding: 0 10px;
     }
   }
   p {
@@ -120,7 +123,7 @@ const ArticleContent = styled.article`
 
     @media (max-width: 1200px) {
       font-size: 14px;
-      padding: 0px 20px 20px;
+      padding: 0px 10px 20px;
     }
   }
   ul {
@@ -148,7 +151,7 @@ const ArticleContent = styled.article`
     width: 960px;
 
     @media (max-width: 1200px) {
-      width: 90%;
+      width: 100%;
     }
   }
 
