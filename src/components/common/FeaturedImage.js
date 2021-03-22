@@ -19,7 +19,7 @@ const Container = styled.div`
   img {
     width: 70%;
     @media (max-width: 1200px) {
-      width: 100%;
+      display: none;
     }
   }
 `;
